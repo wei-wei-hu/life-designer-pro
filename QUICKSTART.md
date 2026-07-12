@@ -4,13 +4,15 @@
 
 1. Get the code:
 
-```bash
-git clone https://github.com/wei-wei-hu/life-designer-pro.git
-cd life-designer-pro
-```
+   ```bash
+   git clone https://github.com/wei-wei-hu/life-designer-pro.git
+   cd life-designer-pro
+   ```
 
-(Or download the ZIP from the repository page and unzip it.)
+   (Or download the ZIP from the repository page and unzip it.)
+
 2. Open the repository in Claude Code or Codex.
+
 3. Start with one of these prompts:
 
 Claude Code:
@@ -53,7 +55,7 @@ The script copies the skill (SKILL.md plus references, templates, and prompts) t
 
 ## Best first-session setup
 
-A quick session takes 5 to 10 minutes: four or five short questions that surface your real question, a life map, and a first experiment. Ask for a deep session (30 to 60 minutes, six to nine questions) when you want the full Core Blueprint or Full Kit. Use a private conversation, answer with real examples instead of abstract labels, and know that “I don’t know” is a valid answer; the coach should respond with a more concrete question. You can pause at any checkpoint and resume later with the memory snapshot the coach offers.
+A quick session takes 5 to 10 minutes: four or five short questions that surface your real question, a life map, and a first experiment. Ask for a deep session (30 to 60 minutes, six to nine questions) when you want the full Core Blueprint or Full Kit. Use a private conversation, answer with real examples instead of abstract labels, and know that "I don't know" is a valid answer; the coach should respond with a more concrete question. You can pause at any checkpoint and resume later with the memory snapshot the coach offers.
 
 ## Resume later
 
