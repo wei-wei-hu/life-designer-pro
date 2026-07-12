@@ -1,0 +1,1 @@
+Use the `life-designer-pro` skill. Review my saved AI Coach Memory and the past month. Ask one question at a time about dashboard scores, energy, relationships, current experiments, boundaries, and important decisions. Update only the sections supported by new evidence. End with a concise monthly adjustment plan.

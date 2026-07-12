@@ -1,0 +1,80 @@
+# Changelog
+
+## 1.4.1 - 2026-07-12
+
+Fixes from two end-to-end validation sessions (quick and deep, synthetic personas):
+
+- Protocol ratings list now includes contribution and meaning (was seven areas vs. the opener's eight)
+- AI Coach Memory clarified as always-created session infrastructure, independent of deliverable selection
+- Scripted opener documented as the one sanctioned exception to the one-ask rule; question-budget counting clarified
+- Weekly-conditions triage now requires the full user-owned ranking, not only a keep-one answer
+- Life Map may propose the experiment when none exists yet, confirmed with the review date at session close
+- Dashboard first-session convention: trend column reads "no prior evidence"
+- Adjacent Life first-90-days framed as start-today reconnaissance; portfolio sweep capped for brief answerers; redundant final checkpoint skipped; baseline projection horizon shortened to two-then-five years; template title aligned
+
+## 1.4.0 - 2026-07-12
+
+- Three futures are now three two-year paths (ordinary day, first 90 days, months 4-12, year 2) instead of five-year designs; shorter horizon keeps paths realistic and testable, refreshed by the annual redesign
+- Lite prompt aligned with the two-year horizon and its ordinary-day wording
+- Weekly-conditions question now enforces the triage: if the user lists more than three, the coach asks a forced-choice follow-up instead of accepting the longer list
+
+## 1.3.0 - 2026-07-11
+
+Improvements from the first live user session:
+
+- Opening question now defines the 0-10 scale and states that the lowest score is not automatically the most urgent
+- Added question-style rules: one ask per question, plain words, short setup, offer a "pick one" way in, match the user's energy
+- Added a session-depth rule resolving the conflict between the 6-9 question budget and full-coverage requirements: secure the real question, weekly conditions, and one energizer; mark the rest insufficient
+- Energy drains can now be collected through a pick-list for brief answerers
+- The pause/snapshot offer is now a required part of the checkpoint format instead of a one-line rule elsewhere
+- Executive Summary spec now requires a session-coverage note when coverage was partial
+- Deliverable selection now always asks first (a general request is not a scope), presents results in conversation, and only writes files on request
+- Added a required six-step session close (confirm proposals, offer gap follow-up, set review date, offer images, hand over memory) so sessions no longer end at file delivery
+- Deliverable 16 redefined from a text pyramid to the visual Life Map (today, real question, portable conditions, active experiment, three futures, evidence loop) with a new template and text fallback
+- Review cadence is now the user's explicit choice (weekly, monthly, quarterly, stackable, changeable at any review); added the missing prompts/WEEKLY_REVIEW.md
+- README gained a See-it-in-action showcase (fictional persona only); example conversation updated to the new opening question; added examples/EXAMPLE_LIFE_MAP.md
+- Install scripts now copy prompts/ (previously the installed skill had dangling references to review prompts); QUICKSTART gained a verify step and a realistic 30-60 minute estimate
+- README and QUICKSTART now carry the repository URL and clone instructions
+- License replaced: all-rights-reserved placeholder is now CC BY 4.0 with a preferred attribution line (use freely, credit Weiwei Hu when sharing or adapting)
+- Quick session is now the default: four or five questions in 5-10 minutes producing the real question, life map, and first experiment; the 30-60 minute deep interview became opt-in
+- README voice pass: AI-assisted life-design coach, "you" instead of "a person", official Designing Your Life and Stanford Life Design Lab links, review loop instead of review system
+- Lite prompt aligned with 1.3.0: quick 4-5 question core, defined rating scale, easy-question rules, text life map, insufficient-evidence rule, cadence choice, paste-back memory block
+
+## 1.2.0 - 2026-07-11
+
+- Unified the Current-Life Dashboard schema across DELIVERABLES.md, BLUEPRINT_TEMPLATE.md, and LIFE_DASHBOARD_TEMPLATE.md (Score 0–10 / Trend / Evidence / Next review question)
+- Expanded the opening ratings question from seven to eight areas to include contribution and meaning, matching the dashboard
+- Aligned Energy and Flow Map template headings with the deliverable spec (recovery activities, supportive people, praised-but-draining, increase/reduce)
+- Added full substructure to the blueprint template for the three futures (10 elements plus scorecard table) and renamed Recommended Prototype to Prototype Plan with all 14 sub-fields
+- Weekly Life Conditions template now shows five to seven lines instead of a hard-coded five
+- Clarified that lens names (Current Direction, Adjacent Life, Unconstrained Life) are design constraints and each future gets a user-specific title
+- Added a thin-evidence rule for the ordinary-day section
+- Added a global evidence rule distinguishing invented user facts from labeled coach-derived proposals
+- Gave the Continuing AI-Companion Prompt (deliverable 25) a required six-point structure
+- Mapped every One-Page Blueprint field to its upstream Core Blueprint section and removed unsourced fields (north-star direction, top five values)
+- Added aspect ratios for all four image formats and prompt templates for desktop and phone wallpapers; added the one-visual-system rule
+- Converted the AI Coach Memory privacy note to a coach-facing comment and added granularity guidance
+- Marked the bundled examples as style exemplars, not a full evidence base
+
+## 1.1.0 - 2026-07-11
+
+- Added gravity-problem triage (actionable vs. unchangeable problems) to methodology and conversation protocol
+- Added behavior-versus-words hypothesis check
+- Added optional consent-based baseline projection with emotional-safety skip rule
+- Added question budget (6–9 primary questions) and stated time commitment
+- Added mid-session pause/resume via partial AI Coach Memory snapshots
+- Enriched prototype plan: anti-vision and vision lines, quarterly core question, one-month buildable, pocket-practice reminders
+- Added LITE_PROMPT.md: copy-paste version for claude.ai
+- Extended validator to verify all duplicated references and templates stay identical
+- Aligned README deliverable count with DELIVERABLES.md (27)
+
+## 1.0.0 - 2026-07-11
+
+- Initial GitHub-ready release
+- Added Claude Code and Codex-compatible skill locations
+- Added canonical root `SKILL.md`
+- Added adaptive conversation protocol
+- Added 27 core and extended deliverables
+- Added image-generation evidence rules
+- Added monthly, quarterly, and annual review prompts
+- Added install and validation scripts
