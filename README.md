@@ -55,7 +55,7 @@ Two rules run through every deliverable: nothing is invented (thin evidence gets
 
 - **Your Life Map:** one page showing your current priorities, energy sources, tensions, and the areas of life that need more attention.
 - **Your Life Design Blueprint:** future life paths grounded in your own evidence, the ordinary day and trade-offs behind each one, and the questions you still need to test.
-- **Your Prototype Plan:** one-day, 30-day, and 90-day tests that help you learn more before making a bigger commitment, with clear criteria for when to stop, continue, or expand.
+- **Your Prototype Plan:** one-day, 30-day, and 90-day tests that help you learn more before making a bigger commitment, with criteria for when to stop, continue, or expand.
 
 Everything is modular: ask for only what you want, from a one-page summary to the full kit with a personal manifesto, images, and review prompts. Exact specifications live in [references/DELIVERABLES.md](references/DELIVERABLES.md). Prefer a zero-install version? [LITE_PROMPT.md](LITE_PROMPT.md) is a single copy-paste prompt that preserves the core method for claude.ai or any chat assistant.
 

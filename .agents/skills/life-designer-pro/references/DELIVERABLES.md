@@ -96,7 +96,7 @@ Include:
 - stop, continue, and expand criteria
 - review date
 
-Make clear that this structure serves only the prototype currently being tested. It is not a lifetime commitment, and a failed prototype still produces useful evidence for the next decision.
+Say plainly that this structure serves only the prototype currently being tested. It is not a lifetime commitment, and a failed prototype still produces useful evidence for the next decision.
 
 ### 12. Boundaries
 
@@ -108,7 +108,7 @@ Include only risks supported by the conversation. Possible categories include em
 
 ### 14. Ordinary Day
 
-End with a grounded morning-to-evening description that integrates the strongest evidence without inventing unsupported details. If the conversation produced no daily-routine evidence, do not simulate a full day: describe only the day-shape the evidence supports (protected blocks, boundaries, recurring commitments) and list what a future session needs to complete the picture.
+End with a grounded morning-to-evening description that integrates the strongest evidence without inventing unsupported details. If the conversation produced no daily-routine evidence, do not simulate a full day: describe only the parts of the day the evidence supports (protected blocks, boundaries, recurring commitments) and list what a future session needs to complete the picture.
 
 ### 15. Final Reflection
 

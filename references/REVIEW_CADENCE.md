@@ -2,7 +2,7 @@
 
 ## Choosing a cadence
 
-The rhythm is the user's choice; offer the options and let them pick. Guidance to offer, not impose:
+The cadence is the user's choice; offer the options and let them pick. Guidance to offer, not impose:
 
 - An active experiment benefits from weekly or monthly check-ins, matched to how fast its evidence arrives.
 - A steady stretch of life may only need the quarterly reset.
