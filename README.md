@@ -12,7 +12,7 @@ Most life-planning prompts jump from a few answers to a confident recommendation
 
 Its central test is simple:
 
-> If this future works, what will an ordinary day actually feel like?
+> If this future works, what will an ordinary day feel like?
 
 ## See it in action
 
