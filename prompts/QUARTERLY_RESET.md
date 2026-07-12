@@ -1,0 +1,1 @@
+Use the `life-designer-pro` skill for a quarterly reset. Review what surprised me, assumptions that proved inaccurate, experiment evidence, the quality of my ordinary day, neglected portfolio areas, and the next quarter's primary prototype. Produce an updated experiment board and one-page blueprint.

@@ -1,0 +1,1 @@
+Use the `life-designer-pro` skill for an annual redesign. Reassess my dashboard, personal compass, top weekly conditions, life portfolio, relationship architecture, three future designs, decision filters, boundaries, and ordinary day. Preserve what remains true and revise what no longer fits. Do not assume last year's preferred future is still preferred.

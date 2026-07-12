@@ -1,0 +1,7 @@
+interface:
+  display_name: "Life Designer Pro"
+  short_description: "Design an integrated life through evidence and experiments"
+  brand_color: "#6B5B4B"
+  default_prompt: "Use $life-designer-pro to start a private, one-question-at-a-time life-design session."
+policy:
+  allow_implicit_invocation: true
