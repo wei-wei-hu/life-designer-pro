@@ -2,7 +2,7 @@
 
 An AI-assisted life-design coach and reusable skill for Claude Code and OpenAI Codex.
 
-Life Designer Pro helps you look into your work, relationships (from partner and family to professional network), health, learning, creativity, community, finances, and contribution as one connected life. It uses an adaptive coaching conversation, three alternative future designs, evidence-based prototypes, and a reusable review loop.
+Life Designer Pro helps you look at your work, relationships (from partner and family to professional network), health, fun, learning and creativity, community, finances, and contribution as one connected life. It uses an adaptive coaching conversation, three alternative future designs, evidence-based prototypes, and a reusable review loop.
 
 > **Attribution:** Inspired by ideas from [*Designing Your Life*](https://designingyour.life/) by [Bill Burnett](https://designingyour.life/about-us/) and [Dave Evans](https://designingyour.life/about-us/) and the [Stanford Life Design Lab](https://lifedesignlab.stanford.edu/). This repository is an independent adaptation. It is not an official Stanford product and is not affiliated with Stanford University.
 
@@ -22,7 +22,7 @@ A session opens with eight life-area ratings, then follows the evidence one plai
 >
 > **User:** Work is 4, and yes, work is the urgent one. I am successful, but every week is meetings and escalations.
 >
-> **Coach:** Your concern seems less about performance and more about the kind of work occupying your time. Tell me about one recent work period that left you energized rather than depleted.
+> **Coach:** Your concern seems to be the kind of work occupying your time, not your performance. Tell me about one recent work period that left you energized rather than depleted.
 
 A few questions later (a quick session takes five to ten minutes), the session has found the real question underneath the stated one, and can draw the whole thing on one page, the Life Map:
 
@@ -47,7 +47,7 @@ A few questions later (a quick session takes five to ten minutes), the session h
         weekly 10 min · monthly · quarterly re-score
 ```
 
-Three paths, all legitimate, none a backup plan. One experiment small enough to start this week. A review loop that re-scores the futures as real evidence arrives, on a cadence the user picks: weekly, monthly, or quarterly. See [examples/](examples/) for the full fictional session excerpt, blueprint, and life map.
+Three paths, all legitimate, none a backup plan. One experiment small enough to start this week. A review loop that re-scores the futures as real evidence arrives, on a cadence the user picks: weekly, monthly, or quarterly. See [examples/](examples/) for the fictional session excerpt, condensed blueprint, and life map.
 
 Two rules run through every deliverable: nothing is invented (thin evidence gets marked "insufficient evidence" instead of being papered over), and every recommendation is a testable prototype, not a verdict. The current version's improvements all came from live user-session feedback: a clearer opening question, one-ask-per-question style, honest partial-coverage notes, and the visual Life Map itself.
 

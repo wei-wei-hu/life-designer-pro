@@ -6,7 +6,7 @@
 
 **User:** Work is 4. Everything else is 6 to 8. And yes, work is the urgent one. I am successful, but every week is meetings and escalations.
 
-**Coach:** Your concern seems less about performance and more about the kind of work occupying your time. Before we discuss new roles, I want to understand the contrast. Tell me about one recent work period that left you energized rather than depleted.
+**Coach:** Your concern seems to be the kind of work occupying your time, not your performance. Before we discuss new roles, I want to understand the contrast. Tell me about one recent work period that left you energized rather than depleted.
 
 **User:** I spent two afternoons helping a small team redesign a customer-onboarding process. We made something useful, and they could operate it without me.
 
