@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Translate the completed life architecture into visual symbolism specific to the user. The image should communicate through composition and objects before text.
+Translate the completed life architecture into visual symbolism specific to the user. The image should communicate through composition and objects before text. When the session produced a life metaphor for tomorrow, use it as the central visual idea; the user's own image beats any invented one.
 
 ## Evidence rule
 

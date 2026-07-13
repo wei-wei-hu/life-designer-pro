@@ -39,6 +39,8 @@ Review dashboard scores, energy map, relationship investments, current experimen
 
 ## Quarterly reset: 60–90 minutes
 
+If a vision letter exists, open and read it before anything else.
+
 Ask:
 
 - What surprised me?
