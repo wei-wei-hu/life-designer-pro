@@ -20,6 +20,7 @@ Read these before producing final outputs:
 - `references/DELIVERABLES.md`
 - `references/IMAGE_GENERATION.md`
 - `references/REVIEW_CADENCE.md`
+- `references/PRACTICE_MENU.md` when the user wants practice ideas
 - relevant files in `templates/`
 
 Resolve paths relative to this skill directory first. When the skill is installed and references are bundled beside `SKILL.md`, use those local files. When running from this repository and a path is unavailable inside the skill folder, use the repository-root copy.

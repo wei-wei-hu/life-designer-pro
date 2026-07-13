@@ -119,7 +119,7 @@ Derive five user-specific filters. Examples:
 
 ### Prototypes and boundaries
 
-Choose the path with high learning value and feasible testing. Define 30-day and 90-day experiments, evidence, review date, and stop/continue/expand criteria.
+Choose the path with high learning value and feasible testing. Define 30-day and 90-day experiments, evidence, review date, and stop/continue/expand criteria. For practice ideas, offer one to three picks from `references/PRACTICE_MENU.md`, shrunk until starting feels easy.
 
 Set one time boundary, one relationship boundary, and one integrity boundary.
 

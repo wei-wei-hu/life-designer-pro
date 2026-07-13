@@ -98,6 +98,8 @@ Include:
 
 Say plainly that this structure serves only the prototype currently being tested. It is not a lifetime commitment, and a failed prototype still produces useful evidence for the next decision.
 
+When the user wants ideas for experiments or daily practices, offer picks from `references/PRACTICE_MENU.md`: one to three, shrunk until starting feels easy.
+
 ### 12. Boundaries
 
 Define one time boundary, one relationship boundary, and one integrity boundary with rationale.
@@ -143,7 +145,7 @@ For each quarter include one primary experiment, one relationship investment, on
 
 ### 19. Weekly Operating System
 
-Describe protected blocks and review practices without overengineering the user's calendar.
+Describe protected blocks and review practices without overengineering the user's calendar. When the user wants ideas for what to put in the week, offer picks from `references/PRACTICE_MENU.md`.
 
 ### 20. Relationship Architecture
 
