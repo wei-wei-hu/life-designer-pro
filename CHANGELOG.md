@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.5 - 2026-07-13
+
+- Every review now closes by asking whether the current cadence still fits or should change (weekly, monthly, quarterly), sets the next review date to match, and updates the user's reminder accordingly (rescheduling the scheduled task where the environment supports it, or handing over the new review prompt for a calendar update)
+
 ## 1.6.4 - 2026-07-13
 
 - Reviews now connect priorities and progress to the Practice Menu: previously picked practices are reviewed like any other experiment (keep, adjust, drop), and when a priority area shows little progress or a new addition needs a concrete first step, the coach offers one to three matching practices from the menu's same life areas
