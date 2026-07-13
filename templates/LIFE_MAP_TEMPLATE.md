@@ -23,7 +23,7 @@ One page: where the user is today, the question that connects it, what travels w
 Rules:
 
 - Every box comes from session evidence; nothing decorative.
-- Anchors in the Today layer are whatever holds the tension: two cities, two roles, two loyalties, or one place and one absence.
+- Anchors in the Today layer are whatever holds the tension: two roles, two places, two loyalties, or one place and one absence.
 - Mark the future currently being tested; do not present it as the winner.
 - Keep box subtitles under six words.
 - When drawing: one highlight color for what is being tested now, neutral for the legitimate alternatives.
