@@ -4,7 +4,7 @@ An AI-assisted life-design coach and reusable skill for Claude Code and OpenAI C
 
 Life Designer Pro helps you look at your work, relationships (from partner and family to professional network), health, fun, learning and creativity, community, finances, and contribution as one connected life. It uses an adaptive coaching conversation, three alternative future designs, evidence-based prototypes, and a reusable review loop.
 
-> **Attribution:** Inspired by ideas from [*Designing Your Life*](https://designingyour.life/) by [Bill Burnett](https://designingyour.life/about-us/) and [Dave Evans](https://designingyour.life/about-us/) and the [Stanford Life Design Lab](https://lifedesignlab.stanford.edu/). The life metaphor, heroes, and vision letter tools draw on [*Design the Life You Love*](https://www.penguinrandomhouse.com/books/252264/design-the-life-you-love-by-ayse-birsel/) by Ayse Birsel. This repository is an independent adaptation, not affiliated with or endorsed by Stanford University or any of these authors.
+> **Attribution:** Inspired by ideas from [*Designing Your Life*](https://designingyour.life/) by [Bill Burnett](https://designingyour.life/about-us/) and [Dave Evans](https://designingyour.life/about-us/) and the [Stanford Life Design Lab](https://lifedesignlab.stanford.edu/). The life metaphor, heroes, and vision letter tools draw on [*Design the Life You Love*](https://www.penguinrandomhouse.com/books/252264/design-the-life-you-love-by-ayse-birsel/) by [Ayse Birsel](https://www.aysebirsel.com/). This repository is an independent adaptation, not affiliated with or endorsed by Stanford University or any of these authors.
 
 ## What makes this different
 
