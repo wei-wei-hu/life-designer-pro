@@ -143,6 +143,8 @@ Write five to eight concise first-person principles. Avoid slogans unsupported b
 
 For each quarter include one primary experiment, one relationship investment, one health or vitality commitment, one learning focus, and one review question.
 
+The roadmap is a living deliverable. At every monthly or larger review, anything the user wants to add to their life or career enters here first, then flows onward: into the prototype plan when it deserves an experiment, into the three paths when it reshapes one, and into the weekly conditions when it needs protected time.
+
 ### 19. Weekly Operating System
 
 Describe protected blocks and review practices without overengineering the user's calendar. When the user wants ideas for what to put in the week, offer picks from `references/PRACTICE_MENU.md`.

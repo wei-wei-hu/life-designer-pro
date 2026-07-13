@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.2 - 2026-07-13
+
+- The review loop gained a forward-looking move: monthly and larger reviews now ask what the user wants to add to their life or career roadmap, and every addition is placed into a deliverable (One-Year Roadmap first, then prototype plan, paths, or weekly conditions) or held in the AI Coach Memory so it is not lost
+
 ## 1.6.1 - 2026-07-13
 
 - Every review now follows an explicit four-move loop: ask for progress and milestones, tie each back to the deliverables it touches (Life Map, Blueprint, prototype plan), show the updated deliverables and ask the user to confirm before saving, then close with the adjustment plan and next review date; all four review prompts updated to match

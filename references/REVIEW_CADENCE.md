@@ -11,12 +11,13 @@ The cadence is the user's choice; offer the options and let them pick. Guidance 
 
 ## The review loop
 
-Every review, at any cadence, follows the same four moves:
+Every review, at any cadence, follows the same five moves:
 
 1. Ask what progress or milestones happened since the last review, one short question at a time.
 2. Tie each milestone back to the deliverables it touches: the Life Map (the experiment box, the path being tested), the Blueprint (dashboard scores, prototype status, boundaries), and the weekly conditions.
-3. Show the user the updated deliverables in the conversation and ask them to confirm or correct the updates before anything is saved.
-4. Close with a concise adjustment plan and the next review date, and refresh the AI Coach Memory.
+3. At monthly and larger reviews, ask what the user would like to add to their life or career roadmap for the future: a goal, a skill, a relationship investment, an experience, a contribution. Place each addition into the deliverables where it belongs: the One-Year Roadmap first, then the prototype plan when it deserves an experiment, the three paths when it reshapes one, and the weekly conditions when it needs protected time. An addition that lands nowhere yet goes into the AI Coach Memory's open questions so it is not lost.
+4. Show the user the updated deliverables in the conversation and ask them to confirm or correct the updates before anything is saved.
+5. Close with a concise adjustment plan and the next review date, and refresh the AI Coach Memory.
 
 Progress the user cannot see back in their own deliverables is progress the method gets no credit for; the tie-back is what makes the review feel like their life advancing, not another status meeting.
 
@@ -29,8 +30,9 @@ When the environment provides scheduling tools (for example Claude Code schedule
 1. Load the user's saved AI Coach Memory block (or file, if the user chose a location).
 2. Greet the user and ask what progress or milestones happened since the last review, one short question at a time: what they achieved, what the active experiment produced, score movements, and anything important that happened.
 3. Tie each milestone back to the deliverables it touches and update only the sections supported by the new evidence, following the matching review prompt in `prompts/`.
-4. Show the updated deliverables in the conversation and ask the user to confirm or correct them before saving.
-5. End with a concise adjustment plan and the next review date, and refresh the AI Coach Memory block.
+4. Ask what the user would like to add to their life or career roadmap for the future, and place each addition into the deliverables where it belongs.
+5. Show the updated deliverables in the conversation and ask the user to confirm or correct them before saving.
+6. End with a concise adjustment plan and the next review date, and refresh the AI Coach Memory block.
 
 When no scheduling tool exists, give the user the matching review prompt text to save and suggest they set a calendar reminder for the chosen date.
 
