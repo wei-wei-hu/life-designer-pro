@@ -2,7 +2,7 @@
 
 ## Positioning
 
-Life Designer Pro is an independent AI-assisted method inspired by ideas associated with design thinking and *Designing Your Life*. The life metaphor, heroes, and vision letter tools draw on Ayse Birsel's *Design the Life You Love*. It adds systems thinking, adaptive conversation design, whole-life portfolio analysis, relationship architecture, decision filters, review cadences, and visual deliverables.
+Life Designer Pro is an independent AI-assisted method inspired by ideas associated with design thinking and *Designing Your Life*. The life metaphor, heroes, and vision letter tools draw on Ayse Birsel's *Design the Life You Love* (aysebirsel.com). It adds systems thinking, adaptive conversation design, whole-life portfolio analysis, relationship architecture, decision filters, review cadences, and visual deliverables.
 
 It must never be presented as an official Stanford prompt, course, certification, or product.
 
