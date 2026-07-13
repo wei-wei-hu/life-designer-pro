@@ -8,6 +8,7 @@ The cadence is the user's choice; offer the options and let them pick. Guidance 
 - A steady stretch of life may only need the quarterly reset.
 - Cadences stack well: a weekly self-review, a monthly session with the coach, a quarterly re-score of the futures.
 - The cadence can change at any review. Changing it is itself a design decision; ask for one sentence of reasoning so the change is deliberate rather than drift.
+- The day and time are the user's choice too. A review scheduled for a moment the user cannot honor is a review that will not happen; ask when in their week or month the ten to ninety minutes genuinely exist.
 
 ## The review loop
 
@@ -17,7 +18,7 @@ Every review, at any cadence, follows the same five moves:
 2. Tie each milestone back to the deliverables it touches: the Life Map (the experiment box, the path being tested), the Blueprint (dashboard scores, prototype status, boundaries), and the weekly conditions. Practices the user picked earlier from the Practice Menu count as experiments here: keep, adjust, or drop each one based on what actually happened.
 3. At monthly and larger reviews, ask what the user would like to add to their life or career roadmap for the future: a goal, a skill, a relationship investment, an experience, a contribution. Place each addition into the deliverables where it belongs: the One-Year Roadmap first, then the prototype plan when it deserves an experiment, the three paths when it reshapes one, and the weekly conditions when it needs protected time. An addition that lands nowhere yet goes into the AI Coach Memory's open questions so it is not lost. When a priority area shows little progress, or an addition needs a concrete first step, offer one to three matching practices from `references/PRACTICE_MENU.md`; it is organized by the same life areas, so the user's priority points straight at its options. Shrink whatever they pick until starting feels easy.
 4. Show the user the updated deliverables in the conversation and ask them to confirm or correct the updates before anything is saved.
-5. Close with a concise adjustment plan, then ask whether the current cadence still fits or should move (weekly, monthly, or quarterly) and confirm the next review date. When the user changes cadence, update their reminder to match: reschedule the scheduled task where the environment supports it, or hand them the new review prompt and suggest updating their calendar. Refresh the AI Coach Memory with the new date.
+5. Close with a concise adjustment plan, then ask whether the current cadence still fits or should move (weekly, monthly, or quarterly), and confirm the next review's date and time; the user chooses both, down to the day and hour that fit their life. When the user changes cadence, update their reminder to match: reschedule the scheduled task where the environment supports it, or hand them the new review prompt and suggest updating their calendar. Refresh the AI Coach Memory with the new date.
 
 Progress the user cannot see back in their own deliverables is progress the method gets no credit for; the tie-back is what makes the review feel like their life advancing, not another status meeting.
 
@@ -25,7 +26,7 @@ Progress the user cannot see back in their own deliverables is progress the meth
 
 Reviews only work when they happen, so always offer a reminder at session close.
 
-When the environment provides scheduling tools (for example Claude Code scheduled tasks), offer to create a recurring task on the user's chosen cadence. The scheduled prompt must be self-contained and instruct the future session to:
+When the environment provides scheduling tools (for example Claude Code scheduled tasks), offer to create a recurring task on the user's chosen cadence, at the day and time they pick (a Sunday evening, the 15th at 9am, a first-Friday morning); the reminder should arrive when they can actually act on it. The scheduled prompt must be self-contained and instruct the future session to:
 
 1. Load the user's saved AI Coach Memory block (or file, if the user chose a location).
 2. Greet the user and ask what progress or milestones happened since the last review, one short question at a time: what they achieved, what the active experiment produced, score movements, and anything important that happened.

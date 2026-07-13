@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.6 - 2026-07-13
+
+- Users now set the exact day and time of their recurring review, not just the cadence: the session close asks when in their week or month the time genuinely exists, reminders are created at that moment, and every review close reconfirms date and time along with cadence
+
 ## 1.6.5 - 2026-07-13
 
 - Every review now closes by asking whether the current cadence still fits or should change (weekly, monthly, quarterly), sets the next review date to match, and updates the user's reminder accordingly (rescheduling the scheduled task where the environment supports it, or handing over the new review prompt for a calendar update)
