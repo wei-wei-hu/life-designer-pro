@@ -34,6 +34,8 @@ Cover all eight areas: physical and emotional well-being; work and career; love 
 
 ### Non-negotiables
 
+### Life metaphors (today, tomorrow, and the bridge between them)
+
 ### Alignment and tensions
 
 ## Energy and Flow Map

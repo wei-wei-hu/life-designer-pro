@@ -42,7 +42,7 @@ Use a three-column table. Avoid placing another person's future decision in the 
 
 ### 5. Personal Compass
 
-Summarize workview, lifeview, values, non-negotiables, alignment, and tensions.
+Summarize workview, lifeview, values (including qualities surfaced by the heroes probe), non-negotiables, alignment, and tensions. When the session produced life metaphors, record them here: the metaphor for today, the metaphor for tomorrow, and the user's answer to how one becomes the other.
 
 ### 6. Energy and Flow Map
 

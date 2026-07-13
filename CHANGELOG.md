@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.3 - 2026-07-13
+
+- Life metaphors now have a guaranteed home in the deliverables: the Personal Compass records the today metaphor, the tomorrow metaphor, and the bridge between them; heroes-probe qualities are named as a values source
+
 ## 1.6.2 - 2026-07-13
 
 - The review loop gained a forward-looking move: monthly and larger reviews now ask what the user wants to add to their life or career roadmap, and every addition is placed into a deliverable (One-Year Roadmap first, then prototype plan, paths, or weekly conditions) or held in the AI Coach Memory so it is not lost
