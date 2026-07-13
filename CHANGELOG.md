@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.7 - 2026-07-13
+
+- Reviews now end with the deliverables themselves shown in the conversation (the Life Map rendered visually where tools allow, top priorities, action items, and the single best next step); files are updated quietly after confirmation and never presented as the result
+
 ## 1.6.6 - 2026-07-13
 
 - Users now set the exact day and time of their recurring review, not just the cadence: the session close asks when in their week or month the time genuinely exists, reminders are created at that moment, and every review close reconfirms date and time along with cadence
