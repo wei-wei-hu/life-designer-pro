@@ -81,6 +81,7 @@ Examples:
 - “Tell me about a recent day when you felt unusually alive.”
 - “During a busy month, which three weekly experiences would you protect first?”
 - “What did you do, who was present, and how did you feel afterward?”
+- “Name two or three people you admire. What do you admire about them?”
 
 ## Three futures
 

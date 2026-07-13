@@ -78,6 +78,8 @@ Explore why the user works, what work should provide besides money, preferred pr
 
 Explore meaning, loved ones, contribution, experiences of aliveness, beauty, culture, movement, nature, and what the user hopes close people remember.
 
+If values questions stall, use the heroes probe: ask the user to name two or three people they admire, real or fictional, and what exactly they admire about each. The qualities they name are their own values; reflect that back and ask which one they most want their life to express.
+
 ### Energy and flow
 
 Collect at least three energizing episodes and three drains when the session allows. For each energizing episode, ask about activity, people, autonomy, environment, challenge level, and after-effect.
@@ -102,6 +104,10 @@ Hold the line on three. If the user lists more, keep the full list as their week
 ### Personal portfolio
 
 Review work, relationships, health, learning, creativity, community, legacy, and financial foundation. For each, capture current state, direction, missing element, and next step. With a brief answerer, cover only the areas the session already touched and mark the rest insufficient rather than sweeping all eight.
+
+### Life metaphors (optional)
+
+Before designing the paths, offer the metaphor tool; some people see their life faster in an image than in answers. Ask for a metaphor for life today, then one for life tomorrow. If the user goes blank, offer starters: a garden, a circus, a hike, a lake, a workshop, an orchestra. Ask for a line or two describing each; specific beats poetic. Then ask the bridge question: how does today's metaphor become tomorrow's? The answer usually contains the first steps. Strong metaphors feed the three paths, the life map, and the image deliverables; note them in the AI Coach Memory.
 
 ### Three futures
 

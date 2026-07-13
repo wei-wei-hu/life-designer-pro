@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.0 - 2026-07-13
+
+- Added three tools adapted from Ayse Birsel's Design the Life You Love (credited in the attribution notes): the life metaphor bridge (a metaphor for today, one for tomorrow, and how one becomes the other), the heroes-to-values probe for users who stall on values questions, and the Vision Letter (deliverable 28), saved privately and opened at a future review
+
 ## 1.5.0 - 2026-07-13
 
 - Added the Practice Menu: 48 small, high-return practices across the five life areas, offered as user-chosen options for prototype plans and weekly systems (pick one to three, shrink until starting feels easy)

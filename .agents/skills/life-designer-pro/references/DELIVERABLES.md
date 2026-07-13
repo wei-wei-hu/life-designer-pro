@@ -192,3 +192,9 @@ Use `templates/ONE_PAGE_BLUEPRINT_TEMPLATE.md`.
 ### 27. Personal-Brand Summary
 
 Only when requested. Include mission, one-line positioning, short bio, long bio, life philosophy, and legacy statement. Keep professional branding distinct from the whole person's worth.
+
+### 28. Vision Letter
+
+A short letter from the user to their future self about the life they are designing: the real question, the experiment now running, and what they hope the evidence will show by the time the letter is opened. The user writes it in their own words; the coach may draft it from session evidence for the user to edit, never to sign.
+
+Set the opening date to a review, ideally the next quarterly reset, so the review begins as a conversation with the past self. Default to saving the letter privately beside the AI Coach Memory. A delayed-email service is an option only if the user chooses it themselves; never suggest collecting or sending anything on their behalf.

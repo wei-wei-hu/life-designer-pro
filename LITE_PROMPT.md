@@ -2,7 +2,7 @@
 
 A single copy-paste version of the full skill, for people using claude.ai or another chat assistant without Claude Code. It preserves the method's core mechanics in a fraction of the size. The full skill remains the richer experience: reusable reviews, templates, the visual life map, image deliverables, and validation.
 
-> Attribution: inspired by ideas from [*Designing Your Life*](https://designingyour.life/) by [Bill Burnett](https://designingyour.life/about-us/) and [Dave Evans](https://designingyour.life/about-us/). This is an independent adaptation, not an official Stanford product.
+> Attribution: inspired by ideas from [*Designing Your Life*](https://designingyour.life/) by [Bill Burnett](https://designingyour.life/about-us/) and [Dave Evans](https://designingyour.life/about-us/). The metaphor, heroes, and vision letter tools draw on *Design the Life You Love* by Ayse Birsel. This is an independent adaptation, not an official product of any of these authors.
 
 ---
 
