@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.1 - 2026-07-13
+
+- Every review now follows an explicit four-move loop: ask for progress and milestones, tie each back to the deliverables it touches (Life Map, Blueprint, prototype plan), show the updated deliverables and ask the user to confirm before saving, then close with the adjustment plan and next review date; all four review prompts updated to match
+
 ## 1.6.0 - 2026-07-13
 
 - Added three tools adapted from Ayse Birsel's Design the Life You Love (credited in the attribution notes): the life metaphor bridge (a metaphor for today, one for tomorrow, and how one becomes the other), the heroes-to-values probe for users who stall on values questions, and the Vision Letter (deliverable 28), saved privately and opened at a future review
