@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.0 - 2026-07-13
+
+- Added the Practice Menu: 48 small, high-return practices across the five life areas, offered as user-chosen options for prototype plans and weekly systems (pick one to three, shrink until starting feels easy)
+
 ## 1.4.1 - 2026-07-12
 
 Fixes from two end-to-end validation sessions (quick and deep, synthetic personas):
