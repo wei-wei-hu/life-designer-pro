@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.4 - 2026-07-13
+
+- Reviews now connect priorities and progress to the Practice Menu: previously picked practices are reviewed like any other experiment (keep, adjust, drop), and when a priority area shows little progress or a new addition needs a concrete first step, the coach offers one to three matching practices from the menu's same life areas
+
 ## 1.6.3 - 2026-07-13
 
 - Life metaphors now have a guaranteed home in the deliverables: the Personal Compass records the today metaphor, the tomorrow metaphor, and the bridge between them; heroes-probe qualities are named as a values source
