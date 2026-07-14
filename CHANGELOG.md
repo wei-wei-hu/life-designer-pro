@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.9 - 2026-07-14
+
+- The coach now guides instead of only collecting: at reviews and when building the roadmap or prototype plan, it proactively brings the practices most relevant to the user's own evidence, explains in one clause why each fits, and asks which to prioritize, add to the roadmap, or give weekly time to, always with a "something else" exit so guidance never becomes prescription
+
 ## 1.6.8 - 2026-07-13
 
 - Scheduled review reminders now open by confirming the frequency still fits (keep, or change cadence, day, or time) before conducting the review, rescheduling themselves when the user changes it
