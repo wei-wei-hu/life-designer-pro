@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.4 - 2026-07-14
+
+- Deliverables now arrive one at a time: when a set is chosen, the coach shows a short numbered menu, the user picks, one deliverable is shown per message, and the remaining menu is re-offered until done; the review's compact closing display stays as the single sanctioned exception
+
 ## 1.7.3 - 2026-07-14
 
 Fixes from a live user session:
