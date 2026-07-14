@@ -26,7 +26,7 @@ Default to a quick session: four or five primary questions, about five to ten mi
 
 When the stated question or the most-urgent area is work or career, anchor the middle of the quick core there and ask the workview kernel at minimum: "Which part of your work would you keep doing even without the title or the pay?" The answer separates the work itself from the package around it, which is usually the career decision in miniature.
 
-Count the opener as one primary question. When the career kernel applies, five primaries is normal and six is acceptable; the budget is a guide for pacing, not a quota to hit.
+Count the opener as one primary question. The practice check-in and the metaphor tool each count as one primary with a short follow-up. When the career kernel or one of these tools joins the core, six primaries is normal; with more than one, seven is acceptable. The budget is a guide for pacing, not a quota to hit; if the session grows, say so honestly and offer the pause snapshot.
 
 Offer the deep session (six to nine primary questions, 30 to 60 minutes) when the user wants the Core Blueprint at full strength or the Full Kit. In either mode, follow a lead with short probes before returning to the main line, keep probing proportionate so the session does not exhaust the user, and state the expected time commitment at the opening so the user can plan.
 
@@ -78,7 +78,7 @@ Explore why the user works, what work should provide besides money, preferred pr
 
 Explore meaning, loved ones, contribution, experiences of aliveness, beauty, culture, movement, nature, and what the user hopes close people remember.
 
-If values questions stall, use the heroes probe: ask the user to name two or three people they admire, real or fictional, and what exactly they admire about each. The qualities they name are their own values; reflect that back and ask which one they most want their life to express.
+If values questions stall, use the heroes probe, split across two turns to keep one ask per question: first ask them to name two or three people they admire, real or fictional; then, as its own follow-up, what exactly they admire about each. The qualities they name are their own values; reflect that back and ask which one they most want their life to express.
 
 ### Energy and flow
 

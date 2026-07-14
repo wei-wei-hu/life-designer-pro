@@ -25,5 +25,6 @@ Rules:
 - Every box comes from session evidence; nothing decorative.
 - Anchors in the Today layer are whatever holds the tension: two roles, two places, two loyalties, or one place and one absence.
 - Mark the future currently being tested; do not present it as the winner.
+- If the three paths do not exist yet, show lens-labeled proposal sketches with scores marked insufficient; never invent scores.
 - Keep box subtitles under six words.
 - When drawing: one highlight color for what is being tested now, neutral for the legitimate alternatives.

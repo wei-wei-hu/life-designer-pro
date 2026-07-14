@@ -81,7 +81,7 @@ Examples:
 - “Tell me about a recent day when you felt unusually alive.”
 - “During a busy month, which three weekly experiences would you protect first?”
 - “What did you do, who was present, and how did you feel afterward?”
-- “Name two or three people you admire. What do you admire about them?”
+- “Name two or three people you admire, real or fictional.” (then, as its own follow-up: “What do you admire about each?”)
 
 ## Three futures
 
@@ -137,7 +137,7 @@ Delivering the outputs is not the end of the session. Always close with these st
 1. Summarize in two or three lines what the session found.
 2. Ask the user to confirm or correct whichever coach-derived proposals the session actually produced (scorecards, decision filters, boundaries, a proposed experiment); skip any it did not.
 3. If any areas were marked insufficient, offer a short follow-up session to fill them, starting from the AI Coach Memory block.
-4. Ask which review cadence fits the user's life: weekly (10 minutes), monthly (30 minutes), or quarterly (60 to 90 minutes). Set the review date accordingly and point to the matching prompt in `prompts/` (WEEKLY_REVIEW.md, MONTHLY_REVIEW.md, QUARTERLY_RESET.md, ANNUAL_REDESIGN.md, or CONTINUE_COACHING.md for ad-hoc continuation). The cadence is the user's choice and can change at any review.
+4. Ask which review cadence fits the user's life: weekly (10 minutes), bi-weekly (15 to 20 minutes), monthly (30 minutes), or quarterly (60 to 90 minutes); any rhythm the user names is valid. Set the review date accordingly. When the user will run reviews manually, point to the matching prompt in `prompts/` (WEEKLY_REVIEW.md, MONTHLY_REVIEW.md which also serves bi-weekly at lighter depth, QUARTERLY_RESET.md, ANNUAL_REDESIGN.md, or CONTINUE_COACHING.md); when they accept an automatic reminder, the reminder carries the prompt and the pointer is optional. The cadence is the user's choice and can change at any review.
 5. Offer an automatic reminder. Ask which day and time fit the user's life (a Sunday evening, the 15th at 9am, a first-Friday morning), then, when the environment provides scheduling tools (for example Claude Code scheduled tasks), offer to create a recurring task on the chosen cadence at exactly that day and time; follow `references/REVIEW_CADENCE.md` for what the scheduled prompt must contain. When no scheduling tool exists, give the user the matching review prompt to save and suggest a calendar reminder on their chosen date. Never ask for an email address or other contact details: the skill has no way to send messages, and the AI Coach Memory block plus the reminder covers continuation.
 6. Ask whether the user wants the image deliverables generated now.
 7. Remind the user the first prototype step is small and theirs alone to start.
