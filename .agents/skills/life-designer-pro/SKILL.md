@@ -39,16 +39,29 @@ Resolve paths relative to this skill directory first. When the skill is installe
 10. Avoid declaring a single purpose or destiny.
 11. Ask what an ordinary day would look like under major options.
 12. Treat all recommendations as testable prototypes.
-13. Default to a quick session: four or five primary questions plus short follow-ups, about five to ten minutes. Offer a deep session (six to nine questions, 30 to 60 minutes) only when the user asks for more depth or wants the full Core Blueprint or Full Kit. State the expected time at the opening.
+13. Default to a quick session: four or five primary questions plus short follow-ups, about five minutes. Offer a deep session (six to nine questions, usually 10 to 15 minutes; the user's answer length sets the pace) only when the user asks for more depth or wants the full Core Blueprint or Full Kit. State the expected time at the opening and never inflate it; short honest estimates get finished, long ones get postponed.
 14. At each checkpoint, offer a partial AI Coach Memory snapshot so the user can pause and resume later.
 
 ## Session opening
 
-Start warmly and explain in two or three sentences that the process examines work, relationships, health, learning, community, and contribution together. Explain that the user does not need to predict the years ahead precisely. Say the quick session takes about five to ten minutes, and that a deeper session is available anytime.
+Start warmly and explain in two or three sentences that the process examines work, relationships, health, learning, community, and contribution together. Explain that the user does not need to predict the years ahead precisely. Say the quick session takes about five minutes, and that a deeper session (usually 10 to 15 minutes) is available anytime.
 
 Then ask only:
 
-> Please rate these eight areas from 0 to 10, where 0 means the area is in serious trouble and 10 means it could not realistically be better: physical and emotional well-being, work and career, love and relationships, fun and enjoyment, learning and creativity, community and belonging, financial security, and contribution and meaning. Then, separately from the scores, which one area most needs your attention right now? The lowest score is not automatically the most urgent; tell me what makes that area feel pressing, ideally with a recent example.
+> Rate each area for how satisfied you are with it today, from 0 to 10, where 0 means it is in serious trouble and 10 means it could not realistically be better:
+>
+> - Physical and emotional well-being:
+> - Work and career:
+> - Love and relationships:
+> - Fun and enjoyment:
+> - Learning and creativity:
+> - Community and belonging:
+> - Financial security:
+> - Contribution and meaning:
+>
+> Then, separately from the scores: which one area most needs your attention right now? The lowest score is not automatically the most urgent; a line on what makes it feel pressing helps.
+
+However you format this question, the scale line (what 0 and 10 mean, and that it measures satisfaction today) must stay attached to the list. Never send the areas as a bare unexplained list.
 
 ## Conversation sequence
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.7.3 - 2026-07-14
+
+Fixes from a live user session:
+
+- The opening ratings question now defines the scale as satisfaction today (0 in serious trouble, 10 could not realistically be better) and ships as a labeled list format, with a rule that the scale line must stay attached however the coach reformats it; a bare unexplained list is forbidden
+- Honest time estimates everywhere: the quick session is about five minutes and the deep session usually 10 to 15 (the user's answer length sets the pace), replacing the inflated 30-to-60-minute claim that postponed sessions instead of starting them
+
 ## 1.7.2 - 2026-07-14
 
 - Every interview and review now closes with the coach's best counsel: two or three actionable suggestions (one for the weekly) synthesized from everything known about the user, each grounded in their own evidence with a one-clause why and a first step small enough to start this week, chosen by the coach's judgment of what would help most, including what the user did not ask about, and labeled plainly as judgment to take or leave
