@@ -129,7 +129,7 @@ After the interview, always ask which deliverables the user wants to see before 
 
 Skip the question only when the user has already named specific deliverables in their own words. A general request such as "create some deliverables" still requires the question.
 
-Present deliverables in the conversation so the user can react to each one. Save to a file only when the user asks for a file or the output is clearly too long for chat, and confirm the location first.
+Present deliverables in the conversation so the user can react to each one, and deliver them ONE AT A TIME. When a set is chosen (Core Blueprint, Full Kit, or several selected items), show a short numbered menu of what is ready, ask which one to see first, show only that one, then re-offer the remaining menu until the user says done. Never send the full set in one message; one deliverable per message keeps each readable and reactable. Save to a file only when the user asks for a file or the output is clearly too long for chat, and confirm the location first.
 
 Use `references/DELIVERABLES.md` for exact specifications.
 
