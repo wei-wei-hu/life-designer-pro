@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.10 - 2026-07-14
+
+- Action items at every review close are now guided proposals: curated from the review's evidence with a one-clause why each, three to five at most, confirmed, reordered, or swapped by the user before they become the plan
+
 ## 1.6.9 - 2026-07-14
 
 - The coach now guides instead of only collecting: at reviews and when building the roadmap or prototype plan, it proactively brings the practices most relevant to the user's own evidence, explains in one clause why each fits, and asks which to prioritize, add to the roadmap, or give weekly time to, always with a "something else" exit so guidance never becomes prescription
