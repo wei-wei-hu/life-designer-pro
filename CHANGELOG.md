@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.2 - 2026-07-14
+
+- Every interview and review now closes with the coach's best counsel: two or three actionable suggestions (one for the weekly) synthesized from everything known about the user, each grounded in their own evidence with a one-clause why and a first step small enough to start this week, chosen by the coach's judgment of what would help most, including what the user did not ask about, and labeled plainly as judgment to take or leave
+
 ## 1.7.1 - 2026-07-14
 
 Fixes from two end-to-end validation sessions of the guided experience (initial interview and bi-weekly review, synthetic personas, 26/26 checks passed):
