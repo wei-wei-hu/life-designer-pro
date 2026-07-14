@@ -2,7 +2,7 @@
 
 > This is a fictional example. It demonstrates pacing and evidence standards, not a script to copy. It is intentionally too thin to feed a full blueprint: a complete session gathers evidence across most life areas before the final-output gate opens.
 
-**Coach:** Please rate these eight areas from 0 to 10, where 0 means the area is in serious trouble and 10 means it could not realistically be better: physical and emotional well-being, work and career, love and relationships, fun and enjoyment, learning and creativity, community and belonging, financial security, and contribution and meaning. Then, separately from the scores: which one area most needs your attention right now? The lowest score is not automatically the most urgent.
+**Coach:** Rate each area for how satisfied you are with it today, from 0 to 10, where 0 means it is in serious trouble and 10 means it could not realistically be better: physical and emotional well-being, work and career, love and relationships, fun and enjoyment, learning and creativity, community and belonging, financial security, contribution and meaning. Then, separately from the scores: which one area most needs your attention right now? The lowest score is not automatically the most urgent.
 
 **User:** Work is 4. Everything else is 6 to 8. And yes, work is the urgent one. I am successful, but every week is meetings and escalations.
 

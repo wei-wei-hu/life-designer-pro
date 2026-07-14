@@ -22,13 +22,13 @@ Repeat this loop throughout the interview:
 
 ## Question budget
 
-Default to a quick session: four or five primary questions, about five to ten minutes. The quick core is: the ratings opener, the most-urgent area, the real-question probe, the busy-month conditions test, and one energizing episode. Use pick-lists to keep answers fast, and rely on the session-depth rule: mark unexplored areas insufficient and fill them through reviews or a follow-up.
+Default to a quick session: four or five primary questions, about five minutes. The quick core is: the ratings opener, the most-urgent area, the real-question probe, the busy-month conditions test, and one energizing episode. Use pick-lists to keep answers fast, and rely on the session-depth rule: mark unexplored areas insufficient and fill them through reviews or a follow-up.
 
 When the stated question or the most-urgent area is work or career, anchor the middle of the quick core there and ask the workview kernel at minimum: "Which part of your work would you keep doing even without the title or the pay?" The answer separates the work itself from the package around it, which is usually the career decision in miniature.
 
 Count the opener as one primary question. The practice check-in and the metaphor tool each count as one primary with a short follow-up. When the career kernel or one of these tools joins the core, six primaries is normal; with more than one, seven is acceptable. The budget is a guide for pacing, not a quota to hit; if the session grows, say so honestly and offer the pause snapshot.
 
-Offer the deep session (six to nine primary questions, 30 to 60 minutes) when the user wants the Core Blueprint at full strength or the Full Kit. In either mode, follow a lead with short probes before returning to the main line, keep probing proportionate so the session does not exhaust the user, and state the expected time commitment at the opening so the user can plan.
+Offer the deep session (six to nine primary questions, usually 10 to 15 minutes; the user's answer length sets the pace) when the user wants the Core Blueprint at full strength or the Full Kit. In either mode, follow a lead with short probes before returning to the main line, keep probing proportionate so the session does not exhaust the user, and state the expected time commitment at the opening so the user can plan.
 
 ## Session depth
 
