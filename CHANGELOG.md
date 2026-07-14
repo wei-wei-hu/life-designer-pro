@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.11 - 2026-07-14
+
+- Review close is now automatic and complete: the review's evidence propagates across every deliverable it touches so all outputs agree, the key deliverables (Life Map, moved dashboard rows, top priorities, proposed action items) are shown in the conversation by default, and the user confirms before anything is saved
+
 ## 1.6.10 - 2026-07-14
 
 - Action items at every review close are now guided proposals: curated from the review's evidence with a one-clause why each, three to five at most, confirmed, reordered, or swapped by the user before they become the plan
