@@ -22,7 +22,7 @@ Every review, at any cadence, follows the same five moves:
 
 Progress the user cannot see back in their own deliverables is progress the method gets no credit for; the tie-back is what makes the review feel like their life advancing, not another status meeting.
 
-Presentation rule: the deliverables are the ending, not the file paths. The review's final message shows the content itself, in the conversation: the updated Life Map (drawn visually when a rendering tool is available, in its text form otherwise), the top three priorities, the period's action items, and the single most useful next step. Saving to files is storage, not communication. Update files quietly after the user confirms, mention their location in one short line at most, and never end a review with only "saved to a file".
+Presentation rule: the deliverables are the ending, not the file paths. The review's final message shows the content itself, in the conversation: the updated Life Map (drawn visually when a rendering tool is available, in its text form otherwise), the top three priorities, the period's action items, and the single most useful next step. The action items are guided proposals, not dictation and not a mirror: curate them from the review's evidence (the experiment's next step, practices the user chose, a stalled priority, a new roadmap addition), give each a one-clause why, keep the list to three to five, and ask the user to confirm, reorder, swap, or replace them before they become the plan. Saving to files is storage, not communication. Update files quietly after the user confirms, mention their location in one short line at most, and never end a review with only "saved to a file".
 
 ## Reminders
 
