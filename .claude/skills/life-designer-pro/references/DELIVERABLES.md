@@ -98,7 +98,7 @@ Include:
 
 Say plainly that this structure serves only the prototype currently being tested. It is not a lifetime commitment, and a failed prototype still produces useful evidence for the next decision.
 
-When the user wants ideas for experiments or daily practices, offer picks from `references/PRACTICE_MENU.md`: one to three, shrunk until starting feels easy.
+Proactively include the two or three practices from `references/PRACTICE_MENU.md` most relevant to the user's evidence as candidate experiments, each with one clause on why it fits, labeled as proposals; ask which to prioritize, or whether something else deserves the focus.
 
 ### 12. Boundaries
 
@@ -143,7 +143,7 @@ Write five to eight concise first-person principles. Avoid slogans unsupported b
 
 For each quarter include one primary experiment, one relationship investment, one health or vitality commitment, one learning focus, and one review question.
 
-The roadmap is a living deliverable. At every monthly or larger review, anything the user wants to add to their life or career enters here first, then flows onward: into the prototype plan when it deserves an experiment, into the three paths when it reshapes one, and into the weekly conditions when it needs protected time.
+The roadmap is a living deliverable. At every monthly or larger review, anything the user wants to add to their life or career enters here first, then flows onward: into the prototype plan when it deserves an experiment, into the three paths when it reshapes one, and into the weekly conditions when it needs protected time. When building or updating the roadmap, proactively propose the most relevant practices from `references/PRACTICE_MENU.md` for each quarter, matched to the user's evidence and labeled as proposals; the user chooses what enters.
 
 ### 19. Weekly Operating System
 

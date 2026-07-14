@@ -4,6 +4,7 @@ A menu of small, widely studied practices for improving each life area. Offer it
 
 How to offer it:
 
+- Be a guide, not a waiter. Do not wait to be asked: study the user's evidence (their priority area, low or slipping scores, a stalled experiment, what they said they want to add) and bring a curated shortlist of two to four practices that fit their situation, each with one plain clause on why it fits their own evidence. Then ask one decision question: which of these do you want to prioritize now, add to your roadmap for later, or give weekly time to, or is there something else you would rather focus on? The "something else" exit is required; guidance must never become prescription.
 - Suggest picking one to three practices, never more. Start with the easiest.
 - Shrink any practice until starting feels easy. "Read 30 minutes" can become "read one page." A tiny start beats an impressive plan.
 - Treat every pick as an experiment: it enters the prototype plan or weekly system with a review date, and the next review keeps or drops it based on what actually happened.
