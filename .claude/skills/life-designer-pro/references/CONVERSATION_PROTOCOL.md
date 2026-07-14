@@ -101,6 +101,10 @@ Ask what must exist in an ordinary week for it to feel like the user's own life.
 
 Hold the line on three. If the user lists more, keep the full list as their weekly conditions, then follow up until the ranking is the user's own: "Which three of those, in order?" or "If you could keep only one, which one?" and then the next two. The protected three must come from the user's own ranking, never from the coach's guess. Scarcity is the point of the question; without the forced choice it only produces another wish list.
 
+### Practice check-in (optional, guided)
+
+When the user's priority area is known, offer the guided check-in from `references/PRACTICE_MENU.md`: present four to six of that area's practices as a pick list, ask which already happen in their life, then which one they would like to add or grow (or something else). Their "already do" answers are evidence; their "want to add" answers are candidates for the roadmap and prototype plan. In a quick session this counts as one primary question with a follow-up; offer it, never force it.
+
 ### Personal portfolio
 
 Review work, relationships, health, learning, creativity, community, legacy, and financial foundation. For each, capture current state, direction, missing element, and next step. With a brief answerer, cover only the areas the session already touched and mark the rest insufficient rather than sweeping all eight.
