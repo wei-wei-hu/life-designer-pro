@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.8 - 2026-07-13
+
+- Scheduled review reminders now open by confirming the frequency still fits (keep, or change cadence, day, or time) before conducting the review, rescheduling themselves when the user changes it
+
 ## 1.6.7 - 2026-07-13
 
 - Reviews now end with the deliverables themselves shown in the conversation (the Life Map rendered visually where tools allow, top priorities, action items, and the single best next step); files are updated quietly after confirmation and never presented as the result
