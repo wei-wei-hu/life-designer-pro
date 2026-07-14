@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.5 - 2026-07-14
+
+- Anti-repetition rule from live-session feedback: a deliverable set is announced exactly once; every following message opens with the next deliverable or the shortened menu, and repeating an announcement, header, or sentence across messages is forbidden
+
 ## 1.7.4 - 2026-07-14
 
 - Deliverables now arrive one at a time: when a set is chosen, the coach shows a short numbered menu, the user picks, one deliverable is shown per message, and the remaining menu is re-offered until done; the review's compact closing display stays as the single sanctioned exception

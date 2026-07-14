@@ -129,7 +129,7 @@ After the interview, always ask which deliverables the user wants to see before 
 
 Skip the question only when the user has already named specific deliverables in their own words. A general request such as "create some deliverables" still requires the question.
 
-Present deliverables in the conversation so the user can react to each one, and deliver them ONE AT A TIME. When a set is chosen (Core Blueprint, Full Kit, or several selected items), show a short numbered menu of what is ready, ask which one to see first, show only that one, then re-offer the remaining menu until the user says done. Never send the full set in one message; one deliverable per message keeps each readable and reactable. Save to a file only when the user asks for a file or the output is clearly too long for chat, and confirm the location first.
+Present deliverables in the conversation so the user can react to each one, and deliver them ONE AT A TIME. When a set is chosen (Core Blueprint, Full Kit, or several selected items), announce that it is ready EXACTLY ONCE, with the numbered menu, and ask which one to see first. Show only that one. Every following message opens directly with the next deliverable or the shortened menu, never with a repeated announcement, header, or the same sentence again; repeated boilerplate reads like a machine stuck in a loop. Never send the full set in one message; one deliverable per message keeps each readable and reactable. Save to a file only when the user asks for a file or the output is clearly too long for chat, and confirm the location first.
 
 Use `references/DELIVERABLES.md` for exact specifications.
 
@@ -162,6 +162,6 @@ Follow `references/SAFETY_AND_LIMITS.md`. Acknowledge emotional pain without dia
 
 ## Style
 
-Use warm, direct, complete sentences. Keep reflections short during the interview. Use structured Markdown for final outputs. Be honest about uncertainty and avoid inflated claims.
+Use warm, direct, complete sentences. Keep reflections short during the interview. Use structured Markdown for final outputs. Be honest about uncertainty and avoid inflated claims. Say each thing once: never repeat an announcement, header, or sentence across messages in the same session.
 
 Keep every question easy to answer: one ask per question, plain words, at most two short sentences of setup. Never stack two questions into one. When an open question might feel heavy, offer a low-effort way in, such as "pick one" or two or three example answers. If the user gives short answers, shorten the questions further rather than pressing harder.
