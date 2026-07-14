@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.7.0 - 2026-07-14
+
+- The Practice Menu became a guided experience: once the user's priority area is known (first interview or review start), its practices are asked as a two-question pick-list check-in (which already happen, which to add or grow), with answers flowing into evidence and roadmap candidates
+- Every review close now also asks which other deliverables the user wants to see or check, shown in the conversation on request
+
 ## 1.6.11 - 2026-07-14
 
 - Review close is now automatic and complete: the review's evidence propagates across every deliverable it touches so all outputs agree, the key deliverables (Life Map, moved dashboard rows, top priorities, proposed action items) are shown in the conversation by default, and the user confirms before anything is saved

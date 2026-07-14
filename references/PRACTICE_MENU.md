@@ -11,6 +11,20 @@ How to offer it:
 - These are plain summaries of common, well-studied ideas, not prescriptions. The user's own review evidence always wins over general advice.
 - Anything involving diet, fasting, or exercise intensity deserves a doctor's opinion first, per `SAFETY_AND_LIMITS.md`.
 
+## The guided check-in: asking the menu as questions
+
+The menu is also a conversational instrument. Once the user's priority area is known (from the opener in a first session, or from the milestones question in a review), turn that area's practices into a two-question check-in. Never present all 48; one area at a time, four to six items, as a pick list.
+
+Question one, looking at their life as it is:
+
+> People often support this area with things like: [four to six practices from the matching section]. Which of these already happen in your life?
+
+Question two, looking forward:
+
+> And which one would you like to add or grow, or is there something else you would rather focus on?
+
+What they already do becomes evidence (energy sources, weekly conditions, dashboard support). What they want to add becomes a roadmap or experiment candidate, shrunk until starting feels easy. The "something else" exit is required, and in a quick session the check-in counts as one primary question with a follow-up.
+
 ## Physical and emotional well-being
 
 1. Move for 30 minutes a day, at an effort that makes you breathe faster.
