@@ -8,6 +8,8 @@ Keep each section to one to three lines. This block is the minimum context a fut
 
 ## Strongest recurring values
 
+## Life metaphors (today / tomorrow)
+
 ## Top three weekly conditions
 
 ## Energy sources and drains

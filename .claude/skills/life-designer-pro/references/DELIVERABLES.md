@@ -133,7 +133,7 @@ Required layers, top to bottom:
 5. The three futures side by side with one or two key scores each, marking which one is being tested first; all three stay legitimate
 6. The evidence loop that re-scores the futures over time
 
-Build every element from session evidence; each box must trace to the user's words. Keep box subtitles under six words. If no experiment exists when the map is drawn (common in quick sessions), propose one from the evidence, label it a proposal, and confirm it together with the review date during the session close.
+Build every element from session evidence; each box must trace to the user's words. Keep box subtitles under six words. If no experiment exists when the map is drawn (common in quick sessions), propose one from the evidence, label it a proposal, and confirm it together with the review date during the session close. If the three paths do not exist yet, draw them as lens-labeled sketches proposed from the evidence, with scores marked insufficient rather than invented.
 
 ### 17. Personal Operating Principles
 

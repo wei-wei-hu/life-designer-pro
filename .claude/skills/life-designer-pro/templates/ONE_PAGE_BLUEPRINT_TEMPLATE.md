@@ -26,4 +26,4 @@ Every field condenses a Core Blueprint section (noted in parentheses). Do not in
 
 ## Three boundaries (time, relationship, integrity; from Boundaries)
 
-## Next review date (from Prototype Plan)
+## Next review date (from AI Coach Memory)

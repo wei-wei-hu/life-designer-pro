@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.7.1 - 2026-07-14
+
+Fixes from two end-to-end validation sessions of the guided experience (initial interview and bi-weekly review, synthetic personas, 26/26 checks passed):
+
+- Bi-weekly joined the cadence menu everywhere, served by the monthly prompt at lighter depth; any rhythm the user names is valid
+- Cadence is asked once per review: settled at the open for scheduled runs, so the close only restates the next date and time
+- One practice conversation per review: the proactive shortlist builds on the check-in results instead of opening a second menu
+- Question budget now counts the check-in and metaphor tool explicitly (six primaries normal with one, seven with more)
+- Life Map gained a missing-paths escape hatch matching the missing-experiment one: lens-labeled proposal sketches, scores marked insufficient
+- Heroes probe split across two turns to honor the one-ask rule; memory template gained a life-metaphors line; one-page review date now sourced from the AI Coach Memory; manual monthly and quarterly prompts open with the cadence check; imminent-slot guidance added for mid-cycle cadence changes
+
 ## 1.7.0 - 2026-07-14
 
 - The Practice Menu became a guided experience: once the user's priority area is known (first interview or review start), its practices are asked as a two-question pick-list check-in (which already happen, which to add or grow), with answers flowing into evidence and roadmap candidates
