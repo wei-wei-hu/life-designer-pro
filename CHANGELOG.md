@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.8.2 - 2026-07-14
+
+- Session times finalized: the quick session is about five minutes and the deep session about ten, with the user's answer length setting the pace
+
 ## 1.8.1 - 2026-07-14
 
 - Session time estimates settled at the author's preferred numbers: the quick session is about ten minutes and the deep session usually 15 to 20, with the user's answer length setting the pace
