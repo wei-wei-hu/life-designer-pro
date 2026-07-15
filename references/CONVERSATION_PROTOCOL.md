@@ -58,7 +58,7 @@ In deep sessions (and quick sessions that start without a specific decision), co
 - financial security
 - contribution and meaning
 
-Explore what each low score actually represents. Do not assume “health” means physical health. In a decision-first quick session, skip the ratings; dashboard rows without ratings are marked insufficient and filled at a later review.
+Explore what each low score actually represents. Do not assume “health” means physical health. In a decision-first quick session, do not open with the ratings; offer them as the optional two-minute snapshot midway or near the close. When the user skips it, dashboard rows without ratings are marked insufficient and filled at a later review.
 
 ### Real question
 

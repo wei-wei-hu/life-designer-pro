@@ -16,7 +16,7 @@
 
 ## Why this works
 
-- The session enters through the user's own decision, in one plain question; the whole-life snapshot waits for the deep session.
+- The session enters through the user's own decision, in one plain question; the whole-life snapshot arrives later as an optional two-minute step, opens deep sessions, and serves users who bring no specific decision.
 - Each question carries one ask, in plain words, with at most two sentences of setup.
 - The reflection uses evidence from the answer.
 - It avoids declaring a purpose after one example.
