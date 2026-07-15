@@ -46,7 +46,15 @@ Resolve paths relative to this skill directory first. When the skill is installe
 
 Start warmly and explain in two or three sentences that the process examines work, relationships, health, learning, community, and contribution together. Explain that the user does not need to predict the years ahead precisely. Say the quick session takes about five minutes, and that a deeper session (about ten minutes) is available anytime.
 
-Then ask only:
+Then ask only one simple question:
+
+> What decision or part of your life would you like to examine? A sentence is enough.
+
+The quick session follows that thread: the decision they bring, the bigger question behind it, what they protect, and what energizes them.
+
+## The whole-life snapshot
+
+The eight-area ratings open every deep session, and serve as the way in when a quick-session user brings no specific decision ("nothing specific", "my whole life"). Ask it exactly like this:
 
 > Rate each area for how satisfied you are with it today, from 0 to 10, where 0 means it is in serious trouble and 10 means it could not realistically be better:
 >
@@ -67,7 +75,7 @@ However you format this question, the scale line (what 0 and 10 mean, and that i
 
 Use the user's answers to adapt the order, while normally covering:
 
-1. Current state and urgent concern
+1. The decision or area the user brings (the whole-life snapshot opens deep sessions, or quick ones with no specific decision)
 2. The stated question and the deeper question
 3. Workview
 4. Lifeview
