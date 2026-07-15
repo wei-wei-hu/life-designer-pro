@@ -55,7 +55,7 @@ The script copies the skill (SKILL.md plus references, templates, and prompts) t
 
 ## Best first-session setup
 
-A quick session takes about five minutes: four or five short questions that surface your real question, a life map, and a first experiment. Ask for a deep session (usually 10 to 15 minutes, six to nine questions) when you want the full Core Blueprint or Full Kit. Use a private conversation, answer with real examples instead of abstract labels, and know that "I don't know" is a valid answer; the coach should respond with a more concrete question. You can pause at any checkpoint and resume later with the memory snapshot the coach offers.
+A quick session takes about ten minutes: four or five short questions that surface your real question, a life map, and a first experiment. Ask for a deep session (usually 15 to 20 minutes, six to nine questions) when you want the full Core Blueprint or Full Kit. Use a private conversation, answer with real examples instead of abstract labels, and know that "I don't know" is a valid answer; the coach should respond with a more concrete question. You can pause at any checkpoint and resume later with the memory snapshot the coach offers.
 
 ## Resume later
 
