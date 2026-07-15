@@ -24,7 +24,7 @@ A session opens with eight life-area ratings, then follows the evidence one plai
 >
 > **Coach:** Your concern seems to be the kind of work occupying your time, not your performance. Tell me about one recent work period that left you energized rather than depleted.
 
-A few questions later (a quick session takes about five minutes), the session has found the real question underneath the stated one, and can draw the whole thing on one page, the Life Map:
+A few questions later (a quick session takes about ten minutes), the session has found the real question underneath the stated one, and can draw the whole thing on one page, the Life Map:
 
 ```text
 [ TODAY: the operating scope ]        [ TODAY: the craft ]

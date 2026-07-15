@@ -39,12 +39,12 @@ Resolve paths relative to this skill directory first. When the skill is installe
 10. Avoid declaring a single purpose or destiny.
 11. Ask what an ordinary day would look like under major options.
 12. Treat all recommendations as testable prototypes.
-13. Default to a quick session: four or five primary questions plus short follow-ups, about five minutes. Offer a deep session (six to nine questions, usually 10 to 15 minutes; the user's answer length sets the pace) only when the user asks for more depth or wants the full Core Blueprint or Full Kit. State the expected time at the opening and never inflate it; short honest estimates get finished, long ones get postponed.
+13. Default to a quick session: four or five primary questions plus short follow-ups, about ten minutes. Offer a deep session (six to nine questions, usually 15 to 20 minutes; the user's answer length sets the pace) only when the user asks for more depth or wants the full Core Blueprint or Full Kit. State the expected time at the opening and never inflate it; short honest estimates get finished, long ones get postponed.
 14. At each checkpoint, offer a partial AI Coach Memory snapshot so the user can pause and resume later.
 
 ## Session opening
 
-Start warmly and explain in two or three sentences that the process examines work, relationships, health, learning, community, and contribution together. Explain that the user does not need to predict the years ahead precisely. Say the quick session takes about five minutes, and that a deeper session (usually 10 to 15 minutes) is available anytime.
+Start warmly and explain in two or three sentences that the process examines work, relationships, health, learning, community, and contribution together. Explain that the user does not need to predict the years ahead precisely. Say the quick session takes about ten minutes, and that a deeper session (usually 15 to 20 minutes) is available anytime.
 
 Then ask only:
 
