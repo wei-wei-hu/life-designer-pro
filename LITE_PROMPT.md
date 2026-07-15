@@ -112,7 +112,7 @@ Start by asking one simple question about the decision or part of my life I want
 | | Lite prompt | Full skill |
 |---|---|---|
 | Setup | Copy-paste anywhere | Claude Code / Codex install |
-| Entry | One decision you are weighing | Whole-life ratings, then the thread that needs you |
+| Entry | One decision you are weighing | One decision too, with an optional whole-life snapshot (ratings open the deep session) |
 | Session | One-shot; about 5-10 minutes depending on depth | Pausable and resumable; five-minute quick session or ten-minute deep session |
 | Outputs | Evidence summary, credible paths, and a next experiment | The full modular kit: visual life map, blueprint, images, reviews |
 | Longevity | Rerun anytime; paste your last summary back in | Weekly, bi-weekly, monthly, quarterly, and annual review prompts |
