@@ -19,10 +19,10 @@ Cover all eight areas: physical and emotional well-being; work and career; love 
 
 **User confirmation or unresolved uncertainty:**
 
-## Facts, Assumptions, and Choices
+## Facts, Assumptions, Preferences, and Choices
 
-| Facts | Assumptions | Choices |
-|---|---|---|
+| Facts | Assumptions | Preferences | Choices |
+|---|---|---|---|
 
 ## Personal Compass
 

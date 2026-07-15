@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.8.0 - 2026-07-14
+
+Voice and method pass in the author's prompt style:
+
+- Lite prompt rewritten in the author's plain numbered style: enters through one decision, richer distinctions (good at, enjoy, energizes, drains, cares about, does for others' expectations), preferences as their own category, fixed versus negotiable constraints, per-path assumptions and a small experiment each, and a know/assume/uncertain closing summary
+- The full skill absorbed the same improvements: the time-and-energy behavior check, the six-way distinction, four-column facts/assumptions/preferences/choices, negotiable-constraint triage, per-path assumptions and experiments, and the session summary in know/assume/uncertain form
+
 ## 1.7.5 - 2026-07-14
 
 - Anti-repetition rule from live-session feedback: a deliverable set is announced exactly once; every following message opens with the next deliverable or the shortened menu, and repeating an announcement, header, or sentence across messages is forbidden
