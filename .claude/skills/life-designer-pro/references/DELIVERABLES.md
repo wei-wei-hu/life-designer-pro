@@ -36,9 +36,9 @@ State:
 - supporting evidence
 - user confirmation or unresolved uncertainty
 
-### 4. Facts, Assumptions, and Choices
+### 4. Facts, Assumptions, Preferences, and Choices
 
-Use a three-column table. Avoid placing another person's future decision in the user's “choices” column.
+Use a four-column table. Avoid placing another person's future decision in the user's “choices” column.
 
 ### 5. Personal Compass
 
@@ -67,8 +67,11 @@ For each path provide:
 - months 4–12
 - year 2
 - what it provides
-- costs and sacrifices
-- three questions to test
+- costs and trade-offs
+- the effect on health, energy, and the people around the user
+- the assumptions behind the path
+- two or three questions that still need evidence
+- one small experiment to test the path
 - scorecard from 1–10 with explanations for excitement, values, relationships, health, financial feasibility, learning, contribution, and confidence
 
 Treat all three as legitimate. Two years keeps the paths realistic and testable; the annual redesign creates fresh paths as evidence accumulates. For the Adjacent Life lens, frame the first 90 days as reconnaissance the user could start today, not as steps that wait for a trigger event.
