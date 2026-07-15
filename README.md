@@ -16,11 +16,11 @@ Its central test is simple:
 
 ## See it in action
 
-A session opens with eight life-area ratings, then follows the evidence one plain question at a time. A fictional example:
+A session opens with one simple question: what decision or part of your life would you like to examine? Then it follows the evidence one plain question at a time. A fictional example:
 
-> **Coach:** Which one area most needs your attention right now? The lowest score is not automatically the most urgent.
+> **Coach:** What decision or part of your life would you like to examine?
 >
-> **User:** Work is 4, and yes, work is the urgent one. I am successful, but every week is meetings and escalations.
+> **User:** Whether to leave my company. I am successful, but every week is meetings and escalations.
 >
 > **Coach:** Your concern seems to be the kind of work occupying your time, not your performance. Tell me about one recent work period that left you energized rather than depleted.
 

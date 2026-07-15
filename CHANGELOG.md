@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.9.0 - 2026-07-14
+
+- The quick session is now decision-first: it opens with "What decision or part of your life would you like to examine?" and follows that thread to the bigger question behind it; the eight-area whole-life snapshot opens every deep session and serves as the quick session's way in only when the user brings no specific decision
+- Dashboard rows without ratings in a decision-first session are marked insufficient and filled at a later review; the README and example conversation now show the decision-first opening
+
 ## 1.8.2 - 2026-07-14
 
 - Session times finalized: the quick session is about five minutes and the deep session about ten, with the user's answer length setting the pace

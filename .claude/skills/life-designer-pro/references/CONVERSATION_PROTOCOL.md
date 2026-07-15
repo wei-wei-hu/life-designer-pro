@@ -18,17 +18,17 @@ Repeat this loop throughout the interview:
 - Prefer concrete prompts (a recent day, a specific purchase, one person) over abstractions (gaps, values, alignment).
 - When an open question might feel heavy, offer a way in: "pick one", a short menu, or an example answer.
 - Match the user's energy: short answers mean shorter, easier questions, not more pressure.
-- The scripted opening question in SKILL.md is the one sanctioned exception to the one-ask rule; every other question follows it.
+- The scripted whole-life snapshot in SKILL.md is the one sanctioned exception to the one-ask rule; every other question, including the decision opener, follows it.
 
 ## Question budget
 
-Default to a quick session: four or five primary questions, about five minutes. The quick core is: the ratings opener, the most-urgent area, the real-question probe, the busy-month conditions test, and one energizing episode. Use pick-lists to keep answers fast, and rely on the session-depth rule: mark unexplored areas insufficient and fill them through reviews or a follow-up.
+Default to a quick session: four or five primary questions, about five minutes, entered through one decision. The quick core is: the decision opener (what decision or part of your life would you like to examine?), the real-question probe, the busy-month conditions test, and one energizing episode. Use pick-lists to keep answers fast, and rely on the session-depth rule: mark unexplored areas insufficient and fill them through reviews or a follow-up.
 
 When the stated question or the most-urgent area is work or career, anchor the middle of the quick core there and ask the workview kernel at minimum: "Which part of your work would you keep doing even without the title or the pay?" The answer separates the work itself from the package around it, which is usually the career decision in miniature.
 
-Count the opener as one primary question. The practice check-in and the metaphor tool each count as one primary with a short follow-up. When the career kernel or one of these tools joins the core, six primaries is normal; with more than one, seven is acceptable. The budget is a guide for pacing, not a quota to hit; if the session grows, say so honestly and offer the pause snapshot.
+Count the opener as one primary question. When the user brings no specific decision, the whole-life snapshot (the eight ratings) takes the opener's place. The practice check-in and the metaphor tool each count as one primary with a short follow-up. When the career kernel or one of these tools joins the core, six primaries is normal; with more than one, seven is acceptable. The budget is a guide for pacing, not a quota to hit; if the session grows, say so honestly and offer the pause snapshot.
 
-Offer the deep session (six to nine primary questions, about ten minutes; the user's answer length sets the pace) when the user wants the Core Blueprint at full strength or the Full Kit. In either mode, follow a lead with short probes before returning to the main line, keep probing proportionate so the session does not exhaust the user, and state the expected time commitment at the opening so the user can plan.
+Offer the deep session (six to nine primary questions, about ten minutes; the user's answer length sets the pace) when the user wants the Core Blueprint at full strength or the Full Kit. The deep session opens with the whole-life snapshot, then works across the areas. In either mode, follow a lead with short probes before returning to the main line, keep probing proportionate so the session does not exhaust the user, and state the expected time commitment at the opening so the user can plan.
 
 ## Session depth
 
@@ -47,7 +47,7 @@ At every checkpoint, offer to generate a partial `AI Coach Memory` block so the 
 
 ### Current life
 
-Collect 0–10 ratings for:
+In deep sessions (and quick sessions that start without a specific decision), collect 0–10 satisfaction ratings for:
 
 - physical and emotional well-being
 - work and career
@@ -58,7 +58,7 @@ Collect 0–10 ratings for:
 - financial security
 - contribution and meaning
 
-Explore what each low score actually represents. Do not assume “health” means physical health.
+Explore what each low score actually represents. Do not assume “health” means physical health. In a decision-first quick session, skip the ratings; dashboard rows without ratings are marked insufficient and filled at a later review.
 
 ### Real question
 
