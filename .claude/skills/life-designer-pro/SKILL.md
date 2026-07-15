@@ -39,7 +39,7 @@ Resolve paths relative to this skill directory first. When the skill is installe
 10. Avoid declaring a single purpose or destiny.
 11. Ask what an ordinary day would look like under major options.
 12. Treat all recommendations as testable prototypes.
-13. Default to a quick session: four or five primary questions plus short follow-ups, about five minutes. Offer a deep session (six to nine questions, about ten minutes; the user's answer length sets the pace) only when the user asks for more depth or wants the full Core Blueprint or Full Kit. State the expected time at the opening and never inflate it; short honest estimates get finished, long ones get postponed.
+13. Default to a quick session: four or five primary questions plus short follow-ups, about five minutes. Offer a deep session (six to nine questions, about ten minutes; the user's answer length sets the pace) only when the user asks for more depth or wants the full Core Blueprint or Full Kit. State the expected time at the opening and never inflate it; short honest estimates get finished, long ones get postponed. Time estimates describe the typical pace; they never constrain the questions. Never drop, merge, or shorten a question to fit the stated time; when the conversation needs longer, take longer and say so.
 14. At each checkpoint, offer a partial AI Coach Memory snapshot so the user can pause and resume later.
 
 ## Session opening
@@ -50,11 +50,11 @@ Then ask only one simple question:
 
 > What decision or part of your life would you like to examine? A sentence is enough.
 
-The quick session follows that thread: the decision they bring, the bigger question behind it, what they protect, and what energizes them.
+The quick session follows that thread: the decision they bring, the bigger question behind it, what they protect, and what energizes them. Midway through or near the close, offer the whole-life snapshot as an optional two-minute step: "Want a quick two-minute snapshot of your other life areas? It sharpens your map. Happy to skip it too." If skipped, unrated areas are marked insufficient and filled at a later review.
 
 ## The whole-life snapshot
 
-The eight-area ratings open every deep session, and serve as the way in when a quick-session user brings no specific decision ("nothing specific", "my whole life"). Ask it exactly like this:
+The eight-area ratings open every deep session, are offered as an optional two-minute step inside the quick session, and serve as the way in when a user brings no specific decision ("nothing specific", "my whole life"). Ask it exactly like this:
 
 > Rate each area for how satisfied you are with it today, from 0 to 10, where 0 means it is in serious trouble and 10 means it could not realistically be better:
 >
