@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.9.1 - 2026-07-14
+
+- The whole-life snapshot returned to the quick session as an optional two-minute step offered midway or near the close (skipping is always fine; skipped areas are marked insufficient); it still opens deep sessions and remains the entry for users without a specific decision
+- Time estimates are now explicitly descriptive, never constraining: the coach must not cut, merge, or rush questions to meet the stated minutes
+
 ## 1.9.0 - 2026-07-14
 
 - The quick session is now decision-first: it opens with "What decision or part of your life would you like to examine?" and follows that thread to the bigger question behind it; the eight-area whole-life snapshot opens every deep session and serves as the quick session's way in only when the user brings no specific decision
