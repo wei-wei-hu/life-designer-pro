@@ -51,7 +51,7 @@ What they already do becomes evidence (energy sources, weekly conditions, dashbo
 8. Use your other hand for small tasks, or take an unfamiliar route.
 9. Play strategy games such as chess.
 10. When something goes wrong, practice the explanation that is specific and temporary, not permanent and personal.
-11. Read outside your field; unrelated disciplines cross-breed ideas.
+11. Read outside your field; ideas from one area spark new ones in another.
 
 ## Work, career, and money
 
