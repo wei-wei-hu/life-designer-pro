@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.10.0 - 2026-08-23
+
+- Added the daily evening reflection, the lightest cadence (about two minutes): each night the user receives tomorrow's five practices (one per area, rotation-fresh so no practice repeats until its area-mates have all had a turn, the user's improve-focus leading, each with a tiny why and honest provenance), a recap of today's five, and three open questions answered in the user's own words through an interactive free-text panel (never rating scales); adopted practices graduate out of rotation into routines, retired ones never return, the improve answer steers the next night, and the log feeds the larger reviews as evidence
+
 ## 1.9.3 - 2026-07-14
 
 - The Practice Menu grew by five practices adapted from a reader-shared habits collection, expressed in the package's own words: a core circle of about five trusted people, helping someone earlier in the path, reading outside your field, a monthly slice for trying something new, and two weekly hours somewhere green; the menu's intro now names the compounding principle (low effort, repeated long enough, multiplying across areas), and the collection's pick-one-or-two-for-30-days philosophy was already the menu's design

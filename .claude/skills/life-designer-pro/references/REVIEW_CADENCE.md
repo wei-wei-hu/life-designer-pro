@@ -9,6 +9,7 @@ The cadence is the user's choice; offer the options and let them pick. Guidance 
 - Cadences stack well: a weekly self-review, a monthly session with the coach, a quarterly re-score of the futures.
 - The cadence can change at any review. Changing it is itself a design decision; ask for one sentence of reasoning so the change is deliberate rather than drift.
 - Bi-weekly sits between weekly and monthly: use the monthly prompt at lighter depth. Any rhythm the user names is valid; the listed cadences are examples, not a fence.
+- The lightest layer of all is the daily evening reflection (about two minutes): see "Daily reflection" below and `prompts/DAILY_REFLECTION.md`. It stacks under every other cadence and feeds the reviews its log.
 - The day and time are the user's choice too. A review scheduled for a moment the user cannot honor is a review that will not happen; ask when in their week or month the ten to ninety minutes genuinely exist.
 
 ## The review loop
@@ -41,6 +42,20 @@ When the environment provides scheduling tools (for example Claude Code schedule
 When no scheduling tool exists, give the user the matching review prompt text to save and suggest they set a calendar reminder for the chosen date.
 
 Never ask for an email address, phone number, or other contact details. The skill runs inside the user's own AI environment and has no way to send messages; collecting contact information would gather sensitive data it cannot use.
+
+## Daily reflection: 2 minutes, evening
+
+The lightest cadence, optional and evening-shaped: each night the user receives tomorrow's five practices (one per area from the Practice Menu, rotation-fresh, their improve-focus leading, each with a tiny why), a recap of today's five, and three open questions answered in their own words: what did you do in each area ("nothing" is a perfectly good answer), does this set feel useful, and what do you want to improve tomorrow.
+
+Mechanics that make it work:
+
+- Real date first: the session checks the system date before greeting; never a guessed weekday.
+- Rotation: within each area, no practice repeats until all its area-mates have had a turn, tracked in the log's Rotation tracker; adopted practices graduate out of rotation into the user's routines, retired ones never return.
+- Own words only: the reflection uses free-text answers (an interactive text panel when widget tools exist, plain questions otherwise), never rating scales or multiple choice.
+- The improve answer steers the next night's picks, and the log feeds the larger reviews as evidence.
+- A day of "nothing", honestly reported, is the system working; the coach never guilt-trips it.
+
+Use `prompts/DAILY_REFLECTION.md`; schedule it at the user's chosen evening time where scheduling tools exist.
 
 ## Weekly review: 10 minutes
 
