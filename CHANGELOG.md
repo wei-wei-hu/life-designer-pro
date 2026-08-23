@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.9.3 - 2026-07-14
+
+- The Practice Menu grew by five practices adapted from a reader-shared habits collection, expressed in the package's own words: a core circle of about five trusted people, helping someone earlier in the path, reading outside your field, a monthly slice for trying something new, and two weekly hours somewhere green; the menu's intro now names the compounding principle (low effort, repeated long enough, multiplying across areas), and the collection's pick-one-or-two-for-30-days philosophy was already the menu's design
+
 ## 1.9.2 - 2026-07-14
 
 - Consistency fixes from the decision-first validation run: the protocol's ratings note now matches the optional-snapshot rule, the lite prompt's comparison table describes the new entry, and the example conversation states the full snapshot rule

@@ -1,6 +1,6 @@
 # Practice Menu
 
-A menu of small, widely studied practices for improving each life area. Offer it when the user wants ideas for their prototype plan, their weekly operating system, or a low score on the dashboard. The user picks; the menu never prescribes.
+A menu of small, widely studied practices for improving each life area. Their power is compounding: low effort, repeated long enough, multiplying across health, relationships, money, learning, and focus. One or two practices kept for 30 days beat twenty attempted at once. Offer the menu when the user wants ideas for their prototype plan, their weekly operating system, or a low score on the dashboard. The user picks; the menu never prescribes.
 
 How to offer it:
 
@@ -37,6 +37,7 @@ What they already do becomes evidence (energy sources, weekly conditions, dashbo
 8. Eat fruits and vegetables in five colors each day.
 9. Keep screens away for the last 90 minutes before bed.
 10. Meditate 20 minutes a day, or start with two.
+11. Spend two hours a week somewhere green; any size pieces count.
 
 ## Learning and creativity
 
@@ -50,6 +51,7 @@ What they already do becomes evidence (energy sources, weekly conditions, dashbo
 8. Use your other hand for small tasks, or take an unfamiliar route.
 9. Play strategy games such as chess.
 10. When something goes wrong, practice the explanation that is specific and temporary, not permanent and personal.
+11. Read outside your field; unrelated disciplines cross-breed ideas.
 
 ## Work, career, and money
 
@@ -63,6 +65,7 @@ What they already do becomes evidence (energy sources, weekly conditions, dashbo
 8. Cover the big risks with insurance before optimizing anything else.
 9. Review your career direction once a quarter.
 10. Invest 5 percent of your income in yourself: courses, skills, and rooms full of people you can learn from.
+11. Give a slice of each month to trying something new: a skill, a person, a direction. Keep more than one path open.
 
 ## Relationships and community
 
@@ -75,6 +78,8 @@ What they already do becomes evidence (energy sources, weekly conditions, dashbo
 7. Decline gatherings that give nothing and take a lot.
 8. When angry, count to ten before you speak.
 9. Smile before you answer the phone; it carries.
+10. Keep a core circle of about five people you deeply trust, and tend it on purpose.
+11. Help someone earlier in the path than you; it grows both of you.
 
 ## Emotion and spirit
 
