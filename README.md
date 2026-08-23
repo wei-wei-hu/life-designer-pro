@@ -47,7 +47,7 @@ A few questions later (a quick session takes about five minutes), the session ha
         weekly 10 min · monthly · quarterly re-score
 ```
 
-Three paths, all legitimate, none a backup plan. One experiment small enough to start this week. A review loop that re-scores the futures as real evidence arrives, on a cadence the user picks: weekly, monthly, or quarterly. See [examples/](examples/) for the fictional session excerpt, condensed blueprint, and life map.
+Three paths, all legitimate, none a backup plan. One experiment small enough to start this week. A review loop that re-scores the futures as real evidence arrives, on a cadence the user picks: a two-minute daily reflection, weekly, monthly, or quarterly. See [examples/](examples/) for the fictional session excerpt, condensed blueprint, and life map.
 
 Two rules run through every deliverable: nothing is invented (thin evidence gets marked "insufficient evidence" instead of being papered over), and every recommendation is a testable prototype, not a verdict. The current version's improvements all came from live user-session feedback: a clearer opening question, one-ask-per-question style, honest partial-coverage notes, and the visual Life Map itself.
 
@@ -91,6 +91,7 @@ life-designer-pro/
 │   └── ONE_PAGE_BLUEPRINT_TEMPLATE.md
 ├── prompts/
 │   ├── START_SESSION.md
+│   ├── DAILY_REFLECTION.md
 │   ├── WEEKLY_REVIEW.md
 │   ├── MONTHLY_REVIEW.md
 │   ├── QUARTERLY_RESET.md
