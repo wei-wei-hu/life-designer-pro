@@ -135,6 +135,8 @@ After the interview, always ask which deliverables the user wants to see before 
 - Full Life Designer Pro Kit
 - Selected deliverables, with a short plain-language menu (for example: the life map, the three futures, the prototype plan, the one-pager, the image prompts)
 
+When the session's decision is career- or income-shaped, include the Career Canvas in the menu (`references/DELIVERABLES.md`, section 29): one page treating the working life as a one-person enterprise, filled by the coach from session evidence. Leave it off the menu otherwise; it is a career lens, not a whole-life step.
+
 Skip the question only when the user has already named specific deliverables in their own words. A general request such as "create some deliverables" still requires the question.
 
 Present deliverables in the conversation so the user can react to each one, and deliver them ONE AT A TIME. When a set is chosen (Core Blueprint, Full Kit, or several selected items), announce that it is ready EXACTLY ONCE, with the numbered menu, and ask which one to see first. Show only that one. Every following message opens directly with the next deliverable or the shortened menu, never with a repeated announcement, header, or the same sentence again; repeated boilerplate reads like a machine stuck in a loop. Never send the full set in one message; one deliverable per message keeps each readable and reactable. Save to a file only when the user asks for a file or the output is clearly too long for chat, and confirm the location first.

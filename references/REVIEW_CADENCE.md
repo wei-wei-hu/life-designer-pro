@@ -68,7 +68,7 @@ Use `prompts/DAILY_REFLECTION.md`; schedule it at the user's chosen evening time
 
 ## Monthly review: 30 minutes
 
-Review dashboard scores, energy map, relationship investments, current experiments, decision filters, and boundaries. Update only what changed.
+Review dashboard scores, energy map, relationship investments, current experiments, decision filters, and boundaries. If a Career Canvas exists, refresh the blocks the month's evidence touched, especially what came back versus what it cost. Update only what changed.
 
 ## Quarterly reset: 60–90 minutes
 

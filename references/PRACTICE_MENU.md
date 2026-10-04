@@ -15,7 +15,7 @@ How to offer it:
 
 ## The guided check-in: asking the menu as questions
 
-The menu is also a conversational instrument. Once the user's priority area is known (from the opener in a first session, or from the milestones question in a review), turn that area's practices into a two-question check-in. Never present all 48; one area at a time, four to six items, as a pick list.
+The menu is also a conversational instrument. Once the user's priority area is known (from the opener in a first session, or from the milestones question in a review), turn that area's practices into a two-question check-in. Never present the whole menu at once; one area at a time, four to six items, as a pick list.
 
 Question one, looking at their life as it is:
 
@@ -68,6 +68,8 @@ What they already do becomes evidence (energy sources, weekly conditions, dashbo
 9. Review your career direction once a quarter.
 10. Invest 5 percent of your income in yourself: courses, skills, and rooms full of people you can learn from.
 11. Give a slice of each month to trying something new: a skill, a person, a direction. Keep more than one path open.
+12. Write one sentence naming who your work helps and what they get from you. Revisit it each quarter.
+13. Once a month, ask one person who uses your work what it made better for them.
 
 ## Relationships and community
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.11.0 - 2026-10-04
+
+- Added the Career Canvas (deliverable 29): one page treating the working life as a one-person enterprise across nine plain-word blocks (who you help, what they get, how they find and trust you, how you stay in their minds, what comes back, who you are and what you have, what fills your days, who helps you, what it costs), offered only when the decision is career- or income-shaped, filled by the coach from session evidence with thin blocks marked insufficient, closed with a one-sentence story, and optionally compared across the three paths with a one-line mini-canvas each
+- Two or three canvas probes join the conversation protocol behind the same career-shaped gate, counting as one primary question; the Practice Menu gains two matching work practices; the monthly review refreshes the canvas; attribution to *Business Model You* (Tim Clark with Alexander Osterwalder and Yves Pigneur) added to the README and methodology
+
 ## 1.10.0 - 2026-08-23
 
 - Added the daily evening reflection, the lightest cadence (about two minutes): each night the user receives tomorrow's five practices (one per area, rotation-fresh so no practice repeats until its area-mates have all had a turn, the user's improve-focus leading, each with a tiny why and honest provenance), a recap of today's five, and three open questions answered in the user's own words through an interactive free-text panel (never rating scales); adopted practices graduate out of rotation into routines, retired ones never return, the improve answer steers the next night, and the log feeds the larger reviews as evidence
