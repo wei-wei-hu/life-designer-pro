@@ -203,3 +203,25 @@ Only when requested. Include mission, one-line positioning, short bio, long bio,
 A short letter from the user to their future self about the life they are designing: the real question, the experiment now running, and what they hope the evidence will show by the time the letter is opened. The user writes it in their own words; the coach may draft it from session evidence for the user to edit, never to sign.
 
 Set the opening date to a review, ideally the next quarterly reset, so the review begins as a conversation with the past self. Default to saving the letter privately beside the AI Coach Memory. A delayed-email service is an option only if the user chooses it themselves; never suggest collecting or sending anything on their behalf.
+
+### 29. Career Canvas
+
+One page that treats the user's working life as a one-person enterprise: who it serves, what it gives them, and what flows back. Offer it only when the session's decision is career- or income-shaped (leaving a role, going independent, a portfolio path, a stalled career, a money question); in a whole-life session without that shape, leave it off the menu. It adds the economic lens the other deliverables do not carry, without replacing any of them.
+
+The coach fills the canvas from session evidence; it is a synthesis, not a questionnaire. Most blocks map onto evidence already collected (strengths and energy sources, key activities, relationships, the financial-security area). Blocks without evidence get "insufficient evidence" plus the question a future session should ask. When the user wants to sharpen thin blocks live, use the canvas probes in `references/CONVERSATION_PROTOCOL.md`, at most two or three.
+
+Nine blocks, in plain words:
+
+1. **Who you help.** The people who actually receive the value of the user's work: external customers, colleagues, a boss, the customer's customer. Naming them is the step most people have never done.
+2. **What they get from you.** Not the tasks; the outcome. What would these people say they got, and what would they miss if the user left?
+3. **How they find and trust you.** The paths by which people who could use the user's work learn what they can do: visibility, referrals, published work, the meeting where their value shows.
+4. **How you stay in their minds.** The role and reputation the user holds with the people they serve; what those people expect them to be.
+5. **What comes back to you.** Returns in two kinds: money, and the soft returns of learning, options, reputation, and joy; over short, medium, and long horizons. A role rich in money and poor in every soft return is evidence, not a verdict.
+6. **Who you are and what you have.** Strengths, knowledge, experience, and network; the reason someone would choose this person. Draw directly from the energy map and the compass.
+7. **What you spend your days doing.** The three to five activities that actually fill the weeks, stated as verb plus number plus outcome. Compare against block 2: activity that serves no one named above is a tension worth flagging.
+8. **Who helps you.** Mentors, sponsors, peers, and the people who provide what blocks 6 and 7 are missing.
+9. **What it costs you.** Money is the smallest column: time, health, flexibility, and freedom are costs too. Weigh them against block 5 in plain sentences; the balance of the two blocks is the career decision in miniature.
+
+Close the canvas with one complete sentence that strings the story together ("I use [resources] to do [activities] that give [customers] [value], reaching them through [channels], and what comes back is [returns] at the cost of [costs]"). If the sentence will not form, the gaps it exposes are the canvas's finding.
+
+When the three two-year paths exist and the decision is career-shaped, optionally add a one-line mini-canvas per path (who it serves, the value, the main return, the main cost), so the paths can be compared on the same economic line. At monthly and larger reviews, refresh the canvas like any other deliverable the evidence touches.

@@ -4,7 +4,7 @@ An AI-assisted life-design coach and reusable skill for Claude Code and OpenAI C
 
 Life Designer Pro helps you look at your work, relationships (from partner and family to professional network), health, fun, learning and creativity, community, finances, and contribution as one connected life. It uses an adaptive coaching conversation, three alternative future designs, evidence-based prototypes, and a reusable review loop.
 
-> **Attribution:** Inspired by ideas from [*Designing Your Life*](https://designingyour.life/) by [Bill Burnett](https://designingyour.life/about-us/) and [Dave Evans](https://designingyour.life/about-us/) and the [Stanford Life Design Lab](https://lifedesignlab.stanford.edu/). The life metaphor, heroes, and vision letter tools draw on [*Design the Life You Love*](https://www.penguinrandomhouse.com/books/252264/design-the-life-you-love-by-ayse-birsel/) by [Ayse Birsel](https://www.aysebirsel.com/). This repository is an independent adaptation, not affiliated with or endorsed by Stanford University or any of these authors.
+> **Attribution:** Inspired by ideas from [*Designing Your Life*](https://designingyour.life/) by [Bill Burnett](https://designingyour.life/about-us/) and [Dave Evans](https://designingyour.life/about-us/) and the [Stanford Life Design Lab](https://lifedesignlab.stanford.edu/). The life metaphor, heroes, and vision letter tools draw on [*Design the Life You Love*](https://www.penguinrandomhouse.com/books/252264/design-the-life-you-love-by-ayse-birsel/) by [Ayse Birsel](https://www.aysebirsel.com/). The Career Canvas adapts the personal business model canvas from [*Business Model You*](https://businessmodelyou.com/) by Tim Clark with Alexander Osterwalder and Yves Pigneur. This repository is an independent adaptation, not affiliated with or endorsed by Stanford University or any of these authors.
 
 ## What makes this different
 
@@ -57,7 +57,7 @@ Two rules run through every deliverable: nothing is invented (thin evidence gets
 - **Your Life Design Blueprint:** future life paths grounded in your own evidence, the ordinary day and trade-offs behind each one, and the questions you still need to test.
 - **Your Prototype Plan:** one-day, 30-day, and 90-day tests that help you learn more before making a bigger commitment, with criteria for when to stop, continue, or expand.
 
-Everything is modular: ask for only what you want, from a one-page summary to the full kit with a personal manifesto, a vision letter to your future self, images, and review prompts. Exact specifications live in [references/DELIVERABLES.md](references/DELIVERABLES.md). Prefer a zero-install version? [LITE_PROMPT.md](LITE_PROMPT.md) is a single copy-paste prompt that preserves the core method for claude.ai or any chat assistant.
+Everything is modular: ask for only what you want, from a one-page summary to the full kit with a personal manifesto, a vision letter to your future self, a career canvas for career-shaped decisions, images, and review prompts. Exact specifications live in [references/DELIVERABLES.md](references/DELIVERABLES.md). Prefer a zero-install version? [LITE_PROMPT.md](LITE_PROMPT.md) is a single copy-paste prompt that preserves the core method for claude.ai or any chat assistant.
 
 ## Repository structure
 

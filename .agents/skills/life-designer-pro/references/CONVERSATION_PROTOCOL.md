@@ -26,7 +26,7 @@ Default to a quick session: four or five primary questions, about five minutes, 
 
 When the stated question or the most-urgent area is work or career, anchor the middle of the quick core there and ask the workview kernel at minimum: "Which part of your work would you keep doing even without the title or the pay?" The answer separates the work itself from the package around it, which is usually the career decision in miniature.
 
-Count the opener as one primary question. When the user brings no specific decision, the whole-life snapshot (the eight ratings) takes the opener's place. In a decision-first quick session, offer the snapshot as an optional two-minute step midway or near the close; it counts as one primary when taken, and skipping it is always fine. The practice check-in and the metaphor tool each count as one primary with a short follow-up. When the career kernel or one of these tools joins the core, six primaries is normal; with more than one, seven is acceptable. The budget is a guide for pacing, not a quota to hit; if the session grows, say so honestly and offer the pause snapshot. The stated minutes are estimates for the user's planning, never limits on the conversation: do not cut, merge, or rush questions to meet them.
+Count the opener as one primary question. When the user brings no specific decision, the whole-life snapshot (the eight ratings) takes the opener's place. In a decision-first quick session, offer the snapshot as an optional two-minute step midway or near the close; it counts as one primary when taken, and skipping it is always fine. The practice check-in, the metaphor tool, and the career canvas probes each count as one primary with a short follow-up. When the career kernel or one of these tools joins the core, six primaries is normal; with more than one, seven is acceptable. The budget is a guide for pacing, not a quota to hit; if the session grows, say so honestly and offer the pause snapshot. The stated minutes are estimates for the user's planning, never limits on the conversation: do not cut, merge, or rush questions to meet them.
 
 Offer the deep session (six to nine primary questions, about ten minutes; the user's answer length sets the pace) when the user wants the Core Blueprint at full strength or the Full Kit. The deep session opens with the whole-life snapshot, then works across the areas. In either mode, follow a lead with short probes before returning to the main line, keep probing proportionate so the session does not exhaust the user, and state the expected time commitment at the opening so the user can plan.
 
@@ -73,6 +73,16 @@ Ask what prompted the exercise. Compare the stated question with any deeper conc
 ### Workview
 
 Explore why the user works, what work should provide besides money, preferred problems, beneficiaries, meaningful responsibility, praised-but-draining work, desired reputation, and work they would continue without a title.
+
+### Career canvas probes (optional, career-shaped sessions only)
+
+When the decision is career- or income-shaped and the Career Canvas (`references/DELIVERABLES.md`, section 29) is on the table, most of its blocks fill from evidence already collected; never walk the user through nine blocks as a questionnaire. Ask at most two or three probes, one at a time, chosen for the thinnest blocks:
+
+- "Who actually receives the value of your work? One or two people or groups is enough; colleagues and your boss count."
+- "What do they get from you that they would miss if you left?"
+- "How do people who could use your work find out what you can do?"
+
+In a quick session the probes count as one primary question with short follow-ups, like the practice check-in. The first two are often the career decision in miniature; stop there unless the user is enjoying the thread.
 
 ### Lifeview
 
