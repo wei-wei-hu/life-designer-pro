@@ -10,6 +10,8 @@ Life Designer Pro helps you look at your work, relationships (from partner and f
 
 **[Open the Life Canvas](https://wei-wei-hu.github.io/life-designer-pro/)**: a free one-page version that runs in your browser. Rate your eight life areas, answer nine plain questions (talk or type), read your life story in one sentence, and copy the result into a full coaching session. Everything you type stays in your browser.
 
+[![The Life Canvas: a one-page interactive version of Life Designer Pro](assets/canvas-preview.png)](https://wei-wei-hu.github.io/life-designer-pro/)
+
 ## What makes this different
 
 Most life-planning prompts jump from a few answers to a confident recommendation. This method slows down the diagnosis, distinguishes facts from assumptions, tracks repeated themes, tests contradictions, and produces practical experiments rather than a permanent verdict.
