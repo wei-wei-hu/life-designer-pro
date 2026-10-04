@@ -113,6 +113,18 @@
     white-space: nowrap;
   }
   .example-chip[hidden] { display: none !important; }
+  a.ghbtn {
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 999px;
+    border: 1.5px solid var(--ink);
+    background: var(--ink);
+    color: var(--white);
+    padding: 7px 16px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  a.ghbtn:hover { background: #333; }
 
   /* ---- numbered pastel cards ---- */
   .cards {
@@ -346,6 +358,7 @@
     <button id="btnTalk" type="button" title="Click into a box, then tap to dictate; tap again to stop">🎤 Talk</button>
     <button id="btnExample" type="button">Reload example</button>
     <button id="btnClear" type="button">Clear all</button>
+    <a class="ghbtn" href="https://github.com/wei-wei-hu/life-designer-pro" rel="noopener">View on GitHub ↗</a>
     <span class="hint" id="canvashint">Prefer talking? Click into a box, then tap 🎤 Talk and speak; tap again to stop.</span>
   </div>
 
