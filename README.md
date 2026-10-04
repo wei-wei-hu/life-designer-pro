@@ -8,7 +8,7 @@ Life Designer Pro helps you look at your work, relationships (from partner and f
 
 ## Try it in one page
 
-**[Open the Life Canvas](https://wei-wei-hu.github.io/life-designer-pro/docs/)**: a free one-page version that runs in your browser. Rate your eight life areas, answer nine plain questions (talk or type), read your life story in one sentence, and copy the result into a full coaching session. Everything you type stays in your browser.
+**[Open the Life Canvas](https://wei-wei-hu.github.io/life-designer-pro/)**: a free one-page version that runs in your browser. Rate your eight life areas, answer nine plain questions (talk or type), read your life story in one sentence, and copy the result into a full coaching session. Everything you type stays in your browser.
 
 ## What makes this different
 
