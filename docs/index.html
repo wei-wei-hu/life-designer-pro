@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Life Designer Pro</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+  /* Single committed theme: blush paper + black slides with candy pastels (the chosen template's world). */
+  :root {
+    --paper: #F2EDE8;
+    --ink: #141414;
+    --muted: #6F6A64;
+    --border: rgba(20, 20, 20, 0.08);
+    --white: #FFFFFF;
+    --lilac: #CDC1F8;
+    --lime: #D5F7A1;
+    --yellow: #F6F07D;
+    --pink: #FAC8EF;
+    --black-card: #141414;
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: light; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    padding: 0 18px 60px;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; }
+
+  /* ---- header ---- */
+  header.poster {
+    position: relative;
+    padding: 52px 8px 6px;
+  }
+  .poster .block {
+    display: inline-block;
+    background: var(--lilac);
+    border-radius: 4px;
+    padding: 2px 16px 4px;
+    font-weight: 800;
+    font-size: clamp(24px, 4vw, 38px);
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+  .poster h1 {
+    font-weight: 700;
+    font-size: clamp(44px, 8vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .poster .byline { font-size: 13.5px; font-weight: 600; margin: 0 0 10px; }
+  .poster .byline a { color: var(--ink); }
+  .poster .subtitle {
+    font-size: 15.5px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    max-width: 56ch;
+  }
+  .poster .subtitle mark { background: var(--yellow); padding: 0 4px; border-radius: 3px; }
+  .poster .how { font-size: 13.5px; color: var(--muted); margin: 0; max-width: 66ch; }
+  .squiggle { position: absolute; pointer-events: none; }
+  .sq1 { top: 34px; right: 10px; width: 170px; }
+  @media (max-width: 860px) { .sq1 { display: none; } }
+
+  /* ---- toolbar ---- */
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 22px 0 18px;
+    padding: 0 8px;
+  }
+  .toolbar .hint { font-size: 12.5px; color: var(--muted); width: 100%; }
+  button {
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 999px;
+    border: 1.5px solid var(--ink);
+    background: var(--white);
+    color: var(--ink);
+    padding: 7px 16px;
+    cursor: pointer;
+  }
+  button:hover { background: var(--lilac); }
+  button.primary { background: var(--ink); color: var(--white); }
+  button.primary:hover { background: #333; }
+  button:focus-visible, textarea:focus-visible, input:focus-visible, a:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+  #btnTalk.listening { background: var(--yellow); border-color: var(--ink); color: var(--ink); }
+  @media (prefers-reduced-motion: no-preference) {
+    #btnTalk.listening { animation: talkpulse 1.2s ease-in-out infinite; }
+  }
+  @keyframes talkpulse { 50% { opacity: 0.65; } }
+  .example-chip {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border: 1.5px dashed var(--ink);
+    border-radius: 999px;
+    padding: 4px 12px;
+    white-space: nowrap;
+  }
+  .example-chip[hidden] { display: none !important; }
+
+  /* ---- numbered pastel cards ---- */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 980px) { .cards { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .cards { grid-template-columns: 1fr; } }
+  .card {
+    position: relative;
+    border-radius: 14px;
+    padding: 18px 18px 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  .c2 { grid-column: span 2; }
+  @media (max-width: 720px) { .c2 { grid-column: span 1; } }
+  .card .num {
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin: 0 0 4px;
+  }
+  .card h3 {
+    font-size: 16.5px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
+    padding-right: 38px;
+  }
+  .card .ask {
+    font-size: 13.5px;
+    margin: 0 0 10px;
+    line-height: 1.5;
+    padding-right: 6px;
+  }
+  .card .icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+  }
+  .card textarea {
+    font: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink);
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    resize: none;
+    overflow: hidden;
+    field-sizing: content;
+    padding: 10px 12px;
+    width: 100%;
+    flex: 1;
+    min-height: 72px;
+  }
+  .card textarea::placeholder { color: var(--muted); opacity: 0.7; }
+
+  .t-lime     { background: var(--lime); }
+  .t-lilac    { background: var(--lilac); }
+  .t-yellow   { background: var(--yellow); }
+  .t-pink     { background: var(--pink); }
+  .t-white    { background: var(--white); border: 1px solid var(--border); }
+  .t-white .icon { background: var(--lilac); }
+
+  /* the eight-areas card */
+  .scores .scale { font-size: 13px; margin: 0 0 8px; line-height: 1.5; padding-right: 38px; }
+  .snaprow {
+    display: grid;
+    grid-template-columns: 1fr 42px 46px;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .snaprow label { font-size: 12.5px; }
+  .snaprow input {
+    font: inherit;
+    font-size: 13.5px;
+    width: 46px;
+    text-align: center;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+  .snapbar { height: 8px; border-radius: 4px; background: rgba(20, 20, 20, 0.08); overflow: hidden; }
+  .snapbar i { display: block; height: 100%; width: 0; background: var(--ink); border-radius: 4px; transition: width 0.2s; }
+  .focusq { font-size: 13px; margin: 12px 0 6px; line-height: 1.5; }
+  .scores .row input[type="text"] {
+    font: inherit;
+    font-size: 13.5px;
+    width: 100%;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 7px 11px;
+  }
+  .scores .row input::placeholder { color: var(--muted); opacity: 0.75; }
+
+  /* ---- story: the black slide ---- */
+  .story {
+    position: relative;
+    margin: 26px 0 0;
+    background: var(--black-card);
+    color: #EFEBE5;
+    border-radius: 16px;
+    padding: 28px 30px 24px;
+    overflow: hidden;
+  }
+  .story .label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--lilac);
+  }
+  .story p#storyline {
+    font-weight: 700;
+    font-size: clamp(19px, 2.8vw, 27px);
+    line-height: 1.45;
+    letter-spacing: -0.015em;
+    margin: 12px 0 8px;
+    max-width: 34em;
+    color: var(--lilac);
+  }
+  .story p#storyline strong { color: #FFFFFF; font-weight: 700; }
+  .story p#storyline .gap {
+    color: var(--yellow);
+    font-size: 0.68em;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-bottom: 1.5px dashed var(--yellow);
+    padding: 0 2px;
+  }
+  .story .note { font-size: 13px; color: rgba(239, 235, 229, 0.65); max-width: 66ch; margin: 0 0 16px; }
+  .sq2 { top: 18px; right: 26px; width: 110px; }
+  @media (max-width: 720px) { .sq2 { display: none; } }
+  .outbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .story button { background: transparent; border-color: rgba(239, 235, 229, 0.85); color: #EFEBE5; }
+  .story button:hover { background: transparent; border-color: var(--yellow); color: var(--yellow); }
+  .story button.primary { background: var(--lilac); border-color: var(--lilac); color: var(--ink); }
+  .story button.primary:hover { background: #DCD3FB; }
+  .copied { font-size: 13px; color: var(--yellow); opacity: 0; transition: opacity 0.25s; }
+  .copied.show { opacity: 1; }
+  #mdout {
+    width: 100%;
+    min-height: 120px;
+    margin-top: 14px;
+    font-family: Menlo, Consolas, "Courier New", monospace;
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--ink);
+    background: var(--white);
+    border: 0;
+    border-radius: 10px;
+    padding: 14px;
+    resize: none;
+    overflow: hidden;
+    field-sizing: content;
+  }
+
+  /* ---- keep going: pastel chips on paper ---- */
+  .deeper {
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 720px) { .deeper { grid-template-columns: 1fr; } }
+  .deeper .card { padding: 20px 20px 18px; }
+  .deeper .num { font-weight: 800; font-size: 26px; margin: 0 0 4px; }
+  .deeper h3 { font-size: 17px; font-weight: 700; margin: 0 0 8px; }
+  .deeper p { font-size: 13.5px; margin: 0 0 10px; max-width: 58ch; }
+  .deeper pre {
+    font-family: Menlo, Consolas, "Courier New", monospace;
+    font-size: 12.5px;
+    background: var(--white);
+    border-radius: 8px;
+    padding: 10px 13px;
+    margin: 0 0 10px;
+    overflow-x: auto;
+    color: var(--ink);
+  }
+  .deeper a { color: var(--ink); font-weight: 700; }
+  .credit { font-size: 12.5px; color: rgba(20, 20, 20, 0.65); line-height: 1.65; }
+
+  footer.site {
+    margin-top: 34px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  footer.site a { color: var(--ink); font-weight: 700; }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header class="poster">
+    <svg class="squiggle sq1" viewBox="0 0 200 170" fill="none" aria-hidden="true">
+      <path d="M18 14 C 118 -12, 192 62, 152 136" stroke="#CDC1F8" stroke-width="8" stroke-linecap="round"/>
+      <path d="M136 124 L153 158 L168 126 Z" fill="#CDC1F8"/>
+    </svg>
+    <span class="block">One page.</span>
+    <h1>Life Designer Pro</h1>
+    <p class="byline">Designed by <a href="https://www.linkedin.com/in/weiweihu" rel="noopener">Weiwei Hu</a>.</p>
+    <p class="subtitle">The test behind every box: <mark>if this future works, what will an ordinary day feel like?</mark></p>
+    <p class="how">Rate the eight areas of your life, find the question that really matters, name what you'd protect on any path, sketch three possible futures, and pick one small thing to try. Fill it in any order; a sentence per line is enough. Not sure about a box? "Not sure yet" is a useful answer too.</p>
+  </header>
+
+  <div class="toolbar">
+    <span class="example-chip" id="exampleChip">Example — type to replace</span>
+    <button id="btnTalk" type="button" title="Click into a box, then tap to dictate; tap again to stop">🎤 Talk</button>
+    <button id="btnExample" type="button">Reload example</button>
+    <button id="btnClear" type="button">Clear all</button>
+    <span class="hint" id="canvashint">Prefer talking? Click into a box, then tap 🎤 Talk and speak; tap again to stop.</span>
+  </div>
+
+  <div class="cards" id="lmgrid"></div>
+
+  <section class="story">
+    <svg class="squiggle sq2" viewBox="0 0 160 130" fill="none" aria-hidden="true">
+      <path d="M12 104 C 58 8, 118 10, 138 58" stroke="#F6F07D" stroke-width="7" stroke-linecap="round"/>
+      <path d="M126 56 L146 76 L152 46 Z" fill="#F6F07D"/>
+    </svg>
+    <div class="label">Where this leaves you</div>
+    <p id="storyline"></p>
+    <p class="note">Built from the first line of each box. Blank spots are not failures; they just show what to figure out next. And all three paths are real options; none is a backup plan.</p>
+    <div class="outbar">
+      <button class="primary" id="btnCopy" type="button">Copy as Markdown</button>
+      <button id="btnShowMd" type="button">Show Markdown</button>
+      <span class="copied" id="copiedMsg">Copied.</span>
+    </div>
+    <textarea id="mdout" hidden readonly spellcheck="false" aria-label="Markdown export"></textarea>
+  </section>
+
+  <section class="deeper">
+    <div class="card t-lime">
+      <div class="num">10.</div>
+      <h3>Take it deeper with the skill</h3>
+      <p>This page is the do-it-yourself version. The <a href="https://github.com/wei-wei-hu/life-designer-pro" rel="noopener">life-designer-pro</a> skill walks you through the same canvas in a short conversation (about five minutes), asks the follow-up questions a page cannot, and keeps your map up to date as your life moves.</p>
+      <pre>/life-designer-pro</pre>
+      <p>In Claude Code. Or in OpenAI Codex:</p>
+      <pre>$life-designer-pro Start a new guided session.</pre>
+      <p>Paste what you copied into the session, and the coach starts from what you already wrote.</p>
+    </div>
+    <div class="card t-lilac">
+      <div class="num">11.</div>
+      <h3>Where this comes from</h3>
+      <p class="credit">
+        <a href="https://github.com/wei-wei-hu/life-designer-pro" rel="noopener">Life Designer Pro</a> by <a href="https://www.linkedin.com/in/weiweihu" rel="noopener">Weiwei Hu</a>, licensed under CC BY 4.0. Inspired by ideas from <em>Designing Your Life</em> (Bill Burnett and Dave Evans) and <em>Design the Life You Love</em> (Ayse Birsel); an independent adaptation, affiliated with none of them.<br><br>
+        Everything you type or say stays in this browser only; nothing is sent or stored anywhere else. The example persona is fictional.
+      </p>
+    </div>
+  </section>
+
+  <footer class="site">
+    © 2026 Weiwei Hu. All rights reserved. · <a href="https://www.linkedin.com/in/weiweihu" rel="noopener">linkedin.com/in/weiweihu</a>
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var AREAS = [
+    { id: "wellbeing",    label: "Physical & emotional well-being" },
+    { id: "work",         label: "Work & career" },
+    { id: "love",         label: "Love & relationships" },
+    { id: "fun",          label: "Fun & enjoyment" },
+    { id: "learning",     label: "Learning & creativity" },
+    { id: "community",    label: "Community & belonging" },
+    { id: "financial",    label: "Financial security" },
+    { id: "contribution", label: "Contribution & meaning" }
+  ];
+
+  // Numbered cards in the poster's order; null marks the eight-areas card.
+  var BLOCKS = [
+    { n: 1, id: "today", tint: "t-lime", icon: "📍", title: "Today",
+      ask: "Where you are right now: your role, your place, what your weeks look like, and anything that feels stuck.",
+      ph: "One thing per line" },
+    { n: 2, id: "question", tint: "t-lilac", icon: "❓", title: "The real question",
+      ask: "The question under your question. What would make an ordinary week feel worth repeating?",
+      ph: "Write it as one honest question" },
+    null, // card 3: the eight areas
+    { n: 4, id: "path1", tint: "t-yellow", icon: "🧭", title: "Path 1 · Keep going",
+      ask: "Two years down your current road. What does a normal day look like?",
+      ph: "Give it a name, then describe a normal day" },
+    { n: 5, id: "path2", tint: "t-pink", icon: "🔀", title: "Path 2 · A different road",
+      ask: "If your current road disappeared tomorrow, what would you do instead? Same question: a normal day.",
+      ph: "Give it a name, then describe a normal day" },
+    { n: 6, id: "path3", tint: "t-lime", icon: "🌤️", title: "Path 3 · No one watching",
+      ask: "If you cared less about titles and other people's opinions, what would you do?",
+      ph: "Give it a name, then describe a normal day" },
+    { n: 7, id: "travels", tint: "t-lilac", icon: "🛡️", title: "What you protect, no matter what",
+      ask: "What has to be in a normal week for it to feel like your own life? In a busy month, which three would you protect first?",
+      ph: "e.g. time to build things, dinners together" },
+    { n: 8, id: "experiment", tint: "t-pink", icon: "🧪", title: "Your next small test",
+      ask: "One thing small enough to try this week, and when you'll look at how it went.",
+      ph: "The test, and a date to look back" },
+    { n: 9, id: "loop", tint: "t-yellow", icon: "⏰", title: "How often you'll check in",
+      ask: "Pick a rhythm you'll actually keep: 2 minutes each night, 10 minutes a week, once a month, or once a season. Any rhythm works.",
+      ph: "e.g. Sunday evenings, 10 minutes" }
+  ];
+  var FIELD_BLOCKS = BLOCKS.filter(function (b) { return b; });
+
+  var EXAMPLE = {
+    snap: { wellbeing: "6", work: "4", love: "7", fun: "5", learning: "5",
+            community: "6", financial: "7", contribution: "5" },
+    focus:      "Work. It takes too much of my energy.",
+    today:      "Manager at a big company\nToo many meetings\nI like writing and teaching",
+    question:   "What kind of work would make my weeks feel good again?",
+    travels:    "Dinner with my family\nTime to write\nEnough sleep",
+    experiment: "Write one short post this week\nSee how it felt in 30 days",
+    path1:      "Stay and improve: same job, better weeks\nA normal day: fewer meetings, one writing hour",
+    path2:      "Teach more: move into training people\nA normal day: teach in the morning, prepare in the afternoon",
+    path3:      "My own thing: freelance writer\nA normal day: write at home, two calls",
+    loop:       "10 minutes every Sunday evening"
+  };
+
+  var KEY = "life-canvas-v1";
+  var byId = function (id) { return document.getElementById(id); };
+  var grid = byId("lmgrid");
+  var isExample = false;
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  // Build the cards
+  BLOCKS.forEach(function (b) {
+    var el = document.createElement("section");
+    if (b === null) {
+      el.className = "card scores t-white";
+      var inner = ['<span class="icon">📊</span><div class="num">03.</div><h3>Your eight areas today</h3>'];
+      inner.push('<p class="scale">Rate each area for how satisfied you are with it today, from 0 to 10, where 0 means it is in serious trouble and 10 means it could not realistically be better. Blank is fine.</p>');
+      AREAS.forEach(function (a) {
+        inner.push('<div class="snaprow"><label for="s-' + a.id + '">' + a.label + "</label>" +
+          '<span class="snapbar"><i id="b-' + a.id + '"></i></span>' +
+          '<input id="s-' + a.id + '" type="number" min="0" max="10" step="1" inputmode="numeric"></div>');
+      });
+      inner.push('<p class="focusq">Separately from the scores: which one area most needs your attention right now? The lowest score is not automatically the most urgent.</p>');
+      inner.push('<div class="row"><input id="f-focus" type="text" placeholder="Name the area, and why it feels pressing" aria-label="Which one area most needs your attention right now?"></div>');
+      el.innerHTML = inner.join("");
+    } else {
+      el.className = "card " + b.tint + (b.c2 ? " c2" : "");
+      el.innerHTML =
+        '<span class="icon">' + b.icon + "</span>" +
+        '<div class="num">0' + b.n + ".</div>" +
+        "<h3>" + b.title + "</h3>" +
+        '<p class="ask">' + b.ask + "</p>" +
+        '<textarea id="f-' + b.id + '" placeholder="' + b.ph + '" spellcheck="false" aria-label="' + b.title + '"></textarea>';
+    }
+    grid.appendChild(el);
+  });
+
+  function updateBars() {
+    AREAS.forEach(function (a) {
+      var raw = byId("s-" + a.id).value;
+      var n = raw === "" ? 0 : Math.max(0, Math.min(10, Number(raw) || 0));
+      byId("b-" + a.id).style.width = (n * 10) + "%";
+    });
+  }
+
+  function autosize(el) {
+    if (!el || el.tagName !== "TEXTAREA") return;
+    el.style.height = "auto";
+    el.style.height = (el.scrollHeight + 2) + "px";
+  }
+  function autosizeAll() {
+    Array.prototype.forEach.call(document.querySelectorAll("textarea"), autosize);
+  }
+
+  function values() {
+    var v = { snap: {} };
+    FIELD_BLOCKS.forEach(function (b) { v[b.id] = byId("f-" + b.id).value; });
+    AREAS.forEach(function (a) { v.snap[a.id] = byId("s-" + a.id).value; });
+    v.focus = byId("f-focus").value;
+    return v;
+  }
+  function setValues(v) {
+    v = v || {};
+    FIELD_BLOCKS.forEach(function (b) { byId("f-" + b.id).value = v[b.id] || ""; });
+    var snap = v.snap || {};
+    AREAS.forEach(function (a) { byId("s-" + a.id).value = snap[a.id] || ""; });
+    byId("f-focus").value = v.focus || "";
+    updateBars();
+    autosizeAll();
+  }
+  function firstLine(text) {
+    var line = (text || "").split("\n").map(function (s) { return s.trim(); })
+      .filter(function (s) { return s.length; })[0] || "";
+    if (line.length > 72) line = line.slice(0, 69).replace(/\s+\S*$/, "") + "…";
+    if (line) line = line.charAt(0).toLowerCase() + line.slice(1);
+    return line;
+  }
+  function esc(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  function piece(v, id, gapLabel) {
+    var line = firstLine(v[id]);
+    return line ? "<strong>" + esc(line) + "</strong>"
+                : '<span class="gap">' + gapLabel + "</span>";
+  }
+  function renderStory() {
+    var v = values();
+    byId("storyline").innerHTML =
+      "“Today: " + piece(v, "today", "where I am") +
+      ". My real question: " + piece(v, "question", "still taking shape") +
+      " Whatever I choose, I keep " + piece(v, "travels", "what I protect") +
+      ". The thing I'm trying next: " + piece(v, "experiment", "not picked yet") +
+      ". I'll check in " + piece(v, "loop", "on a rhythm I pick") + ".”";
+  }
+  function storyPlain() {
+    return byId("storyline").textContent;
+  }
+  function markdown() {
+    var v = values();
+    var out = ["# My Life Design, one page", ""];
+    out.push("## My eight life areas (satisfaction today, 0 to 10)");
+    out.push("");
+    AREAS.forEach(function (a) {
+      var s = (v.snap[a.id] || "").trim();
+      out.push("- " + a.label + ": " + (s === "" ? "not rated yet" : s));
+    });
+    out.push("- Most needs attention: " + ((v.focus || "").trim() || "not named yet"));
+    out.push("");
+    FIELD_BLOCKS.forEach(function (b) {
+      out.push("## " + b.title);
+      var body = (v[b.id] || "").trim();
+      if (body) {
+        body.split("\n").forEach(function (line) {
+          line = line.trim();
+          if (line) out.push("- " + line);
+        });
+      } else {
+        out.push("- not sure yet");
+      }
+      out.push("");
+    });
+    out.push("## Where this leaves me");
+    out.push("");
+    out.push("> " + storyPlain());
+    out.push("");
+    out.push("---");
+    out.push("Made with Life Designer Pro by Weiwei Hu (CC BY 4.0). " +
+      "https://github.com/wei-wei-hu/life-designer-pro");
+    return out.join("\n");
+  }
+
+  function save() {
+    try {
+      localStorage.setItem(KEY, JSON.stringify({ v: values(), example: isExample }));
+    } catch (e) { /* private window etc. */ }
+  }
+  function load() {
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (!raw) return false;
+      var data = JSON.parse(raw);
+      setValues(data.v || {});
+      isExample = !!data.example;
+      return true;
+    } catch (e) { return false; }
+  }
+  function setExampleState(on) {
+    isExample = on;
+    byId("exampleChip").hidden = !on;
+  }
+  function loadExample() {
+    setValues(EXAMPLE);
+    setExampleState(true);
+    renderStory();
+    save();
+    refreshMd();
+  }
+  function refreshMd() {
+    var md = byId("mdout");
+    if (!md.hidden) { md.value = markdown(); autosize(md); }
+  }
+  function onAnyInput() {
+    if (isExample) setExampleState(false);
+    updateBars();
+    renderStory();
+    save();
+    refreshMd();
+  }
+
+  grid.addEventListener("input", function (e) {
+    autosize(e.target);
+    onAnyInput();
+  });
+
+  byId("btnExample").addEventListener("click", loadExample);
+
+  byId("btnClear").addEventListener("click", function () {
+    setValues({});
+    setExampleState(false);
+    renderStory();
+    save();
+    refreshMd();
+  });
+
+  byId("btnShowMd").addEventListener("click", function () {
+    var md = byId("mdout");
+    md.hidden = !md.hidden;
+    this.textContent = md.hidden ? "Show Markdown" : "Hide Markdown";
+    if (!md.hidden) { md.value = markdown(); autosize(md); }
+  });
+
+  byId("btnCopy").addEventListener("click", function () {
+    var text = markdown();
+    var done = function () {
+      var m = byId("copiedMsg");
+      m.classList.add("show");
+      setTimeout(function () { m.classList.remove("show"); }, 1800);
+    };
+    var fallback = function () {
+      var md = byId("mdout");
+      md.hidden = false;
+      byId("btnShowMd").textContent = "Hide Markdown";
+      md.value = text;
+      md.select();
+      try { document.execCommand("copy"); done(); } catch (e) { /* user copies manually */ }
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  });
+
+  // ---- talk instead of type: one button, dictates into the focused box ----
+  var btnTalk = byId("btnTalk");
+  var rec = null, talkField = null, talkBase = "";
+  var lastField = null;
+  grid.addEventListener("focusin", function (e) {
+    var t = e.target;
+    if (t && (t.tagName === "TEXTAREA" || (t.tagName === "INPUT" && t.type === "text"))) lastField = t;
+  });
+  function resetTalkUI() {
+    btnTalk.classList.remove("listening");
+    btnTalk.textContent = "🎤 Talk";
+    rec = null; talkField = null;
+  }
+  btnTalk.addEventListener("click", function () {
+    if (!SR) return;
+    if (rec) { try { rec.stop(); } catch (e) { /* already stopped */ } return; }
+    talkField = lastField || byId("f-today");
+    talkBase = talkField.value;
+    rec = new SR();
+    rec.lang = navigator.language || "en-US";
+    rec.continuous = true;
+    rec.interimResults = true;
+    rec.onresult = function (e) {
+      var text = "";
+      for (var i = 0; i < e.results.length; i++) text += e.results[i][0].transcript;
+      text = text.trim();
+      if (!text || !talkField) return;
+      var sep = talkField.tagName === "INPUT" ? " " : "\n";
+      talkField.value = talkBase ? talkBase.replace(/\s+$/, "") + sep + text : text;
+      autosize(talkField);
+      onAnyInput();
+    };
+    rec.onerror = function (e) {
+      resetTalkUI();
+      btnTalk.textContent = (e.error === "not-allowed" || e.error === "service-not-allowed")
+        ? "Mic blocked, type instead" : "🎤 Try again";
+    };
+    rec.onend = resetTalkUI;
+    btnTalk.classList.add("listening");
+    btnTalk.textContent = "● Listening… tap to stop";
+    talkField.scrollIntoView({ block: "center", behavior: "smooth" });
+    try { rec.start(); } catch (err) { resetTalkUI(); }
+  });
+  if (!SR) {
+    btnTalk.hidden = true;
+    byId("canvashint").textContent = "Fill any box in your own words; one line is enough.";
+  }
+
+  if (!load()) loadExample();
+  else { setExampleState(isExample); renderStory(); }
+})();
+</script>
+
+</body>
+</html>

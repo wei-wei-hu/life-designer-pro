@@ -6,6 +6,10 @@ Life Designer Pro helps you look at your work, relationships (from partner and f
 
 > **Attribution:** Inspired by ideas from [*Designing Your Life*](https://designingyour.life/) by [Bill Burnett](https://designingyour.life/about-us/) and [Dave Evans](https://designingyour.life/about-us/) and the [Stanford Life Design Lab](https://lifedesignlab.stanford.edu/). The life metaphor, heroes, and vision letter tools draw on [*Design the Life You Love*](https://www.penguinrandomhouse.com/books/252264/design-the-life-you-love-by-ayse-birsel/) by [Ayse Birsel](https://www.aysebirsel.com/). The Career Canvas adapts the personal business model canvas from [*Business Model You*](https://businessmodelyou.com/) by Tim Clark with Alexander Osterwalder and Yves Pigneur. This repository is an independent adaptation, not affiliated with or endorsed by Stanford University or any of these authors.
 
+## Try it in one page
+
+**[Open the Life Canvas](https://wei-wei-hu.github.io/life-designer-pro/)**: a free one-page version that runs in your browser. Rate your eight life areas, answer nine plain questions (talk or type), read your life story in one sentence, and copy the result into a full coaching session. Everything you type stays in your browser.
+
 ## What makes this different
 
 Most life-planning prompts jump from a few answers to a confident recommendation. This method slows down the diagnosis, distinguishes facts from assumptions, tracks repeated themes, tests contradictions, and produces practical experiments rather than a permanent verdict.
@@ -58,54 +62,6 @@ Two rules run through every deliverable: nothing is invented (thin evidence gets
 - **Your Prototype Plan:** one-day, 30-day, and 90-day tests that help you learn more before making a bigger commitment, with criteria for when to stop, continue, or expand.
 
 Everything is modular: ask for only what you want, from a one-page summary to the full kit with a personal manifesto, a vision letter to your future self, a career canvas for career-shaped decisions, images, and review prompts. Exact specifications live in [references/DELIVERABLES.md](references/DELIVERABLES.md). Prefer a zero-install version? [LITE_PROMPT.md](LITE_PROMPT.md) is a single copy-paste prompt that preserves the core method for claude.ai or any chat assistant.
-
-## Repository structure
-
-```text
-life-designer-pro/
-├── SKILL.md                         # Canonical Agent Skill
-├── CLAUDE.md                        # Claude Code repository instructions
-├── AGENTS.md                        # Codex repository instructions
-├── README.md
-├── QUICKSTART.md
-├── LITE_PROMPT.md
-├── LICENSE.md
-├── CHANGELOG.md
-├── .claude/skills/life-designer-pro/SKILL.md
-├── .agents/skills/life-designer-pro/
-│   ├── SKILL.md
-│   └── agents/openai.yaml
-├── references/
-│   ├── METHODOLOGY.md
-│   ├── CONVERSATION_PROTOCOL.md
-│   ├── DELIVERABLES.md
-│   ├── IMAGE_GENERATION.md
-│   ├── SAFETY_AND_LIMITS.md
-│   └── REVIEW_CADENCE.md
-├── templates/
-│   ├── BLUEPRINT_TEMPLATE.md
-│   ├── LIFE_DASHBOARD_TEMPLATE.md
-│   ├── LIFE_MAP_TEMPLATE.md
-│   ├── EXPERIMENT_BOARD_TEMPLATE.md
-│   ├── AI_COACH_MEMORY_TEMPLATE.md
-│   └── ONE_PAGE_BLUEPRINT_TEMPLATE.md
-├── prompts/
-│   ├── START_SESSION.md
-│   ├── DAILY_REFLECTION.md
-│   ├── WEEKLY_REVIEW.md
-│   ├── MONTHLY_REVIEW.md
-│   ├── QUARTERLY_RESET.md
-│   ├── ANNUAL_REDESIGN.md
-│   └── CONTINUE_COACHING.md
-├── examples/
-│   ├── EXAMPLE_CONVERSATION.md
-│   ├── EXAMPLE_BLUEPRINT.md
-│   └── EXAMPLE_LIFE_MAP.md
-└── scripts/
-    ├── install.sh
-    ├── install.ps1
-    └── validate_package.py
-```
 
 ## Two ways to use it
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.12.0 - 2026-10-04
+
+- Added the Life Canvas, a free one-page browser version of the method at docs/index.html (published via GitHub Pages): the eight-area snapshot, nine plain-language boxes in a 3x3 grid, optional voice input, a one-sentence story, and a Markdown export that feeds a full session; everything stays in the visitor's browser
+- The README now leads with the canvas link and no longer prints the full repository tree
+
 ## 1.11.0 - 2026-10-04
 
 - Added the Career Canvas (deliverable 29): one page treating the working life as a one-person enterprise across nine plain-word blocks (who you help, what they get, how they find and trust you, how you stay in their minds, what comes back, who you are and what you have, what fills your days, who helps you, what it costs), offered only when the decision is career- or income-shaped, filled by the coach from session evidence with thin blocks marked insufficient, closed with a one-sentence story, and optionally compared across the three paths with a one-line mini-canvas each
