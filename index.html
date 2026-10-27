@@ -353,6 +353,14 @@
   }
   .onepager .op-sum svg { display: inline-block; vertical-align: -3px; width: 15px; height: 15px; margin: 0 6px; }
 
+  #aipanel { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 16px; }
+  #aipanel input {
+    font: inherit; font-size: 13px; flex: 1; min-width: 240px;
+    border: 1.5px solid var(--ink); border-radius: 999px; padding: 7px 14px;
+    background: var(--white); color: var(--ink);
+  }
+  #aipanel .ainote { width: 100%; font-size: 11.5px; color: var(--muted); margin: 0; }
+
   /* ---- the life map output: a flow of sticker tiles ---- */
   .maplabel { margin-top: 12px; }
   .lifemap {
@@ -557,7 +565,13 @@
       <button id="btnCopy" type="button">⧉ Copy letter</button>
       <button id="btnEmail" type="button">✉️ Email it</button>
       <button id="btnShare" type="button" hidden>↗ Share</button>
-      <button id="btnAI" type="button">✨ Get the AI-written version</button>
+      <button id="btnAI" type="button">✨ Write it with AI</button>
+    </div>
+    <div id="aipanel" hidden>
+      <input id="aikey" type="password" placeholder="Paste your Anthropic API key (sk-ant-…)" autocomplete="off">
+      <button id="aigo" type="button" class="primary">Write my letter</button>
+      <button id="aicopy" type="button">⧉ Or copy the prompt for Claude / ChatGPT</button>
+      <p class="ainote" id="ainote">Your key is kept only in this browser and sent only to Anthropic to write this letter. Get one at console.anthropic.com. Your answers go to Anthropic for this one request and nowhere else.</p>
     </div>
 
     <p id="lettertext"></p>
@@ -579,7 +593,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card13</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card14</span></p>
   </footer>
 </div>
 
@@ -761,6 +775,7 @@
   function cleanOrdinary(l) {
     return (l || "").replace(/^(an?\s+)?(ordinary|normal)\s+day\s*[:,]?\s*/i, "").trim();
   }
+  var aiLetter = null, aiHash = null;
   function seedOf(v) {
     var str = JSON.stringify(v);
     var h = 0;
@@ -772,6 +787,7 @@
   }
   function letterText() {
     var v = values();
+    if (aiLetter && aiHash === seedOf(v)) return aiLetter;
     var today = lines(v.today), q = lines(v.question), tr = lines(v.travels),
         ex = lines(v.experiment), focus = (v.focus || "").trim();
     var mt = lines(v.metaphor), hr = lines(v.heroes), hp = lines(v.help), en = lines(v.energy);
@@ -1052,9 +1068,9 @@
     window.print();
   }
   byId("btnPdf").addEventListener("click", savePdf);
-  byId("btnAI").addEventListener("click", function () {
+  function answersText() {
     var v = values();
-    var parts = ["Write me a letter from my future self, two years from now, using the method of Designing Your Life (Burnett and Evans), Design the Life You Love (Birsel), and Business Model You (Clark). Rules: use only my answers below; never invent outcomes, events, or feelings; pick the 4 to 6 most revealing details instead of repeating everything; find one connection between answers I have not made myself; name any tension between my ratings, my question, and my roads; treat my experiment as a way to learn, not a result; plain warm human language, no coaching or corporate words, no cliches, no slogans; full paragraphs; open with: Hey. It's you, two years from now. Close with: Your future self.", "", "My answers:"];
+    var parts = ["My answers:"];
     FIELD_BLOCKS.forEach(function (b) {
       var val = (v[b.id] || "").trim();
       if (val) parts.push(b.title + ": " + val.replace(/\n/g, "; "));
@@ -1065,9 +1081,65 @@
     }).filter(Boolean);
     if (rated.length) parts.push("My life ratings: " + rated.join(", "));
     if ((v.focus || "").trim()) parts.push("Needs attention most: " + v.focus.trim());
+    return parts.join("\n");
+  }
+  var AI_SYSTEM = "You write a letter from the user's future self, two years from now, applying the methods of Designing Your Life (Burnett and Evans: gauges, odyssey alternatives, prototypes, reframing the problem), Design the Life You Love (Birsel: metaphors, heroes, deconstruction and reconstruction), and Business Model You (Clark: who you help and what they would miss). Rules. Use only the user's answers; never invent outcomes, events, feelings, or results. Do not repeat every input: choose the 4 to 6 most revealing details. Find at least one connection between answers the user has not made, and name any tension between their ratings, their question, their drains, and their roads (for example a 10/10 area they still want more from, or a lowest-rated area missing from their question). Reframe their stated question into the deeper question their answers point toward, tentatively (may also have been about). Treat their experiment as a way to learn, never a result. If heroes are named, use the exact qualities given, then: those qualities gave you another way to look at the choices in front of you. If a metaphor exists, bring it back near the end, softly (started to feel a little more like). One more/less contrast only if their energy answers support it. Give one practical message they can act on tonight, from their own experiment or priority, and one or two concrete recommendations that follow from the methods (a smaller first version of their experiment, a person to talk to, a week-long test). Close on ordinary life. Open exactly with: Hey. It's you, two years from now. End exactly with: Your future self. Style: plain warm human language, natural contractions, full paragraphs (never one-or-two-sentence paragraphs), 250 to 400 words. Never use: coaching or corporate jargon, cliches, slogans, three-part lists, the words quiet, simple, easy, journey, purpose, or phrases like what mattered most, the version of yourself, somewhere along the way. The letter must read as if only this person could receive it.";
+  function setAiLetter(text) {
+    aiLetter = text;
+    aiHash = seedOf(values());
+    renderStory();
+  }
+  function aiGenerate() {
+    var key = "";
+    try { key = localStorage.getItem("ldp-anthropic-key") || ""; } catch (e) {}
+    var typed = byId("aikey").value.trim();
+    if (typed) { key = typed; try { localStorage.setItem("ldp-anthropic-key", typed); } catch (e) {} }
+    if (!key) { byId("ainote").textContent = "Paste an Anthropic API key first (console.anthropic.com), or use the copy-the-prompt button."; return; }
+    var go = byId("aigo");
+    go.disabled = true; go.textContent = "Writing…";
+    fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-api-key": key,
+        "anthropic-version": "2023-06-01",
+        "anthropic-dangerous-direct-browser-access": "true"
+      },
+      body: JSON.stringify({
+        model: "claude-sonnet-5",
+        max_tokens: 800,
+        system: AI_SYSTEM,
+        messages: [{ role: "user", content: answersText() }]
+      })
+    }).then(function (r) { return r.json(); }).then(function (data) {
+      go.disabled = false; go.textContent = "Write my letter";
+      if (data && data.content && data.content[0] && data.content[0].text) {
+        setAiLetter(data.content[0].text.trim());
+        byId("ainote").textContent = "Written by Claude from your answers. Change any box and it falls back to the instant version until you write it again.";
+        byId("aipanel").hidden = true;
+      } else {
+        var msg2 = (data && data.error && data.error.message) ? data.error.message : "That did not work. Check the key and try again.";
+        byId("ainote").textContent = msg2;
+        try { localStorage.removeItem("ldp-anthropic-key"); } catch (e) {}
+      }
+    }).catch(function () {
+      go.disabled = false; go.textContent = "Write my letter";
+      byId("ainote").textContent = "Could not reach Anthropic. Check your connection or use the copy-the-prompt button.";
+    });
+  }
+  byId("btnAI").addEventListener("click", function () {
+    var panel = byId("aipanel");
+    var hasKey = false;
+    try { hasKey = !!localStorage.getItem("ldp-anthropic-key"); } catch (e) {}
+    if (hasKey && panel.hidden) { aiGenerate(); return; }
+    panel.hidden = !panel.hidden;
+  });
+  byId("aigo").addEventListener("click", aiGenerate);
+  byId("aicopy").addEventListener("click", function () {
     var b2 = this;
-    var done = function () { b2.textContent = "Prompt copied, paste it into Claude or ChatGPT"; setTimeout(function () { b2.textContent = "✨ Get the AI-written version"; }, 3200); };
-    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(parts.join("\n")).then(done, function () {});
+    var text = AI_SYSTEM + "\n\n" + answersText();
+    var done = function () { b2.textContent = "Prompt copied, paste it into Claude or ChatGPT"; setTimeout(function () { b2.textContent = "⧉ Or copy the prompt for Claude / ChatGPT"; }, 3200); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, function () {});
   });
   byId("btnCopy").addEventListener("click", function () {
     var b = this;
