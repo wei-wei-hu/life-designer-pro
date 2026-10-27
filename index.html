@@ -488,7 +488,9 @@
   .cpanel .mbar { height: 3px; }
   .p-letter .ldate { font-size: 9px; color: var(--muted); margin-bottom: 1mm; }
   .p-letter .lwave { display: block; width: 120px; height: 7px; stroke: #8F7BE0; margin: 1mm 0 3mm; }
+  .p-letter { padding-bottom: 10mm; }
   .p-letter .ltext { font-size: 9px; line-height: 1.48; white-space: pre-line; flex: 1; overflow: hidden; column-count: 2; column-gap: 8mm; }
+  .p-letter .insidefoot { margin-top: 8mm; text-align: center; font-size: 8px; color: #777; }
 
   footer.site {
     margin-top: 36px;
@@ -592,7 +594,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card22</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card23</span></p>
   </footer>
 </div>
 
@@ -668,7 +670,7 @@
     help:       "My students: someone who notices when they are struggling\nNew teachers: lesson plans that actually work"
   };
 
-  var EXAMPLE_AI_LETTER = "Hey, Elena. It's you, two years from now. I have been waiting for a chance to answer this one properly.\n\nI remember where you were. Eleven years into teaching science, parents three hours away and getting older, weekends disappearing into grading. You asked whether you should move back to your hometown. From here, that looks like it may also have been a question about who is in your week. Your own numbers said it first: meaning sat at an 8, community sat at a 4, your lowest. The gap between those two numbers may be most of the question.\n\nPut two more of your answers side by side and something shows. You swore to protect summers off with real rest, and in the same breath described weekends that vanish into grading late at night. The drain you named was already living inside the thing you wanted to protect. No wonder the move felt heavy; it was carrying that too.\n\nYou drew three roads, and the one with a kitchen table in it was the middle one: a smaller school, dinner at your parents' place on Wednesdays. The others stayed real. And I notice you put morning runs and lab days, the hours that fuel you, into every version. Those were never up for negotiation, which tells you what actually travels with you.\n\nSo the experiment was the right size: two full weekends there this month, not holidays. Ordinary Tuesdays in disguise. The point was never to decide. It was to feel what a normal week there does to you, and whether the people fill the number your ratings said was emptiest.\n\nYou once wrote down what you admired: your dad, fixing things without complaining, and your first mentor, making every kid feel seen. Those qualities gave you a way to read your own roads. A smaller school is full of kids to see.\n\nOne thing worth doing tonight: put both weekends on the calendar before grading eats them.\n\nAnd the picture you drew, a commuter train you never chose becoming a kitchen table with people around it, came with its own instruction: fewer transfers, shorter line. An ordinary day here finally feels like it belongs to us.\n\nYour future self";
+  var EXAMPLE_AI_LETTER = "Hey, Elena.\nIt's you, two years from now. I have been waiting for a chance to answer this one properly.\n\nI remember where you were. Eleven years into teaching science, parents three hours away and getting older, weekends disappearing into grading. You asked whether you should move back to your hometown. From here, that looks like it may also have been a question about who is in your week. Your own numbers said it first: meaning sat at an 8, community sat at a 4, your lowest. The gap between those two numbers may be most of the question.\n\nPut two more of your answers side by side and something shows. You swore to protect summers off with real rest, and in the same breath described weekends that vanish into grading late at night. The drain you named was already living inside the thing you wanted to protect. No wonder the move felt heavy; it was carrying that too.\n\nYou drew three roads, and the one with a kitchen table in it was the middle one: a smaller school, dinner at your parents' place on Wednesdays. The others stayed real. And I notice you put morning runs and lab days, the hours that fuel you, into every version. Those were never up for negotiation, which tells you what actually travels with you.\n\nSo the experiment was the right size: two full weekends there this month, not holidays. Ordinary Tuesdays in disguise. The point was never to decide. It was to feel what a normal week there does to you, and whether the people fill the number your ratings said was emptiest.\n\nYou once wrote down what you admired: your dad, fixing things without complaining, and your first mentor, making every kid feel seen. Those qualities gave you a way to read your own roads. A smaller school is full of kids to see.\n\nOne thing worth doing tonight: put both weekends on the calendar before grading eats them.\n\nAnd the picture you drew, a commuter train you never chose becoming a kitchen table with people around it, came with its own instruction: fewer transfers, shorter line. An ordinary day here finally feels like it belongs to us.\n\nYour future self";
   var KEY = "life-canvas-v1";
   var byId = function (id) { return document.getElementById(id); };
   var grid = byId("lmgrid");
@@ -867,7 +869,7 @@
     var p = [];
     {
       var who = (v.name || "").trim();
-      var started = "Hey" + (who ? ", " + who : "") + ". It's you, two years from now. " + pick(seed, 1, [
+      var started = "Hey" + (who ? ", " + who : "") + ".\nIt's you, two years from now. " + pick(seed, 1, [
         "I have been hoping you would sit down and do this.",
         "I was glad when you finally sat down to do this.",
         "I kept this one short, the way you like it."
@@ -1024,12 +1026,14 @@
     h.push("</div>");
     // Sheet 2, inside: map fills the top half, letter fills the bottom half
     h.push('<div class="cardsheet">');
-    h.push('<div class="cpanel p-map"><h3>My life map</h3><div class="lifemap">' + buildMapHtml() + "</div></div>");
+    var nm = (values().name || "").trim();
+    h.push('<div class="cpanel p-map"><h3>' + (nm ? esc(nm) + "\u2019s life map" : "My life map") + '</h3><div class="lifemap">' + buildMapHtml() + "</div></div>");
     h.push('<div class="foldmark"></div>');
     h.push('<div class="cpanel p-letter">' +
       '<div class="ldate">\ud83d\udc8c ' + (function () { var n = (values().name || "").trim(); return n ? "For " + esc(n) + ", from your future self" : "A note from my future self"; })() + " \u00b7 " + new Date().toLocaleDateString() + "</div>" +
       '<svg class="lwave thin" viewBox="0 0 150 8" aria-hidden="true"><path d="M3 5 C 25 1, 55 7, 80 4 C 105 1, 130 6, 147 3"/></svg>' +
-      '<div class="ltext">' + esc(letterText()) + "</div></div>");
+      '<div class="ltext">' + esc(letterText()) + "</div>" +
+      '<div class="insidefoot">Life Designer Pro \u00b7 \u00a9 2026 Weiwei Hu. All rights reserved.</div></div>');
     h.push("</div>");
     byId("onepager").innerHTML = h.join("");
   }
