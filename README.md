@@ -6,10 +6,6 @@ Inspired by ideas from [*Designing Your Life*](https://designingyour.life/) by [
 
 ![A life-vision image generated from a real session](assets/vision.png)
 
-**[Open the Life Canvas](https://wei-wei-hu.github.io/life-designer-pro/)** — free, private, in your browser. Nothing you type or say leaves it.
-
-[![The Life Canvas](assets/cover.png)](https://wei-wei-hu.github.io/life-designer-pro/)
-
 ## What makes this different
 
 Most life-planning prompts jump from a few answers to a confident recommendation. This method slows down the diagnosis, distinguishes facts from assumptions, tracks repeated themes, tests contradictions, and produces practical experiments rather than a permanent verdict.
@@ -51,10 +47,14 @@ Two rules run through every output: nothing is invented ("not sure yet" is a wel
 
 ## What you get
 
+**[Open the Life Canvas](https://wei-wei-hu.github.io/life-designer-pro/)** — free, private, in your browser. Nothing you type or say leaves it.
+
+[![The Life Canvas](assets/cover.png)](https://wei-wei-hu.github.io/life-designer-pro/)
+
 - **A letter from your future self:** key takeaways and recommendations in your own words, two years ahead — read it, or listen to it.
 - **Your Life Map:** one page showing your current priorities, energy sources, tensions, and the areas of life that need more attention.
 - **A printable card:** the letter inside, your map opposite, a cover that says who it's for. Print it for yourself, or fill it in for someone you love.
-- **Your vision, as an image:** the card closes with an image prompt composed from your own answers. Paste it into any image tool and see your next chapter as one scene, like the one at the top of this page.
+- **Your vision image:** the card closes with an image prompt composed from your own answers. Paste it into any image tool and see your next chapter as one scene, like the one at the top of this page.
 
 ## The life-designer-pro skill package · members only
 
