@@ -582,7 +582,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card15</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card16</span></p>
   </footer>
 </div>
 
@@ -1097,7 +1097,7 @@
       body: JSON.stringify({ answers: answersText() })
     }).then(function (r) { return r.json(); }).then(function (d) {
       btn.disabled = false; btn.textContent = "✨ Write it with AI";
-      if (d && d.letter) { setAiLetter(d.letter); note("Written from your answers. Change a box and it returns to the instant version until you write it again."); }
+      if (d && d.letter) { setAiLetter(d.letter); note("Written from your answers. Your card now carries this letter on one side and your life map on the other. Change a box and it returns to the instant version until you write it again."); }
       else if (d && d.error === "payment") { try { localStorage.removeItem("ldp-letter-pass"); } catch (e) {} startCheckout(); }
       else note("That did not work. Try again in a moment.");
     }).catch(function () {
