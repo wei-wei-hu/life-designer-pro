@@ -505,6 +505,16 @@
     white-space: pre-line;
   }
   .vhow { font-size: 7.5px; color: #777; margin-top: 1.5mm; }
+  .vimg {
+    display: block;
+    width: 100%;
+    height: 52mm;
+    object-fit: cover;
+    border: 1px solid rgba(20, 20, 20, 0.3);
+    border-radius: 8px;
+    box-shadow: 2px 2px 0 rgba(20, 20, 20, 0.45);
+    transform: rotate(-0.4deg);
+  }
 
   .modal[hidden] { display: none !important; }
   .modal {
@@ -649,7 +659,7 @@
       <a class="pill" href="https://github.com/wei-wei-hu/life-designer-pro" rel="noopener">GitHub</a>
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card39</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card40</span></p>
   </footer>
 </div>
 
@@ -846,6 +856,8 @@
     return (l || "").replace(/^(an?\s+)?(ordinary|normal)\s+day\s*[:,]?\s*/i, "").trim();
   }
   var aiLetter = null, aiHash = null;
+  var aiImage = null, aiImageHash = null;
+  var EXAMPLE_AI_IMAGE = "assets/example-vision.jpg";
   function seedOf(v) {
     var str = JSON.stringify(v);
     var h = 0;
@@ -1101,12 +1113,18 @@
     return p.join("\n");
   }
   function buildVisionHtml() {
+    var nm = (values().name || "").trim();
+    var title = '<div class="vtitle">\ud83d\uddbc ' + (nm ? esc(nm) + "\u2019s vision image" : "My vision image") + "</div>";
+    if (aiImage && aiImageHash === seedOf(values())) {
+      return '<div class="vwrap">' + title +
+        '<img class="vimg" src="' + esc(aiImage) + '" alt="Vision image generated from the answers above">' +
+        '<div class="vhow">Generated from the answers above.</div></div>';
+    }
     var prompt = buildVisionPrompt();
     if (!prompt) return "";
-    var nm = (values().name || "").trim();
-    return '<div class="vwrap"><div class="vtitle">\ud83d\uddbc ' + (nm ? esc(nm) + "\u2019s vision image" : "My vision image") + "</div>" +
+    return '<div class="vwrap">' + title +
       '<div class="vprompt">' + esc(prompt) + "</div>" +
-      '<div class="vhow">Paste this into your favorite image tool to see it.</div></div>';
+      '<div class="vhow">Paste this into your favorite image tool to see it. Members get it generated on the card.</div></div>';
   }
   function renderOnePager() {
     var h = [];
@@ -1160,6 +1178,13 @@
     setValues(EXAMPLE);
     aiLetter = EXAMPLE_AI_LETTER;
     aiHash = seedOf(values());
+    var exImg = new Image();
+    exImg.onload = function () {
+      if (!fromExample) return;
+      aiImage = EXAMPLE_AI_IMAGE;
+      aiImageHash = seedOf(values());
+    };
+    exImg.src = EXAMPLE_AI_IMAGE;
     renderStory();
     note('This example letter was written by the AI from the answers above. Members get theirs written the same way; message <a href="https://www.linkedin.com/in/weiweihu" rel="noopener">Weiwei Hu on LinkedIn</a> for access.');
     save();
@@ -1233,13 +1258,24 @@
       body: JSON.stringify({ answers: answersText() })
     }).then(function (r) { return r.json(); }).then(function (d) {
       btn.disabled = false; btn.textContent = "✨ Write it with AI";
-      if (d && d.letter) { setAiLetter(d.letter); note("Written from your answers. Your card now carries this letter on one side and your life map on the other. Change a box and it returns to the instant version until you write it again."); }
+      if (d && d.letter) { setAiLetter(d.letter); aiDrawImage(); note("Written from your answers. Your card now carries this letter on one side and your life map on the other. Change a box and it returns to the instant version until you write it again."); }
       else if (d && d.error === "payment") { try { localStorage.removeItem("ldp-letter-pass"); } catch (e) {} startCheckout(); }
       else note("That did not work. Try again in a moment.");
     }).catch(function () {
       btn.disabled = false; btn.textContent = "✨ Write it with AI";
       note("Could not reach the letter service. Try again in a moment.");
     });
+  }
+  function aiDrawImage() {
+    var prompt = buildVisionPrompt();
+    if (!prompt || !WORKER_URL) return;
+    fetch(WORKER_URL + "/image", {
+      method: "POST",
+      headers: { "content-type": "application/json", "authorization": "Bearer " + aiToken() },
+      body: JSON.stringify({ prompt: prompt })
+    }).then(function (r) { return r.json(); }).then(function (d) {
+      if (d && d.image) { aiImage = d.image; aiImageHash = seedOf(values()); }
+    }).catch(function () { /* the card falls back to the prompt */ });
   }
   function startCheckout() {
     note("Taking you to secure checkout…");
