@@ -66,7 +66,7 @@ Life Designer Pro is created by [Weiwei Hu](https://www.linkedin.com/in/weiweihu
 
 Weiwei Hu · [LinkedIn](https://www.linkedin.com/in/weiweihu/) · [Website](https://weiweihu.carrd.co/)
 
-## Notes
+## Disclaimer
 
 Life Designer Pro supports reflection and planning. It does not provide therapy, diagnosis, medical advice, legal advice, or financial advice.
 
