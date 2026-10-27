@@ -412,7 +412,6 @@
     .onepager {
       display: block;
       color: #141414;
-      zoom: 0.88;
       width: 640px;
       max-width: 86%;
       margin: 0 auto;
@@ -434,14 +433,16 @@
   .onepager .opletter {
     background: #F0EBFC;
     border-left: 5px solid #CDC1F8;
-    border-radius: 12px;
-    padding: 12px 16px;
-    font-size: 9.5px;
-    line-height: 1.45;
+    border-radius: 14px;
+    padding: 20px 24px;
+    font-size: 11px;
+    line-height: 1.6;
     white-space: pre-line;
-    margin: 0 0 6px;
+    margin: 0 0 10px;
   }
-  .onepager .opfoot { font-size: 8.5px; color: #777; margin-top: 12px; text-align: center; }
+  .onepager .opfoot { font-size: 8.5px; color: #777; margin-top: 14px; text-align: center; }
+  .oppage1 { break-after: page; page-break-after: always; }
+  .onepager .opmaptitle { font-size: 19px; font-weight: 800; letter-spacing: -0.02em; margin: 2px 0 10px; }
 
   footer.site {
     margin-top: 36px;
@@ -486,7 +487,7 @@
     <p class="sig">A job tells you what you do. An ordinary day tells you what life you choose.</p>
     <div class="heropills">
       <button id="btnListenHero" type="button">🎧 Listen to your future self</button>
-      <button id="btnPdfHero" type="button">⬇ Download the letter</button>
+      <button id="btnPdfHero" type="button">⬇ Download your card</button>
     </div>
     <div class="ctarow">
       <button class="primary" id="btnStart" type="button">Start with one question</button>
@@ -515,7 +516,7 @@
     <svg class="hand-underline thin" viewBox="0 0 210 12" aria-hidden="true"><path d="M4 7 C 40 2, 90 10, 130 5 C 165 2, 190 8, 206 5"/></svg>
     <div class="outbar">
       <button class="primary" id="btnListen" type="button">▶ Listen</button>
-      <button id="btnPdf" type="button">⬇ Save as PDF</button>
+      <button id="btnPdf" type="button">⬇ Save your card (PDF)</button>
     </div>
 
     <p id="lettertext"></p>
@@ -857,6 +858,7 @@
   }
   function renderOnePager() {
     var h = [];
+    h.push('<div class="oppage1">');
     h.push('<span class="opblock">Life Designer Pro</span>');
     h.push('<svg class="ann thin op-spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 v6 M12 16 v6 M2 12 h6 M16 12 h6"/></svg>');
     h.push('<div class="opdate">A note from my future self \u00b7 ' + new Date().toLocaleDateString() +
@@ -864,10 +866,13 @@
     h.push('<svg class="ann thin op-bg1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 v5 M12 16 v5 M3 12 h5 M16 12 h5"/></svg>');
     h.push('<svg class="ann thin op-bg2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 v5 M12 16 v5 M3 12 h5 M16 12 h5"/></svg>');
     h.push('<div class="opletter">\ud83d\udc8c\n\n' + esc(letterText()) + "</div>");
-    h.push('<div class="opmaplabel">My life map</div>');
-    h.push('<div class="lifemap">' + buildMapHtml() + "</div>");
     h.push('<div class="hand op-sum"><svg class="thin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 v5 M12 16 v5 M3 12 h5 M16 12 h5"/></svg>An ordinary day that finally feels like yours.<svg class="thin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 v5 M12 16 v5 M3 12 h5 M16 12 h5"/></svg></div>');
-    h.push('<div class="opfoot">Life Designer Pro \u00a9 2026 Weiwei Hu. All rights reserved.</div>');
+    h.push("</div>");
+    h.push('<div class="oppage2">');
+    h.push('<div class="opmaptitle">My life map</div>');
+    h.push('<div class="lifemap">' + buildMapHtml() + "</div>");
+    h.push('<div class="opfoot">Print double-sided (flip on the short edge) to make this a card. \u00b7 Life Designer Pro \u00a9 2026 Weiwei Hu. All rights reserved.</div>');
+    h.push("</div>");
     byId("onepager").innerHTML = h.join("");
   }
 
