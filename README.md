@@ -70,8 +70,6 @@ Life Designer Pro is created by [Weiwei Hu](https://www.linkedin.com/in/weiweihu
 
 Weiwei Hu · [LinkedIn](https://www.linkedin.com/in/weiweihu/) · [Website](https://weiweihu.carrd.co/)
 
-If this helped you find your real question, she would love to hear what it turned out to be.
-
 ## License
 
 © 2026 Weiwei Hu. All rights reserved. Free to use at the link above; do not copy, redistribute, or adapt without permission.
