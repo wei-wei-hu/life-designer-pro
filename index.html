@@ -291,6 +291,14 @@
   .ctarow { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
   .ctarow button { padding: 7px 14px; font-size: 12.5px; white-space: nowrap; }
   .privline { font-size: 12.5px; color: var(--muted); margin: 12px 0 0; }
+  .namebar { display: flex; align-items: center; gap: 12px; margin: 24px 0 2px; }
+  .namebar .nblabel { font-size: 21px; color: var(--muted); }
+  .namebar input {
+    font: inherit; font-size: 14px; font-weight: 600; width: 200px;
+    border: 1.5px solid var(--ink); border-radius: 999px; padding: 7px 16px;
+    background: var(--white); color: var(--ink);
+  }
+  .returnline { font-family: "Caveat", cursive; font-size: 18.5px; color: var(--muted); margin: -6px 0 16px; }
   .grouphead { font-size: 16px; font-weight: 800; letter-spacing: -0.01em; margin: 26px 0 10px; }
   .grouphead::after { content: ""; display: block; width: 36px; height: 5px; border-radius: 3px; margin-top: 4px; }
   .gh-lime::after { background: var(--lime); }
@@ -457,6 +465,7 @@
     margin-bottom: 4mm;
   }
   .p-front h2 { font-size: 36px; font-weight: 800; letter-spacing: -0.035em; line-height: 1.02; margin: 0; }
+  .p-front .forline { font-family: "Caveat", cursive; font-size: 26px; color: var(--ink); margin-top: 5mm; }
   .p-front .fhand { font-family: "Caveat", cursive; font-size: 22px; color: var(--muted); margin-top: 9mm; }
   .p-front .fsquig { position: absolute; top: 9mm; right: 10mm; width: 32mm; }
   /* inside: map fills the top half, letter fills the bottom half */
@@ -539,6 +548,10 @@
 
 
   <div id="lmgrid">
+    <div class="namebar">
+      <span class="hand nblabel">This one is for…</span>
+      <input id="f-name" type="text" placeholder="Your first name" autocomplete="off">
+    </div>
     <div class="grouphead gh-lime">Start here</div>
     <div class="cards" id="grp1"></div>
     <div class="grouphead gh-lilac">Explore your future</div>
@@ -563,6 +576,7 @@
     <p class="ainote" id="ainote" hidden></p>
 
     <p id="lettertext"></p>
+    <p class="returnline" id="returnline" hidden></p>
     <div class="label maplabel">🗺️ Your life map</div>
     <div class="lifemap" id="mapgrid"></div>
   </section>
@@ -581,7 +595,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card19</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card20</span></p>
   </footer>
 </div>
 
@@ -640,6 +654,7 @@
   var FIELD_BLOCKS = BLOCKS.filter(function (b) { return b; });
 
   var EXAMPLE = {
+    name: "Elena",
     snap: { wellbeing: "5", work: "7", love: "6", fun: "4", learning: "6",
             community: "4", financial: "6", contribution: "8" },
     focus:      "Community. I know almost nobody outside school anymore.",
@@ -656,7 +671,7 @@
     help:       "My students: someone who notices when they are struggling\nNew teachers: lesson plans that actually work"
   };
 
-  var EXAMPLE_AI_LETTER = "Hey. It's you, two years from now. I have been waiting for a chance to answer this one properly.\n\nI remember where you were. Eleven years into teaching science, parents three hours away and getting older, weekends disappearing into grading. You asked whether you should move back to your hometown. From here, that looks like it may also have been a question about who is in your week. Your own numbers said it first: meaning sat at an 8, community sat at a 4, your lowest. The gap between those two numbers may be most of the question.\n\nPut two more of your answers side by side and something shows. You swore to protect summers off with real rest, and in the same breath described weekends that vanish into grading late at night. The drain you named was already living inside the thing you wanted to protect. No wonder the move felt heavy; it was carrying that too.\n\nYou drew three roads, and the one with a kitchen table in it was the middle one: a smaller school, dinner at your parents' place on Wednesdays. The others stayed real. And I notice you put morning runs and lab days, the hours that fuel you, into every version. Those were never up for negotiation, which tells you what actually travels with you.\n\nSo the experiment was the right size: two full weekends there this month, not holidays. Ordinary Tuesdays in disguise. The point was never to decide. It was to feel what a normal week there does to you, and whether the people fill the number your ratings said was emptiest.\n\nYou once wrote down what you admired: your dad, fixing things without complaining, and your first mentor, making every kid feel seen. Those qualities gave you a way to read your own roads. A smaller school is full of kids to see.\n\nOne thing worth doing tonight: put both weekends on the calendar before grading eats them.\n\nAnd the picture you drew, a commuter train you never chose becoming a kitchen table with people around it, came with its own instruction: fewer transfers, shorter line. An ordinary day here finally feels like it belongs to us.\n\nYour future self";
+  var EXAMPLE_AI_LETTER = "Hey, Elena. It's you, two years from now. I have been waiting for a chance to answer this one properly.\n\nI remember where you were. Eleven years into teaching science, parents three hours away and getting older, weekends disappearing into grading. You asked whether you should move back to your hometown. From here, that looks like it may also have been a question about who is in your week. Your own numbers said it first: meaning sat at an 8, community sat at a 4, your lowest. The gap between those two numbers may be most of the question.\n\nPut two more of your answers side by side and something shows. You swore to protect summers off with real rest, and in the same breath described weekends that vanish into grading late at night. The drain you named was already living inside the thing you wanted to protect. No wonder the move felt heavy; it was carrying that too.\n\nYou drew three roads, and the one with a kitchen table in it was the middle one: a smaller school, dinner at your parents' place on Wednesdays. The others stayed real. And I notice you put morning runs and lab days, the hours that fuel you, into every version. Those were never up for negotiation, which tells you what actually travels with you.\n\nSo the experiment was the right size: two full weekends there this month, not holidays. Ordinary Tuesdays in disguise. The point was never to decide. It was to feel what a normal week there does to you, and whether the people fill the number your ratings said was emptiest.\n\nYou once wrote down what you admired: your dad, fixing things without complaining, and your first mentor, making every kid feel seen. Those qualities gave you a way to read your own roads. A smaller school is full of kids to see.\n\nOne thing worth doing tonight: put both weekends on the calendar before grading eats them.\n\nAnd the picture you drew, a commuter train you never chose becoming a kitchen table with people around it, came with its own instruction: fewer transfers, shorter line. An ordinary day here finally feels like it belongs to us.\n\nYour future self";
   var KEY = "life-canvas-v1";
   var byId = function (id) { return document.getElementById(id); };
   var grid = byId("lmgrid");
@@ -724,6 +739,7 @@
     FIELD_BLOCKS.forEach(function (b) { v[b.id] = byId("f-" + b.id).value; });
     AREAS.forEach(function (a) { v.snap[a.id] = byId("s-" + a.id).value; });
     v.focus = byId("f-focus").value;
+    v.name = byId("f-name").value;
     return v;
   }
   function setValues(v) {
@@ -732,6 +748,7 @@
     var snap = v.snap || {};
     AREAS.forEach(function (a) { byId("s-" + a.id).value = snap[a.id] || ""; });
     byId("f-focus").value = v.focus || "";
+    byId("f-name").value = v.name || "";
     updateBars();
     autosizeAll();
   }
@@ -852,7 +869,8 @@
     }
     var p = [];
     {
-      var started = "Hey. It's you, two years from now. " + pick(seed, 1, [
+      var who = (v.name || "").trim();
+      var started = "Hey" + (who ? ", " + who : "") + ". It's you, two years from now. " + pick(seed, 1, [
         "I have been hoping you would sit down and do this.",
         "I was glad when you finally sat down to do this.",
         "I kept this one short, the way you like it."
@@ -979,6 +997,13 @@
   }
   function renderLetter() {
     byId("lettertext").textContent = letterText();
+    var rl = byId("returnline");
+    var hasContent = letterText().indexOf("Fill in a few boxes") !== 0;
+    if (hasContent) {
+      var d30 = new Date(Date.now() + 30 * 86400000);
+      rl.textContent = "📌 Worth re-reading on " + d30.toLocaleDateString(undefined, { month: "long", day: "numeric" }) + ". Your answers stay saved in this browser, so this page will remember you.";
+      rl.hidden = false;
+    } else rl.hidden = true;
     byId("mapgrid").innerHTML = buildMapHtml();
   }
   function renderStory() {
@@ -997,6 +1022,7 @@
       '<div class="femoji">\ud83d\udc8c</div>' +
       '<span class="fblock">A note</span>' +
       "<h2>from your<br>future self</h2>" +
+      (function () { var n = (values().name || "").trim(); return n ? '<div class="fhand forline">for ' + esc(n) + "</div>" : ""; })() +
       '<div class="fhand">An ordinary day that finally feels like yours.</div></div>');
     h.push("</div>");
     // Sheet 2, inside: map fills the top half, letter fills the bottom half
@@ -1004,7 +1030,7 @@
     h.push('<div class="cpanel p-map"><h3>My life map</h3><div class="lifemap">' + buildMapHtml() + "</div></div>");
     h.push('<div class="foldmark"></div>');
     h.push('<div class="cpanel p-letter">' +
-      '<div class="ldate">\ud83d\udc8c A note from my future self \u00b7 ' + new Date().toLocaleDateString() + "</div>" +
+      '<div class="ldate">\ud83d\udc8c ' + (function () { var n = (values().name || "").trim(); return n ? "For " + esc(n) + ", from your future self" : "A note from my future self"; })() + " \u00b7 " + new Date().toLocaleDateString() + "</div>" +
       '<svg class="lwave thin" viewBox="0 0 150 8" aria-hidden="true"><path d="M3 5 C 25 1, 55 7, 80 4 C 105 1, 130 6, 147 3"/></svg>' +
       '<div class="ltext">' + esc(letterText()) + "</div>" +
       '<div class="handwrite"><div class="hp">Some room left on purpose. Add a line in your own hand:</div><div class="hline"></div><div class="hline"></div></div></div>');
@@ -1063,6 +1089,7 @@
   function answersText() {
     var v = values();
     var parts = ["My answers:"];
+    if ((v.name || "").trim()) parts.push("This letter is for: " + v.name.trim());
     FIELD_BLOCKS.forEach(function (b) {
       var val = (v[b.id] || "").trim();
       if (val) parts.push(b.title + ": " + val.replace(/\n/g, "; "));
