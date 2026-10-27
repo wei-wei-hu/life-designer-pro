@@ -571,7 +571,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card5</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card6</span></p>
   </footer>
 </div>
 
@@ -795,12 +795,13 @@
         if (focus && /energy/i.test(focus)) deeper = "where your energy was going";
         else if (drains.length && /meeting|email|call|status|shift/i.test(drains.join(" "))) deeper = "how much of your week you were giving away";
         else if (tr.length && focus && /famil|love|relation|kid|partner/i.test(focus)) deeper = "who gets your best hours";
+        else if (focus && /communi|friend|alone|nobody|lonel/i.test(focus)) deeper = "who is around you in a normal week";
         p.push("You asked: " + lc(q[0]) + " What looked like a question about what to do may also have been a question about " + deeper + ".");
       }
       var frame = "";
       if (tr.length) {
         frame = "An ordinary week has the things you said you'd protect in it now: " + joinNice(tr, 3) + ".";
-        if (gives.length) frame += " You found more room for " + lc(gives[0]) + ".";
+        if (gives.length && !drains.length) frame += " You found more room for " + lc(gives[0]) + ".";
       } else if (gives.length) {
         frame = "You found more room for " + joinNice(gives, 2) + ". That changed the week more than any title did.";
       }
@@ -823,11 +824,11 @@
           }
         });
         if (hq.length) {
-          var hline = "The " + hq[0].q + " you admired in " + hq[0].n;
-          if (hq[1]) hline += ", and the " + hq[1].q + " you saw in " + hq[1].n + ",";
+          var hline = "You once wrote down what you admired in " + hq[0].n + ": " + hq[0].q + ".";
+          if (hq[1]) hline += " And in " + hq[1].n + ": " + hq[1].q + ".";
           hline += tr.length
-            ? " started showing up in the way you protected " + lc(tr[0]) + "."
-            : " started showing up more clearly in your own choices.";
+            ? " It started showing up in how you protect " + lc(tr[0]) + "."
+            : " It started showing up in your own choices.";
           p.push(hline);
         } else {
           p.push("The qualities you admired in your heroes kept showing up in the choices you made.");
