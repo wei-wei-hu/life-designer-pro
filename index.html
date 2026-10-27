@@ -403,46 +403,79 @@
   .mscore { display: grid; grid-template-columns: 1fr 34px 14px; gap: 5px; align-items: center; font-size: 9.5px; margin-top: 2px; }
   .mbar { height: 4px; border-radius: 2px; background: rgba(20, 20, 20, 0.1); overflow: hidden; }
   .mbar i { display: block; height: 100%; background: var(--ink); }
-  /* ---- the printable one-pager (shown only when saving as PDF) ---- */
+  /* ---- the printable folded card ---- */
   .onepager { display: none; }
   @media print {
-    @page { margin: 7mm; size: A4; }
-    body { background: #F2EDE8 !important; padding: 0; }
+    @page { size: A4 landscape; margin: 0; }
+    body { background: #fff; padding: 0; margin: 0; }
     .wrap > *:not(.onepager) { display: none !important; }
     .onepager {
       display: block;
       color: #141414;
-      width: 640px;
-      max-width: 86%;
-      margin: 0 auto;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
   }
-  .onepager .opblock {
+  .cardsheet {
+    width: 296mm;
+    height: 208mm;
+    display: flex;
+    background: #F2EDE8;
+    overflow: hidden;
+    position: relative;
+  }
+  .sheet1 { break-after: page; page-break-after: always; }
+  .cpanel {
+    width: 50%;
+    height: 100%;
+    padding: 12mm;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .foldmark { position: absolute; left: 50%; top: 5mm; bottom: 5mm; border-left: 1px dashed rgba(20, 20, 20, 0.15); }
+  /* front cover */
+  .p-front { align-items: center; justify-content: center; text-align: center; }
+  .p-front .femoji { font-size: 44px; margin-bottom: 7mm; }
+  .p-front .fblock {
     display: inline-block;
     background: var(--lilac);
-    border-radius: 4px;
-    padding: 0 10px 2px;
+    border-radius: 5px;
+    padding: 2px 16px 4px;
     font-weight: 800;
-    font-size: 14px;
+    font-size: 21px;
     letter-spacing: -0.01em;
+    margin-bottom: 4mm;
   }
-  .onepager h2 { font-weight: 800; font-size: 27px; letter-spacing: -0.035em; margin: 3px 0 1px; }
-  .onepager .opdate { font-size: 9.5px; color: var(--muted); margin: 0 0 9px; }
-  .onepager .opletter {
-    background: #F0EBFC;
-    border-left: 5px solid #CDC1F8;
-    border-radius: 14px;
-    padding: 20px 24px;
-    font-size: 11px;
-    line-height: 1.6;
-    white-space: pre-line;
-    margin: 0 0 10px;
-  }
-  .onepager .opfoot { font-size: 8.5px; color: #777; margin-top: 14px; text-align: center; }
-  .oppage1 { break-after: page; page-break-after: always; }
-  .onepager .opmaptitle { font-size: 19px; font-weight: 800; letter-spacing: -0.02em; margin: 2px 0 10px; }
+  .p-front h2 { font-size: 34px; font-weight: 800; letter-spacing: -0.035em; line-height: 1.02; margin: 0; }
+  .p-front .fhand { font-family: "Caveat", cursive; font-size: 21px; color: var(--muted); margin-top: 9mm; }
+  .p-front .fsquig { position: absolute; top: 10mm; right: 10mm; width: 34mm; }
+  /* back cover */
+  .p-back { align-items: center; justify-content: flex-end; text-align: center; padding-bottom: 18mm; }
+  .p-back svg { width: 16px; height: 16px; margin-bottom: 4mm; stroke: #8F7BE0; }
+  .p-back .bl { font-size: 8.5px; color: #777; line-height: 1.8; }
+  /* inside left: the map */
+  .p-map h3 { font-size: 15px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 4mm; }
+  .cpanel .lifemap { gap: 4px; margin-top: 0; }
+  .cpanel .mrow { gap: 6px; }
+  .cpanel .mtile { padding: 4px 8px; border-width: 1px; border-radius: 8px; box-shadow: 2px 2px 0 rgba(20, 20, 20, 0.85); }
+  .cpanel .mtile li { font-size: 7.5px; line-height: 1.3; margin: 0; }
+  .cpanel .mtile ul { padding-left: 11px; }
+  .cpanel .mt { font-size: 6.5px; padding: 1px 6px; margin-bottom: 3px; }
+  .cpanel .mq .qtext { font-size: 10px; }
+  .cpanel .mname { font-size: 8.5px; }
+  .cpanel .mday { font-size: 7.5px; }
+  .cpanel .mempty { font-size: 7.5px; }
+  .cpanel .mconn { margin: -2px 0; }
+  .cpanel .mconn .hand { font-size: 10.5px; }
+  .cpanel .mconn svg { width: 8px; height: 11px; }
+  .cpanel .mscore { font-size: 6.5px; grid-template-columns: 1fr 26px 10px; gap: 4px; margin-top: 1px; }
+  .cpanel .mbar { height: 3px; }
+  /* inside right: the letter */
+  .p-letter .ldate { font-size: 8.5px; color: var(--muted); margin-bottom: 2mm; }
+  .p-letter .lwave { display: block; width: 120px; height: 7px; stroke: #8F7BE0; margin: 1mm 0 3mm; }
+  .p-letter .ltext { font-size: 9px; line-height: 1.5; white-space: pre-line; flex: 1; overflow: hidden; }
 
   footer.site {
     margin-top: 36px;
@@ -538,7 +571,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved.</p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card</span></p>
   </footer>
 </div>
 
@@ -858,20 +891,27 @@
   }
   function renderOnePager() {
     var h = [];
-    h.push('<div class="oppage1">');
-    h.push('<span class="opblock">Life Designer Pro</span>');
-    h.push('<svg class="ann thin op-spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 v6 M12 16 v6 M2 12 h6 M16 12 h6"/></svg>');
-    h.push('<div class="opdate">A note from my future self \u00b7 ' + new Date().toLocaleDateString() +
-      '<svg class="date-wave thin" viewBox="0 0 150 8" aria-hidden="true"><path d="M3 5 C 25 1, 55 7, 80 4 C 105 1, 130 6, 147 3"/></svg></div>');
-    h.push('<svg class="ann thin op-bg1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 v5 M12 16 v5 M3 12 h5 M16 12 h5"/></svg>');
-    h.push('<svg class="ann thin op-bg2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 v5 M12 16 v5 M3 12 h5 M16 12 h5"/></svg>');
-    h.push('<div class="opletter">\ud83d\udc8c\n\n' + esc(letterText()) + "</div>");
-    h.push('<div class="hand op-sum"><svg class="thin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 v5 M12 16 v5 M3 12 h5 M16 12 h5"/></svg>An ordinary day that finally feels like yours.<svg class="thin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 v5 M12 16 v5 M3 12 h5 M16 12 h5"/></svg></div>');
+    // Sheet 1, outside: back cover (left) + front cover (right)
+    h.push('<div class="cardsheet sheet1">');
+    h.push('<div class="cpanel p-back">' +
+      '<svg class="thin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 v5 M12 16 v5 M3 12 h5 M16 12 h5"/></svg>' +
+      '<div class="bl">Made with Life Designer Pro \u00b7 wei-wei-hu.github.io/life-designer-pro<br>\u00a9 2026 Weiwei Hu. All rights reserved.<br>Print both pages double-sided (flip on the short edge), then fold down the middle.</div></div>');
+    h.push('<div class="foldmark"></div>');
+    h.push('<div class="cpanel p-front">' +
+      '<svg class="fsquig" viewBox="0 0 200 170" fill="none" aria-hidden="true"><path d="M18 14 C 118 -12, 192 62, 152 136" stroke="#CDC1F8" stroke-width="8" stroke-linecap="round"/><path d="M136 124 L153 158 L168 126 Z" fill="#CDC1F8"/></svg>' +
+      '<div class="femoji">\ud83d\udc8c</div>' +
+      '<span class="fblock">A note</span>' +
+      "<h2>from your<br>future self</h2>" +
+      '<div class="fhand">An ordinary day that finally feels like yours.</div></div>');
     h.push("</div>");
-    h.push('<div class="oppage2">');
-    h.push('<div class="opmaptitle">My life map</div>');
-    h.push('<div class="lifemap">' + buildMapHtml() + "</div>");
-    h.push('<div class="opfoot">Print double-sided (flip on the short edge) to make this a card. \u00b7 Life Designer Pro \u00a9 2026 Weiwei Hu. All rights reserved.</div>');
+    // Sheet 2, inside: map (left) + letter (right)
+    h.push('<div class="cardsheet">');
+    h.push('<div class="cpanel p-map"><h3>My life map</h3><div class="lifemap">' + buildMapHtml() + "</div></div>");
+    h.push('<div class="foldmark"></div>');
+    h.push('<div class="cpanel p-letter">' +
+      '<div class="ldate">\ud83d\udc8c A note from my future self \u00b7 ' + new Date().toLocaleDateString() + "</div>" +
+      '<svg class="lwave thin" viewBox="0 0 150 8" aria-hidden="true"><path d="M3 5 C 25 1, 55 7, 80 4 C 105 1, 130 6, 147 3"/></svg>' +
+      '<div class="ltext">' + esc(letterText()) + "</div></div>");
     h.push("</div>");
     byId("onepager").innerHTML = h.join("");
   }
