@@ -386,6 +386,10 @@
     padding: 2px 9px;
     margin-bottom: 6px;
   }
+  .mtile.t-lime { background: var(--lime); }
+  .mtile.t-yellow { background: var(--yellow); }
+  .mtile.t-lilac { background: var(--lilac); }
+  .mtile.t-pink { background: var(--pink); }
   .mtile ul { margin: 0; padding-left: 15px; }
   .mtile li { font-size: 11.5px; line-height: 1.45; margin: 1px 0; }
   .mempty { font-size: 11px; font-style: italic; color: var(--muted); }
@@ -402,13 +406,14 @@
   /* ---- the printable one-pager (shown only when saving as PDF) ---- */
   .onepager { display: none; }
   @media print {
-    @page { margin: 8mm; size: A4; }
+    @page { margin: 7mm; size: A4; }
     body { background: #F2EDE8 !important; padding: 0; }
     .wrap > *:not(.onepager) { display: none !important; }
     .onepager {
       display: block;
       color: #141414;
-      width: 620px;
+      zoom: 0.88;
+      width: 640px;
       max-width: 86%;
       margin: 0 auto;
       -webkit-print-color-adjust: exact;
@@ -430,11 +435,11 @@
     background: #F0EBFC;
     border-left: 5px solid #CDC1F8;
     border-radius: 12px;
-    padding: 13px 18px;
-    font-size: 10px;
-    line-height: 1.5;
+    padding: 12px 16px;
+    font-size: 9.5px;
+    line-height: 1.45;
     white-space: pre-line;
-    margin: 0 0 8px;
+    margin: 0 0 6px;
   }
   .onepager .opfoot { font-size: 8.5px; color: #777; margin-top: 12px; text-align: center; }
 
@@ -837,10 +842,10 @@
     });
     prow.push("</div>");
     h.push(prow.join(""));
-    h.push(conn("tried first as one small step"));
-    h.push('<div class="mtile"><span class="mt">The small test</span>' + items(lines(v.experiment), 2) + "</div>");
-    h.push(conn("carried along on every road"));
-    h.push('<div class="mtile t-pink"><span class="mt">What you protect</span>' + items(lines(v.travels)) + "</div>");
+    h.push(conn("tested by one small step, carried by what you protect"));
+    h.push('<div class="mrow">' +
+      '<div class="mtile"><span class="mt">The small test</span>' + items(lines(v.experiment), 2) + "</div>" +
+      '<div class="mtile t-pink"><span class="mt">What you protect</span>' + items(lines(v.travels)) + "</div></div>");
     return h.join("");
   }
   function renderLetter() {
@@ -1007,6 +1012,7 @@
     btnListen.hidden = true;
   }
 
+  if (/[?&]print=1/.test(location.search)) { loadExample(); renderOnePager(); }
   if (!load()) setValues({});
   renderStory();
 })();
