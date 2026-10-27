@@ -488,9 +488,23 @@
   .cpanel .mbar { height: 3px; }
   .p-letter .ldate { font-size: 9px; color: var(--muted); margin-bottom: 1mm; }
   .p-letter .lwave { display: block; width: 120px; height: 7px; stroke: #8F7BE0; margin: 1mm 0 3mm; }
-  .p-letter { padding-bottom: 10mm; }
-  .p-letter .ltext { font-size: 9px; line-height: 1.48; white-space: pre-line; flex: 1; overflow: hidden; column-count: 2; column-gap: 8mm; }
-  .p-letter .insidefoot { margin-top: 8mm; text-align: center; font-size: 8px; color: #777; }
+  .p-letter { padding-bottom: 8mm; }
+  .p-letter .ltext { font-size: 8px; line-height: 1.42; white-space: pre-line; flex: 1; overflow: hidden; }
+  .p-letter .insidefoot { margin-top: 2.5mm; text-align: center; font-size: 8px; color: #777; }
+  .vwrap { margin-top: 2.5mm; }
+  .vtitle { font-family: "Caveat", cursive; font-size: 14px; margin: 0 0 1.5mm; }
+  .vprompt {
+    background: var(--lilac);
+    border: 1px solid rgba(20, 20, 20, 0.3);
+    border-radius: 8px;
+    padding: 2mm 3.5mm;
+    box-shadow: 2px 2px 0 rgba(20, 20, 20, 0.45);
+    transform: rotate(-0.4deg);
+    font-size: 7px;
+    line-height: 1.45;
+    white-space: pre-line;
+  }
+  .vhow { font-size: 7.5px; color: #777; margin-top: 1.5mm; }
 
   .modal[hidden] { display: none !important; }
   .modal {
@@ -634,9 +648,8 @@
       <a class="pill" href="https://www.linkedin.com/in/weiweihu" rel="noopener">LinkedIn</a>
       <a class="pill" href="https://github.com/wei-wei-hu/life-designer-pro" rel="noopener">GitHub</a>
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
-      <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card37</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card38</span></p>
   </footer>
 </div>
 
@@ -1061,6 +1074,40 @@
   function renderStory() {
     renderLetter();
   }
+  function buildVisionPrompt() {
+    var v = values();
+    var mt = lines(v.metaphor).filter(function (l) { return !/^how\s*[:,]/i.test(l); }).map(function (l) { return l.replace(/^(today|tomorrow)\s*[:,]\s*/i, ""); });
+    var tr = lines(v.travels).slice(0, 3);
+    var en = lines(v.energy).filter(function (l) { return !/^drain/i.test(l); }).map(function (l) { return l.replace(/^(gave|gives?)\s*[:,]?\s*/i, ""); }).slice(0, 2);
+    var ex = lines(v.experiment).slice(0, 1);
+    var hp = lines(v.help).slice(0, 1).map(function (l) { return l.split(/[:\u2014\u2013]|( - )/)[0].trim(); });
+    var focus = (v.focus || "").trim().split(/[.!?]/)[0].trim();
+    if (!mt.length && !tr.length && !en.length) return "";
+    var objs = [];
+    tr.forEach(function (l) { return objs.push(lc(l) + " (what travels with you)"); });
+    en.forEach(function (l) { return objs.push(lc(l) + " (what fuels you)"); });
+    if (ex.length) objs.push("a small sign of the experiment underway: " + lc(ex[0]));
+    if (hp.length && hp[0]) objs.push("a second place in the scene for " + lc(hp[0]));
+    if (focus) objs.push("visible care given to " + lc(focus));
+    var p = [];
+    p.push("Create one 16:9 editorial image of your next chapter, told through objects in a single scene.");
+    if (mt.length === 2) p.push("Central visual idea: a scene caught midway between " + lc(mt[0]) + " and " + lc(mt[1]) + ".");
+    else if (mt.length) p.push("Central visual idea: " + lc(mt[0]) + ".");
+    if (objs.length) p.push("Specific objects and their meaning: " + objs.join("; ") + ".");
+    p.push("Environment: a calm interior at dusk, one large window, natural light.");
+    p.push("Composition: one coherent scene, no collage, strong negative space, layered depth.");
+    p.push("Aesthetic: refined, contemporary, understated, personal.");
+    p.push("Exclude: people, generic desk scenes, corporate slide look, clich\u00e9s, logos, illegible text.");
+    return p.join("\n");
+  }
+  function buildVisionHtml() {
+    var prompt = buildVisionPrompt();
+    if (!prompt) return "";
+    var nm = (values().name || "").trim();
+    return '<div class="vwrap"><div class="vtitle">\ud83d\uddbc ' + (nm ? esc(nm) + "\u2019s vision, as an image" : "My vision, as an image") + "</div>" +
+      '<div class="vprompt">' + esc(prompt) + "</div>" +
+      '<div class="vhow">Paste this into your favorite image tool to see it.</div></div>';
+  }
   function renderOnePager() {
     var h = [];
     // Sheet 1, outside: back cover (top, rotated) + front cover (bottom)
@@ -1086,6 +1133,7 @@
       '<div class="ldate">\ud83d\udc8c ' + (function () { var n = (values().name || "").trim(); return n ? "For " + esc(n) + ", from your future self" : "A note from my future self"; })() + " \u00b7 " + new Date().toLocaleDateString() + "</div>" +
       '<svg class="lwave thin" viewBox="0 0 150 8" aria-hidden="true"><path d="M3 5 C 25 1, 55 7, 80 4 C 105 1, 130 6, 147 3"/></svg>' +
       '<div class="ltext">' + esc(letterText()) + "</div>" +
+      buildVisionHtml() +
       '<div class="insidefoot">Life Designer Pro \u00b7 \u00a9 2026. All rights reserved.</div></div>');
     h.push("</div>");
     byId("onepager").innerHTML = h.join("");
@@ -1221,8 +1269,8 @@
           try { localStorage.setItem("ldp-letter-pass", d.token); } catch (e) {}
           note("Unlocked. Writing your letter…");
           aiWrite();
-        } else note("Payment could not be confirmed. If you were charged, contact underlineai@gmail.com.");
-      }).catch(function () { note("Payment could not be confirmed. If you were charged, contact underlineai@gmail.com."); });
+        } else note("Payment could not be confirmed. If you were charged, reach out on LinkedIn.");
+      }).catch(function () { note("Payment could not be confirmed. If you were charged, reach out on LinkedIn."); });
   })();
   if (navigator.share) {
     var shareBtn = byId("btnShare");
