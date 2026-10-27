@@ -34,7 +34,7 @@ Inspired by ideas from [*Designing Your Life*](https://designingyour.life/) by B
 
 ## Author
 
-Weiwei Hu · [LinkedIn](https://www.linkedin.com/in/weiweihu/) · [weiweihu.carrd.co](https://weiweihu.carrd.co/)
+Weiwei Hu · [LinkedIn](https://www.linkedin.com/in/weiweihu/) · [Website](https://weiweihu.carrd.co/)
 
 ## License
 
