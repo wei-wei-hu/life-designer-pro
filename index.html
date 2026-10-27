@@ -491,7 +491,7 @@
   .p-letter { padding-bottom: 8mm; }
   .p-letter .ltext { font-size: 8px; line-height: 1.42; white-space: pre-line; flex: 1; overflow: hidden; }
   .p-letter .insidefoot { margin-top: 2.5mm; text-align: center; font-size: 8px; color: #777; }
-  .vwrap { margin-top: 2.5mm; }
+  .vwrap { margin-top: 2mm; }
   .vtitle { font-family: "Caveat", cursive; font-size: 14px; margin: 0 0 1.5mm; }
   .vprompt {
     background: var(--lilac);
@@ -508,7 +508,7 @@
   .vimg {
     display: block;
     width: 100%;
-    height: 52mm;
+    height: 31mm;
     object-fit: cover;
     border: 1px solid rgba(20, 20, 20, 0.3);
     border-radius: 8px;
@@ -659,7 +659,7 @@
       <a class="pill" href="https://github.com/wei-wei-hu/life-designer-pro" rel="noopener">GitHub</a>
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card40</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card41</span></p>
   </footer>
 </div>
 
@@ -1178,13 +1178,8 @@
     setValues(EXAMPLE);
     aiLetter = EXAMPLE_AI_LETTER;
     aiHash = seedOf(values());
-    var exImg = new Image();
-    exImg.onload = function () {
-      if (!fromExample) return;
-      aiImage = EXAMPLE_AI_IMAGE;
-      aiImageHash = seedOf(values());
-    };
-    exImg.src = EXAMPLE_AI_IMAGE;
+    aiImage = EXAMPLE_AI_IMAGE;
+    aiImageHash = aiHash;
     renderStory();
     note('This example letter was written by the AI from the answers above. Members get theirs written the same way; message <a href="https://www.linkedin.com/in/weiweihu" rel="noopener">Weiwei Hu on LinkedIn</a> for access.');
     save();
