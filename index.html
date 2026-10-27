@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Life Designer Pro</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500;600&display=swap">
+<style>
+  /* Single committed theme: blush paper + black slides with candy pastels (the chosen template's world). */
+  :root {
+    --paper: #F2EDE8;
+    --ink: #141414;
+    --muted: #6F6A64;
+    --border: rgba(20, 20, 20, 0.08);
+    --white: #FFFFFF;
+    --lilac: #CDC1F8;
+    --lime: #D5F7A1;
+    --yellow: #F6F07D;
+    --pink: #FAC8EF;
+    --violet: #8F7BE0;
+    --black-card: #141414;
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: light; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    padding: 0 18px 60px;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; }
+
+  /* ---- header ---- */
+  header.poster {
+    position: relative;
+    padding: 52px 8px 6px;
+  }
+  .poster .block {
+    display: inline-block;
+    background: var(--lilac);
+    border-radius: 4px;
+    padding: 2px 16px 4px;
+    font-weight: 800;
+    font-size: clamp(24px, 4vw, 38px);
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+  .poster h1 {
+    font-weight: 700;
+    font-size: clamp(44px, 8vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .poster .byline { font-size: 13.5px; font-weight: 600; margin: 0 0 10px; }
+  .poster .byline a { color: var(--ink); }
+  .poster .subtitle {
+    font-size: 15.5px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    max-width: 56ch;
+  }
+  .poster .subtitle mark { background: var(--yellow); padding: 0 4px; border-radius: 3px; }
+  .poster .subtitle mark.lm { background: var(--lilac); font-weight: 800; padding: 0 8px 2px; border-radius: 4px; }
+  .poster .how { font-size: 13.5px; color: var(--muted); margin: 0; max-width: 66ch; }
+  .squiggle { position: absolute; pointer-events: none; }
+  .sq1 { top: 34px; right: 30px; width: 150px; }
+  .heropills {
+    position: absolute;
+    top: 196px;
+    right: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+  .heropills button {
+    white-space: nowrap;
+    font-size: 15px;
+    font-weight: 800;
+    padding: 12px 22px;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    box-shadow: 3px 4px 0 var(--ink);
+    transition: transform 0.12s, box-shadow 0.12s;
+  }
+  .heropills button:hover {
+    transform: translate(-1px, -2px);
+    box-shadow: 5px 6px 0 var(--ink);
+  }
+  #btnListenHero { background: var(--lilac); }
+  #btnListenHero:hover { background: var(--lilac); color: var(--ink); }
+  #btnPdfHero { background: var(--yellow); }
+  #btnPdfHero:hover { background: var(--yellow); color: var(--ink); }
+  @media (max-width: 860px) { .sq1, .heropills { display: none; } }
+
+  /* ---- toolbar ---- */
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 22px 0 18px;
+    padding: 0 8px;
+  }
+  .toolbar .hint { font-size: 12.5px; color: var(--muted); width: 100%; }
+  button {
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 999px;
+    border: 1.5px solid var(--ink);
+    background: var(--white);
+    color: var(--ink);
+    padding: 7px 16px;
+    cursor: pointer;
+  }
+  button:hover { background: var(--violet); border-color: var(--violet); color: #fff; }
+  button.primary { background: var(--ink); color: var(--white); }
+  button.primary:hover { background: #333; }
+  button:focus-visible, textarea:focus-visible, input:focus-visible, a:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+  #btnTalk.listening { background: var(--yellow); border-color: var(--ink); color: var(--ink); }
+  @media (prefers-reduced-motion: no-preference) {
+    #btnTalk.listening { animation: talkpulse 1.2s ease-in-out infinite; }
+  }
+  @keyframes talkpulse { 50% { opacity: 0.65; } }
+  a.ghbtn {
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 999px;
+    border: 1.5px solid var(--ink);
+    background: var(--ink);
+    color: var(--white);
+    padding: 7px 16px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  a.ghbtn:hover { background: #333; }
+
+  /* ---- numbered pastel cards ---- */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 980px) { .cards { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .cards { grid-template-columns: 1fr; } }
+  .card {
+    position: relative;
+    border-radius: 14px;
+    padding: 18px 18px 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  .c2 { grid-column: span 2; }
+  @media (max-width: 720px) { .c2 { grid-column: span 1; } }
+  .card .num {
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin: 0 0 4px;
+  }
+  .card h3 {
+    font-size: 16.5px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
+    padding-right: 38px;
+  }
+  .card .ask {
+    font-size: 13.5px;
+    margin: 0 0 10px;
+    line-height: 1.5;
+    padding-right: 6px;
+  }
+  .card .icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+  }
+  .card textarea {
+    font: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink);
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    resize: none;
+    overflow: hidden;
+    field-sizing: content;
+    padding: 10px 12px;
+    width: 100%;
+    flex: 1;
+    min-height: 72px;
+  }
+  .card textarea::placeholder { color: var(--muted); opacity: 0.7; }
+
+  .t-lime     { background: var(--lime); }
+  .t-lilac    { background: var(--lilac); }
+  .t-yellow   { background: var(--yellow); }
+  .t-pink     { background: var(--pink); }
+  .t-white    { background: var(--white); border: 1px solid var(--border); }
+  .t-white .icon { background: var(--lilac); }
+
+  /* the eight-areas card */
+  .scores .scale { font-size: 13px; margin: 0 0 8px; line-height: 1.5; padding-right: 38px; }
+  .snaprow {
+    display: grid;
+    grid-template-columns: 1fr 42px 46px;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .snaprow label { font-size: 12.5px; }
+  .snaprow input {
+    font: inherit;
+    font-size: 13.5px;
+    width: 46px;
+    text-align: center;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+  .snapbar { height: 8px; border-radius: 4px; background: rgba(20, 20, 20, 0.08); overflow: hidden; }
+  .snapbar i { display: block; height: 100%; width: 0; background: var(--ink); border-radius: 4px; transition: width 0.2s; }
+  .focusq { font-size: 13px; margin: 12px 0 6px; line-height: 1.5; }
+  .scores .row input[type="text"] {
+    font: inherit;
+    font-size: 13.5px;
+    width: 100%;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 7px 11px;
+  }
+  .scores .row input::placeholder { color: var(--muted); opacity: 0.75; }
+
+  /* ---- the letter from your future self ---- */
+  .letter {
+    position: relative;
+    margin: 26px 0 0;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 30px 24px;
+  }
+  .letter .label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .letter h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.015em; margin: 8px 0 8px; }
+  .letter .outbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 4px 0 26px; }
+  .letter p#lettertext {
+    font-size: 15.5px;
+    line-height: 1.7;
+    max-width: 70ch;
+    margin: 0 0 18px;
+    white-space: pre-line;
+  }
+  .letter .lnote { font-size: 12.5px; color: rgba(20, 20, 20, 0.65); margin: 10px 0 0; max-width: 64ch; }
+  #btnListen.listening { background: var(--yellow); border-color: var(--ink); color: var(--ink); }
+  @media (prefers-reduced-motion: no-preference) {
+    #btnListen.listening { animation: talkpulse 1.2s ease-in-out infinite; }
+  }
+
+  .poster .sig { font-size: 13px; font-style: italic; color: var(--muted); margin: 8px 0 0; }
+  .ctarow { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .ctarow button { padding: 7px 14px; font-size: 12.5px; white-space: nowrap; }
+  .privline { font-size: 12.5px; color: var(--muted); margin: 12px 0 0; }
+  .grouphead { font-size: 16px; font-weight: 800; letter-spacing: -0.01em; margin: 26px 0 10px; }
+  .grouphead::after { content: ""; display: block; width: 36px; height: 5px; border-radius: 3px; margin-top: 4px; }
+  .gh-lime::after { background: var(--lime); }
+  .gh-lilac::after { background: var(--lilac); }
+  .nsy {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0 0 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(20, 20, 20, 0.55);
+    text-decoration: underline dotted;
+    cursor: pointer;
+  }
+  .nsy:hover { background: none; color: var(--ink); }
+
+  .corner {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--black-card);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  /* ---- hand-drawn notes ---- */
+  .hand { font-family: "Caveat", cursive; color: var(--ink); line-height: 1.15; }
+  .thin { stroke: #141414; stroke-width: 1.4; fill: none; stroke-linecap: round; }
+  .ann { position: absolute; pointer-events: none; }
+  .hand-underline { display: block; width: 210px; height: 12px; margin: -2px 0 10px; stroke: var(--violet); }
+  .letter .note-read {
+    right: 72px;
+    top: 22px;
+    width: 92px;
+    text-align: center;
+    font-size: 19px;
+    transform: rotate(-4deg);
+  }
+  .letter .spark1 { left: 14px; top: 14px; width: 18px; height: 18px; opacity: 0.8; }
+  @media (max-width: 720px) { .letter .note-read, .letter .spark1 { display: none; } }
+
+  .onepager { position: relative; }
+  .onepager .op-spark { top: 4px; left: 168px; width: 18px; height: 18px; }
+  .onepager .op-bg1 { left: -44px; top: 250px; width: 20px; height: 20px; opacity: 0.55; }
+  .onepager .op-bg2 { right: -44px; bottom: 150px; width: 16px; height: 16px; opacity: 0.55; }
+  .onepager .date-wave { display: block; width: 150px; height: 8px; margin: 1px 0 8px; stroke: #8F7BE0; }
+  .onepager .op-sum {
+    text-align: center;
+    font-size: 20px;
+    margin: 4px 0 2px;
+  }
+  .onepager .op-sum svg { display: inline-block; vertical-align: -3px; width: 15px; height: 15px; margin: 0 6px; }
+
+  /* ---- the life map output: a flow of sticker tiles ---- */
+  .maplabel { margin-top: 12px; }
+  .lifemap {
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .mrow { display: flex; gap: 14px; }
+  .mrow > * { flex: 1; }
+  @media (max-width: 720px) { .mrow { flex-direction: column; } }
+  .mtile {
+    border: 1.5px solid var(--ink);
+    border-radius: 12px;
+    padding: 12px 15px;
+    box-shadow: 3px 4px 0 rgba(20, 20, 20, 0.9);
+    background: var(--white);
+  }
+  .mtile .mt {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: #fff;
+    border: 1px solid rgba(20, 20, 20, 0.25);
+    border-radius: 999px;
+    padding: 2px 9px;
+    margin-bottom: 6px;
+  }
+  .mtile ul { margin: 0; padding-left: 15px; }
+  .mtile li { font-size: 11.5px; line-height: 1.45; margin: 1px 0; }
+  .mempty { font-size: 11px; font-style: italic; color: var(--muted); }
+  .mq { text-align: center; }
+  .mq .qtext { font-size: 15px; font-weight: 700; max-width: 46ch; margin: 0 auto; }
+  .mname { font-weight: 700; font-size: 12.5px; }
+  .mday { font-size: 11px; color: rgba(20, 20, 20, 0.72); }
+  .mconn { display: flex; align-items: center; justify-content: center; gap: 8px; margin: -2px 0; }
+  .mconn svg { width: 14px; height: 20px; stroke: var(--violet); }
+  .mconn .hand { font-size: 16.5px; color: var(--muted); }
+  .mscore { display: grid; grid-template-columns: 1fr 34px 14px; gap: 5px; align-items: center; font-size: 9.5px; margin-top: 2px; }
+  .mbar { height: 4px; border-radius: 2px; background: rgba(20, 20, 20, 0.1); overflow: hidden; }
+  .mbar i { display: block; height: 100%; background: var(--ink); }
+  /* ---- the printable one-pager (shown only when saving as PDF) ---- */
+  .onepager { display: none; }
+  @media print {
+    @page { margin: 8mm; size: A4; }
+    body { background: #F2EDE8 !important; padding: 0; }
+    .wrap > *:not(.onepager) { display: none !important; }
+    .onepager {
+      display: block;
+      color: #141414;
+      width: 620px;
+      max-width: 86%;
+      margin: 0 auto;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+  .onepager .opblock {
+    display: inline-block;
+    background: var(--lilac);
+    border-radius: 4px;
+    padding: 0 10px 2px;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+  }
+  .onepager h2 { font-weight: 800; font-size: 27px; letter-spacing: -0.035em; margin: 3px 0 1px; }
+  .onepager .opdate { font-size: 9.5px; color: var(--muted); margin: 0 0 9px; }
+  .onepager .opletter {
+    background: #F0EBFC;
+    border-left: 5px solid #CDC1F8;
+    border-radius: 12px;
+    padding: 13px 18px;
+    font-size: 10px;
+    line-height: 1.5;
+    white-space: pre-line;
+    margin: 0 0 8px;
+  }
+  .onepager .opfoot { font-size: 8.5px; color: #777; margin-top: 12px; text-align: center; }
+
+  footer.site {
+    margin-top: 36px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  footer.site .pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  footer.site .pill {
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 999px;
+    border: 1.5px solid var(--ink);
+    background: var(--white);
+    color: var(--ink);
+    padding: 7px 18px;
+    text-decoration: none;
+  }
+  footer.site .pill:hover { background: var(--violet); border-color: var(--violet); color: #fff; }
+  footer.site p { font-size: 12.5px; color: var(--muted); margin: 0 auto 6px; max-width: 76ch; }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header class="poster">
+    <svg class="squiggle sq1" viewBox="0 0 200 170" fill="none" aria-hidden="true">
+      <path d="M18 14 C 118 -12, 192 62, 152 136" stroke="#CDC1F8" stroke-width="8" stroke-linecap="round"/>
+      <path d="M136 124 L153 158 L168 126 Z" fill="#CDC1F8"/>
+    </svg>
+    <h1>Life Designer Pro</h1>
+    <p class="subtitle">Think through the life behind <mark class="lm">your next decision</mark>.</p>
+    <p class="how">Start with one question. Explore how each choice could affect your work, relationships, health, energy, learning, community, and finances. Then choose one small experiment to try before making a bigger commitment.</p>
+    <p class="motto">If this future works, what would an <mark>ordinary day</mark> feel like for you?</p>
+    <p class="sig">A job tells you what you do. An ordinary day tells you what life you choose.</p>
+    <div class="heropills">
+      <button id="btnListenHero" type="button">🎧 Listen to your future self</button>
+      <button id="btnPdfHero" type="button">⬇ Download the letter</button>
+    </div>
+    <div class="ctarow">
+      <button class="primary" id="btnStart" type="button">Start with one question</button>
+      <button id="btnTalk" type="button" title="Click into a box, then tap to dictate; tap again to stop">🎤 Talk instead of type</button>
+      <button id="btnExample" type="button">See an example</button>
+      <button id="btnClear" type="button">Clear all</button>
+    </div>
+  </header>
+
+
+  <div id="lmgrid">
+    <div class="grouphead gh-lime">Start here</div>
+    <div class="cards" id="grp1"></div>
+    <div class="grouphead gh-lilac">Explore your future</div>
+    <div class="cards" id="grp2"></div>
+    <div class="cards" id="grp3" style="margin-top: 14px;"></div>
+  </div>
+
+
+  <section class="letter">
+    <span class="corner" aria-hidden="true">→</span>
+    <svg class="ann thin spark1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 v6 M12 16 v6 M2 12 h6 M16 12 h6"/></svg>
+    <div class="ann hand note-read" aria-hidden="true">read this slowly<svg class="thin" width="22" height="26" viewBox="0 0 22 26"><path d="M11 2 C 8 10, 10 16, 11 22"/><path d="M6 16 L11 24 L16 16"/></svg></div>
+    <div class="label">💌 From your future self</div>
+    <h3>A note from your future self</h3>
+    <svg class="hand-underline thin" viewBox="0 0 210 12" aria-hidden="true"><path d="M4 7 C 40 2, 90 10, 130 5 C 165 2, 190 8, 206 5"/></svg>
+    <div class="outbar">
+      <button class="primary" id="btnListen" type="button">▶ Listen</button>
+      <button id="btnPdf" type="button">⬇ Save as PDF</button>
+    </div>
+
+    <p id="lettertext"></p>
+    <div class="label maplabel">🗺️ Your life map</div>
+    <div class="lifemap" id="mapgrid"></div>
+  </section>
+
+
+
+
+  <div class="onepager" id="onepager"></div>
+
+
+
+  <footer class="site">
+    <div class="pills">
+      <a class="pill" href="https://www.linkedin.com/in/weiweihu" rel="noopener">LinkedIn</a>
+      <a class="pill" href="https://github.com/wei-wei-hu/life-designer-pro" rel="noopener">GitHub</a>
+      <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
+      <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
+    </div>
+    <p>© 2026 Weiwei Hu. All rights reserved.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var AREAS = [
+    { id: "wellbeing",    label: "Physical & emotional well-being" },
+    { id: "work",         label: "Work & career" },
+    { id: "love",         label: "Love & relationships" },
+    { id: "fun",          label: "Fun & enjoyment" },
+    { id: "learning",     label: "Learning & creativity" },
+    { id: "community",    label: "Community & belonging" },
+    { id: "financial",    label: "Financial security" },
+    { id: "contribution", label: "Contribution & meaning" }
+  ];
+
+  // Numbered cards in the poster's order; null marks the eight-areas card.
+  var BLOCKS = [
+    { n: 1, id: "today", tint: "t-lime", icon: "📍", title: "Today",
+      ask: "Where you are today: the places, roles, or parts of life that hold you now, and any pull you feel between them.",
+      ph: "One anchor per line" },
+    { n: 2, id: "question", tint: "t-yellow", icon: "❓", title: "The question",
+      ask: "What decision or part of your life would you like to examine? A sentence is enough. Then look under it: what is the bigger question behind it?",
+      ph: "Write it as one honest question" },
+    null, // card 3: the eight areas
+    { n: 4, id: "path1", tint: "t-lilac", icon: "🧭", title: "Path 1 · Current Direction",
+      ask: "Your current direction, two years on. If this future works, what will an ordinary day feel like?",
+      ph: "Give it a name, then its ordinary day" },
+    { n: 5, id: "path2", tint: "t-lilac", icon: "🔀", title: "Path 2 · Adjacent Life",
+      ask: "The life you would build if the current route disappeared. Same test: the ordinary day.",
+      ph: "Give it a name, then its ordinary day" },
+    { n: 6, id: "path3", tint: "t-lilac", icon: "🌤️", title: "Path 3 · Unconstrained Life",
+      ask: "The life you would live if money or image were no object. Same test: the ordinary day.",
+      ph: "Give it a name, then its ordinary day" },
+    { n: 7, id: "travels", tint: "t-pink", icon: "🛡️", title: "What travels with you",
+      ask: "What must exist in an ordinary week for it to feel like your own life? During a busy month, which three would you protect first?",
+      ph: "Your weekly conditions, one per line" },
+    { n: 8, id: "experiment", tint: "t-yellow", icon: "🧪", title: "The active experiment",
+      ask: "One experiment small enough to start this week, and the date you will look at how it went.",
+      ph: "The experiment + review date" },
+    { n: 9, id: "energy", tint: "t-lime", icon: "⚡", title: "What fuels you, what drains you",
+      ask: "Think of a recent normal week. Which moments gave you energy, and which drained it?",
+      ph: "e.g. Gave: teaching a new hire / Drained: status meetings" },
+    { n: 10, id: "heroes", tint: "t-pink", icon: "🌟", title: "Your heroes",
+      ask: "Name two or three people you admire, real or fictional. What exactly do you admire about each? Those qualities are your own values.",
+      ph: "A name, then what you admire about them" },
+    { n: 11, id: "metaphor", tint: "t-lime", icon: "🪴", title: "Your life as a picture",
+      ask: "Pick a metaphor for your life today, and one for the life you want (a garden, a hike, an orchestra). How does one become the other?",
+      ph: "Today: … / Tomorrow: … / How: …" },
+    { n: 12, id: "help", tint: "t-lilac", icon: "🤝", title: "Who you help",
+      ask: "Who receives the value of your work? And what do they get from you that they would miss if you left?",
+      ph: "One person or group per line, and what they get" }
+  ];
+  var FIELD_BLOCKS = BLOCKS.filter(function (b) { return b; });
+
+  var EXAMPLE = {
+    snap: { wellbeing: "6", work: "4", love: "7", fun: "5", learning: "5",
+            community: "6", financial: "7", contribution: "5" },
+    focus:      "Work. It takes more energy than it gives back.",
+    today:      "Marketing manager at a big company\nGood at my job, tired by 6pm\nThe part I love: writing and teaching",
+    question:   "What kind of work would make an ordinary week feel good again?",
+    travels:    "Dinner with my family\nOne hour to write\nA full night's sleep",
+    experiment: "Write one short post this week\nSee how it felt in 30 days",
+    energy:     "Gave: teaching a new hire\nGave: quiet writing in the morning\nDrained: status meetings",
+    path1:      "Stay and reshape: same job, fewer meetings\nAn ordinary day: two meetings instead of six, one writing hour",
+    path2:      "Teach inside: move into training people\nAn ordinary day: teach in the morning, prepare in the afternoon",
+    path3:      "Write for myself: freelance\nAn ordinary day: write at home, lunch outside, two calls",
+    heroes:     "My grandmother: calm, never rushed\nA writer I follow: explains hard things kindly",
+    metaphor:   "Today: a crowded train\nTomorrow: a garden\nHow: get off one stop early and start planting",
+    help:       "My team: plans they can trust\nNew managers: simple answers to hard questions"
+  };
+
+  var KEY = "life-canvas-v1";
+  var byId = function (id) { return document.getElementById(id); };
+  var grid = byId("lmgrid");
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  // Build the cards
+  function grpOf(b) {
+    if (b === null || b.id === "today" || b.id === "question") return "grp1";
+    if (b.id === "heroes" || b.id === "metaphor" || b.id === "help") return "grp3";
+    return "grp2";
+  }
+  BLOCKS.forEach(function (b) {
+    var el = document.createElement("section");
+    if (b === null) {
+      el.className = "card scores t-white";
+      var inner = ['<span class="icon">📊</span><div class="num">03.</div><h3>Your life snapshot</h3>'];
+      inner.push('<p class="scale">Rate each area for how satisfied you are with it today, from 0 to 10, where 0 means it is in serious trouble and 10 means it could not realistically be better. Blank is fine.</p>');
+      AREAS.forEach(function (a) {
+        inner.push('<div class="snaprow"><label for="s-' + a.id + '">' + a.label + "</label>" +
+          '<span class="snapbar"><i id="b-' + a.id + '"></i></span>' +
+          '<input id="s-' + a.id + '" type="number" min="0" max="10" step="1" inputmode="numeric"></div>');
+      });
+      inner.push('<p class="focusq">Separately from the scores: which one area most needs your attention right now? The lowest score is not automatically the most urgent.</p>');
+      inner.push('<div class="row"><input id="f-focus" type="text" placeholder="Name the area, and why it feels pressing" aria-label="Which one area most needs your attention right now?"></div>');
+      el.innerHTML = inner.join("");
+    } else {
+      el.className = "card " + b.tint + (b.c2 ? " c2" : "");
+      el.innerHTML =
+        '<span class="icon">' + b.icon + "</span>" +
+        '<div class="num">0' + b.n + ".</div>" +
+        "<h3>" + b.title + "</h3>" +
+        '<p class="ask">' + b.ask + "</p>" +
+        '<button type="button" class="nsy" data-nsy="f-' + b.id + '">Not sure yet? Leave it as a question</button>' +
+        '<textarea id="f-' + b.id + '" placeholder="' + b.ph + '" spellcheck="false" aria-label="' + b.title + '"></textarea>';
+    }
+    byId(grpOf(b)).appendChild(el);
+  });
+  grid.addEventListener("click", function (e) {
+    var t = e.target.closest ? e.target.closest("[data-nsy]") : null;
+    if (!t) return;
+    var f = byId(t.getAttribute("data-nsy"));
+    f.value = isNSY(f.value) ? "" : "Not sure yet";
+    f.dispatchEvent(new Event("input", { bubbles: true }));
+  });
+
+  function updateBars() {
+    AREAS.forEach(function (a) {
+      var raw = byId("s-" + a.id).value;
+      var n = raw === "" ? 0 : Math.max(0, Math.min(10, Number(raw) || 0));
+      byId("b-" + a.id).style.width = (n * 10) + "%";
+    });
+  }
+
+  function autosize(el) {
+    if (!el || el.tagName !== "TEXTAREA") return;
+    el.style.height = "auto";
+    el.style.height = (el.scrollHeight + 2) + "px";
+  }
+  function autosizeAll() {
+    Array.prototype.forEach.call(document.querySelectorAll("textarea"), autosize);
+  }
+
+  function values() {
+    var v = { snap: {} };
+    FIELD_BLOCKS.forEach(function (b) { v[b.id] = byId("f-" + b.id).value; });
+    AREAS.forEach(function (a) { v.snap[a.id] = byId("s-" + a.id).value; });
+    v.focus = byId("f-focus").value;
+    return v;
+  }
+  function setValues(v) {
+    v = v || {};
+    FIELD_BLOCKS.forEach(function (b) { byId("f-" + b.id).value = v[b.id] || ""; });
+    var snap = v.snap || {};
+    AREAS.forEach(function (a) { byId("s-" + a.id).value = snap[a.id] || ""; });
+    byId("f-focus").value = v.focus || "";
+    updateBars();
+    autosizeAll();
+  }
+  function isNSY(text) {
+    return /^not sure/i.test((text || "").trim());
+  }
+  function lines(text) {
+    if (isNSY(text)) return [];
+    return (text || "").split("\n").map(function (s) { return s.trim(); })
+      .filter(function (s) { return s.length; });
+  }
+  var KEEPCAP = /^(I\b|[A-Z]{2}|Mon(day)?\b|Tue(s(day)?)?\b|Wed(nesday)?\b|Thu(rs(day)?)?\b|Fri(day)?\b|Sat(urday)?\b|Sun(day)?\b)/;
+  function lc(s) {
+    if (!s || KEEPCAP.test(s)) return s || "";
+    return s.charAt(0).toLowerCase() + s.slice(1);
+  }
+  function esc(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  function joinNice(ls, max) {
+    ls = ls.slice(0, max || 3).map(lc);
+    if (ls.length <= 1) return ls[0] || "";
+    return ls.slice(0, -1).join(", ") + " and " + ls[ls.length - 1];
+  }
+  function cleanOrdinary(l) {
+    return (l || "").replace(/^(an?\s+)?(ordinary|normal)\s+day\s*[:,]?\s*/i, "").trim();
+  }
+  function letterText() {
+    var v = values();
+    var today = lines(v.today), q = lines(v.question), tr = lines(v.travels),
+        ex = lines(v.experiment), focus = (v.focus || "").trim();
+    var mt = lines(v.metaphor), hr = lines(v.heroes), hp = lines(v.help), en = lines(v.energy);
+    var pathsRaw = { p1: lines(v.path1), p2: lines(v.path2), p3: lines(v.path3) };
+    var pnames = ["p1", "p2", "p3"].map(function (k) { var l = pathsRaw[k][0]; if (!l) return null; var i = l.indexOf(":"); return i > -1 ? l.slice(0, i).trim() : l; }).filter(Boolean);
+    var any = today.length || q.length || tr.length || ex.length || pnames.length || focus || mt.length || hr.length || hp.length || en.length;
+    if (!any) return "Fill in a few boxes above, and I will write you this letter in your own words. Start anywhere; one line is enough.";
+
+    // Quiet prep: metaphor pair, energy split, overlaps
+    var mToday = null, mTomorrow = null;
+    mt.forEach(function (l) {
+      if (/^today\s*[:,]/i.test(l)) mToday = l.replace(/^today\s*[:,]\s*/i, "");
+      else if (/^tomorrow\s*[:,]/i.test(l)) mTomorrow = l.replace(/^tomorrow\s*[:,]\s*/i, "");
+    });
+    if (!mToday && mt.length > 0 && !/^how\s*[:,]/i.test(mt[0])) mToday = mt[0];
+    if (!mTomorrow && mt.length > 1 && !/^how\s*[:,]/i.test(mt[1])) mTomorrow = mt[1];
+    var gives = [], drains = [];
+    en.forEach(function (l) {
+      if (/^drain/i.test(l)) drains.push(l.replace(/^drain(ed|s)?\s*[:,]?\s*/i, ""));
+      else gives.push(l.replace(/^(gave|gives?)\s*[:,]?\s*/i, ""));
+    });
+    var todayText = today.join(" ").toLowerCase();
+    var drainInToday = drains.filter(function (d) {
+      var w = d.toLowerCase().split(/\s+/).filter(function (x) { return x.length > 4; });
+      return w.some(function (x) { return todayText.indexOf(x) > -1; });
+    })[0] || null;
+
+    // One insight, chosen by what the answers actually support
+    var insight = null;
+    if (gives.length && drains.length) insight = "More " + lc(gives[0]) + ", less " + lc(drains[0]) + ". It was never a slogan; it turned out to be the whole design.";
+    else if (pnames.length >= 2 && ex.length) insight = "You were never short on options. You were short on evidence.";
+    else if (focus && /work|career|job/i.test(focus) && tr.some(function (t) { return !/work|career|job/i.test(t); })) insight = "The real constraint was never ambition. It was how much you were asking one job to provide.";
+    else if (drains.length && tr.length) insight = "The calendar told the story before any plan did.";
+    else if (q.length && ex.length) insight = "You kept trying to choose the right future before giving yourself permission to test one.";
+
+    var p = [];
+    {
+      p.push("Hey. It's you, two years from now. I have been hoping you would sit down and do this.");
+      var started = "";
+      if (today.length) started = "I remember where you were: " + joinNice(today, 2) + ".";
+      if (focus) started += (started ? " And I remember what pressed hardest: " : "I remember what pressed hardest: ") + lc(focus);
+      if (started) p.push(started);
+      if (q.length) p.push("You asked: " + lc(q[0]) + " What looked like a question about what to do may also have been a question about what an ordinary day should feel like.");
+      if (tr.length) {
+        var frame = "An ordinary day now is built around what you swore to protect: " + joinNice(tr, 3) + ".";
+        if (gives.length) frame += " And the hours that fuel you, like " + lc(gives[0]) + ", stopped being optional.";
+        p.push(frame);
+      } else if (gives.length) {
+        p.push("The hours that fuel you, " + joinNice(gives, 2) + ", stopped being optional. That changed the shape of a week more than any title did.");
+      }
+      if (insight) p.push(insight);
+      if (ex.length) {
+        var exline = "The small test, " + lc(ex[0]) + ", gave you evidence that thinking alone could not.";
+        if (drainInToday) exline += " It also showed you something your own answers were already pointing at: " + lc(drainInToday) + " was sitting right inside your ordinary day.";
+        p.push(exline);
+      }
+      if (hr.length) {
+        var hq = [];
+        hr.slice(0, 2).forEach(function (l) {
+          var i2 = l.indexOf(":");
+          if (i2 > -1) {
+            var n2 = l.slice(0, i2).trim(), q2 = l.slice(i2 + 1).trim();
+            if (n2 && q2) hq.push({ n: lc(n2), q: lc(q2) });
+          }
+        });
+        if (hq.length) {
+          var hline = "The " + hq[0].q + " you admired in " + hq[0].n;
+          if (hq[1]) hline += ", and the " + hq[1].q + " you saw in " + hq[1].n + ",";
+          hline += " started showing up more clearly in your own choices.";
+          p.push(hline);
+        } else {
+          p.push("The qualities you admired in your heroes kept showing up in the choices you made.");
+        }
+      }
+      else if (hp.length) p.push("The people you help, " + joinNice(hp, 2) + ", kept getting what only you give them. Whenever two roads looked equal, that settled it.");
+      var openq = FIELD_BLOCKS.filter(function (b) { return isNSY(v[b.id]); }).map(function (b) { return lc(b.title); });
+      if (openq.length) p.push("Some boxes you left as open questions: " + openq.join(", ") + ". The good answers arrived on their own time.");
+      var msg = "One message back to you, tonight: ";
+      if (ex.length) msg += "run the small test. " + (tr.length ? "And protect " + lc(tr[0]) + " while you do it." : "Start smaller than feels serious.");
+      else if (tr.length) msg += "protect " + lc(tr[0]) + " this week, on purpose, and watch what it does to the days around it.";
+      else msg += "write one honest line in the question box. That is the whole assignment.";
+      p.push(msg);
+      var close = "";
+      if (tr.length) close += "You stopped treating " + lc(tr[0]) + " as the time left over after everything else. ";
+      if (mToday && mTomorrow) close += "And somewhere in there, " + lc(mToday) + " became " + lc(mTomorrow) + ". ";
+      close += "An ordinary day here finally feels like it belongs to us. I am proud of you for starting.";
+      p.push(close);
+    }
+    p.push("Your future self");
+    return p.join("\n\n");
+  }
+  function buildMapHtml() {
+    var v = values();
+    function items(arr, max) {
+      arr = arr.slice(0, max || 3);
+      if (!arr.length) return '<span class="mempty">not filled yet</span>';
+      return "<ul>" + arr.map(function (l) { return "<li>" + esc(l) + "</li>"; }).join("") + "</ul>";
+    }
+    function conn(label) {
+      return '<div class="mconn"><svg class="thin" viewBox="0 0 16 22" aria-hidden="true"><path d="M8 1 v14"/><path d="M3 11 L8 19 L13 11"/></svg><span class="hand">' + label + "</span></div>";
+    }
+    var h = [];
+    var ratedHtml = "";
+    AREAS.forEach(function (a2) {
+      var raw = (v.snap[a2.id] || "").trim();
+      if (raw === "") return;
+      var n = Math.max(0, Math.min(10, Number(raw) || 0));
+      ratedHtml += '<div class="mscore"><span>' + a2.label + '</span><span class="mbar"><i style="width:' + (n * 10) + '%"></i></span><span>' + n + "</span></div>";
+    });
+    h.push('<div class="mrow">' +
+      '<div class="mtile t-lime"><span class="mt">Today</span>' + items(lines(v.today)) + "</div>" +
+      '<div class="mtile"><span class="mt">Life snapshot</span>' + (ratedHtml || '<span class="mempty">not filled yet</span>') + "</div></div>");
+    h.push(conn("which raised the question"));
+    var q = lines(v.question);
+    h.push('<div class="mtile t-yellow mq"><span class="mt">The question</span><div class="qtext">' + (q.length ? esc(q[0]) : '<span class="mempty">not written yet</span>') + "</div></div>");
+    h.push(conn("three roads could answer it"));
+    var prow = ['<div class="mrow">'];
+    ["path1", "path2", "path3"].forEach(function (k) {
+      var pl = lines(v[k]);
+      var name = pl[0] ? (pl[0].indexOf(":") > -1 ? pl[0].slice(0, pl[0].indexOf(":")).trim() : pl[0]) : "";
+      var day = cleanOrdinary(pl.filter(function (l) { return /(ordinary|normal)\s+day/i.test(l); })[0] || pl[1] || "");
+      prow.push('<div class="mtile t-lilac"><span class="mt">Path</span>' +
+        (name ? '<div class="mname">' + esc(name) + "</div>" + (day ? '<div class="mday">' + esc(day) + "</div>" : "") : '<span class="mempty">not sketched yet</span>') + "</div>");
+    });
+    prow.push("</div>");
+    h.push(prow.join(""));
+    h.push(conn("tried first as one small step"));
+    h.push('<div class="mtile"><span class="mt">The small test</span>' + items(lines(v.experiment), 2) + "</div>");
+    h.push(conn("carried along on every road"));
+    h.push('<div class="mtile t-pink"><span class="mt">What you protect</span>' + items(lines(v.travels)) + "</div>");
+    return h.join("");
+  }
+  function renderLetter() {
+    byId("lettertext").textContent = letterText();
+    byId("mapgrid").innerHTML = buildMapHtml();
+  }
+  function renderStory() {
+    renderLetter();
+  }
+  function renderOnePager() {
+    var h = [];
+    h.push('<span class="opblock">Life Designer Pro</span>');
+    h.push('<svg class="ann thin op-spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 v6 M12 16 v6 M2 12 h6 M16 12 h6"/></svg>');
+    h.push('<div class="opdate">A note from my future self \u00b7 ' + new Date().toLocaleDateString() +
+      '<svg class="date-wave thin" viewBox="0 0 150 8" aria-hidden="true"><path d="M3 5 C 25 1, 55 7, 80 4 C 105 1, 130 6, 147 3"/></svg></div>');
+    h.push('<svg class="ann thin op-bg1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 v5 M12 16 v5 M3 12 h5 M16 12 h5"/></svg>');
+    h.push('<svg class="ann thin op-bg2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 v5 M12 16 v5 M3 12 h5 M16 12 h5"/></svg>');
+    h.push('<div class="opletter">\ud83d\udc8c\n\n' + esc(letterText()) + "</div>");
+    h.push('<div class="opmaplabel">My life map</div>');
+    h.push('<div class="lifemap">' + buildMapHtml() + "</div>");
+    h.push('<div class="hand op-sum"><svg class="thin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 v5 M12 16 v5 M3 12 h5 M16 12 h5"/></svg>An ordinary day that finally feels like yours.<svg class="thin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 v5 M12 16 v5 M3 12 h5 M16 12 h5"/></svg></div>');
+    h.push('<div class="opfoot">Life Designer Pro \u00a9 2026 Weiwei Hu. All rights reserved.</div>');
+    byId("onepager").innerHTML = h.join("");
+  }
+
+  function save() {
+    try {
+      localStorage.setItem(KEY, JSON.stringify({ v: values() }));
+    } catch (e) { /* private window etc. */ }
+  }
+  function load() {
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (!raw) return false;
+      var data = JSON.parse(raw);
+      setValues(data.v || {});
+      return true;
+    } catch (e) { return false; }
+  }
+  function loadExample() {
+    setValues(EXAMPLE);
+    renderStory();
+    save();
+  }
+  function onAnyInput() {
+    updateBars();
+    renderStory();
+    save();
+  }
+
+  grid.addEventListener("input", function (e) {
+    autosize(e.target);
+    onAnyInput();
+  });
+
+  byId("btnExample").addEventListener("click", loadExample);
+
+  byId("btnClear").addEventListener("click", function () {
+    setValues({});
+    renderStory();
+    save();
+  });
+
+
+
+  function savePdf() {
+    renderOnePager();
+    window.print();
+  }
+  byId("btnPdf").addEventListener("click", savePdf);
+  byId("btnListenHero").addEventListener("click", function () {
+    document.querySelector(".letter").scrollIntoView({ behavior: "smooth", block: "start" });
+    byId("btnListen").click();
+  });
+  byId("btnPdfHero").addEventListener("click", savePdf);
+  byId("btnStart").addEventListener("click", function () {
+    var f = byId("f-question");
+    f.scrollIntoView({ behavior: "smooth", block: "center" });
+    f.focus({ preventScroll: true });
+  });
+
+  // ---- talk instead of type: one button, dictates into the focused box ----
+  var btnTalk = byId("btnTalk");
+  var rec = null, talkField = null, talkBase = "";
+  var lastField = null;
+  grid.addEventListener("focusin", function (e) {
+    var t = e.target;
+    if (t && (t.tagName === "TEXTAREA" || (t.tagName === "INPUT" && t.type === "text"))) lastField = t;
+  });
+  function resetTalkUI() {
+    btnTalk.classList.remove("listening");
+    btnTalk.textContent = "🎤 Talk";
+    rec = null; talkField = null;
+  }
+  btnTalk.addEventListener("click", function () {
+    if (!SR) return;
+    if (rec) { try { rec.stop(); } catch (e) { /* already stopped */ } return; }
+    talkField = lastField || byId("f-question");
+    talkBase = talkField.value;
+    rec = new SR();
+    rec.lang = navigator.language || "en-US";
+    rec.continuous = true;
+    rec.interimResults = true;
+    rec.onresult = function (e) {
+      var text = "";
+      for (var i = 0; i < e.results.length; i++) text += e.results[i][0].transcript;
+      text = text.trim();
+      if (!text || !talkField) return;
+      var sep = talkField.tagName === "INPUT" ? " " : "\n";
+      talkField.value = talkBase ? talkBase.replace(/\s+$/, "") + sep + text : text;
+      autosize(talkField);
+      onAnyInput();
+    };
+    rec.onerror = function (e) {
+      resetTalkUI();
+      btnTalk.textContent = (e.error === "not-allowed" || e.error === "service-not-allowed")
+        ? "Mic blocked, type instead" : "🎤 Try again";
+    };
+    rec.onend = resetTalkUI;
+    btnTalk.classList.add("listening");
+    btnTalk.textContent = "● Listening… tap to stop";
+    talkField.scrollIntoView({ block: "center", behavior: "smooth" });
+    try { rec.start(); } catch (err) { resetTalkUI(); }
+  });
+  if (!SR) {
+    btnTalk.hidden = true;
+    var ch = byId("canvashint"); if (ch) ch.textContent = "";
+  }
+
+  // ---- listen: the letter read aloud with the device's own voice ----
+  var btnListen = byId("btnListen");
+  var synth = window.speechSynthesis;
+  var pickedVoice = null;
+  function pickVoice() {
+    if (!synth) return;
+    var voices = synth.getVoices() || [];
+    var langPref = (navigator.language || "en").slice(0, 2);
+    var warm = ["Samantha", "Karen", "Moira", "Tessa", "Victoria", "Google US English", "Google UK English Female"];
+    for (var i = 0; i < warm.length && !pickedVoice; i++) {
+      pickedVoice = voices.filter(function (v) { return v.name === warm[i]; })[0] || null;
+    }
+    if (!pickedVoice) pickedVoice = voices.filter(function (v) { return v.lang && v.lang.slice(0, 2) === langPref; })[0] || voices[0] || null;
+  }
+  if (synth) {
+    pickVoice();
+    if (typeof synth.onvoiceschanged !== "undefined") synth.onvoiceschanged = pickVoice;
+    var resetListenUI = function () {
+      btnListen.classList.remove("listening");
+      btnListen.textContent = "▶ Listen";
+    };
+    btnListen.addEventListener("click", function () {
+      if (synth.speaking) { synth.cancel(); resetListenUI(); return; }
+      var u = new SpeechSynthesisUtterance(letterText().replace(/\n+/g, ". "));
+      if (pickedVoice) u.voice = pickedVoice;
+      u.rate = 0.95;
+      u.pitch = 1;
+      u.onend = resetListenUI;
+      u.onerror = resetListenUI;
+      btnListen.classList.add("listening");
+      btnListen.textContent = "⏹ Stop listening";
+      synth.speak(u);
+    });
+  } else {
+    btnListen.hidden = true;
+  }
+
+  if (!load()) setValues({});
+  renderStory();
+})();
+</script>
+
+</body>
+</html>
