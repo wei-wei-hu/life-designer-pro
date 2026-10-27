@@ -60,7 +60,7 @@ Two rules run through every output: nothing is invented ("not sure yet" is a wel
 
 The canvas is the one-page version. Behind it is the complete life-designer-pro skill package: a guided coaching conversation for Claude Code and OpenAI Codex that asks the follow-up questions a page cannot, produces the full blueprint, life map, and prototype plan, and keeps them current with weekly to quarterly reviews and a daily reflection.
 
-## Important limits
+## Notes
 
 Life Designer Pro supports reflection and planning. It does not provide therapy, diagnosis, medical advice, legal advice, or financial advice.
 
