@@ -571,7 +571,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card6</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card7</span></p>
   </footer>
 </div>
 
@@ -803,15 +803,15 @@
         frame = "An ordinary week has the things you said you'd protect in it now: " + joinNice(tr, 3) + ".";
         if (gives.length && !drains.length) frame += " You found more room for " + lc(gives[0]) + ".";
       } else if (gives.length) {
-        frame = "You found more room for " + joinNice(gives, 2) + ". That changed the week more than any title did.";
+        frame = "The weeks here make more room for " + joinNice(gives, 2) + ".";
       }
       if (gives.length && drains.length) frame += (frame ? " " : "") + "More " + lc(gives[0]) + ", less of " + lc(drains[0]) + ".";
       if (frame) p.push(frame);
       var turn = [];
       if (insight) turn.push(insight);
       if (ex.length) {
-        turn.push("You tried the small test: " + lc(ex[0]) + ". Nothing dramatic happened, but it told you something thinking alone could not.");
-        if (drainInToday) turn.push("And " + lc(drainInToday) + " showed up right in the middle of it. That told you something too.");
+        turn.push("You tried a small test: " + lc(ex[0]) + ". The point was to learn, not to prove the whole future, and it could answer something thinking alone could not.");
+        if (drainInToday) turn.push("One thing stood out when you put your answers side by side: " + lc(drainInToday) + " was already sitting inside your ordinary day.");
       }
       if (turn.length) p.push(turn.join(" "));
       if (hr.length) {
@@ -826,9 +826,7 @@
         if (hq.length) {
           var hline = "You once wrote down what you admired in " + hq[0].n + ": " + hq[0].q + ".";
           if (hq[1]) hline += " And in " + hq[1].n + ": " + hq[1].q + ".";
-          hline += tr.length
-            ? " It started showing up in how you protect " + lc(tr[0]) + "."
-            : " It started showing up in your own choices.";
+          hline += " Those qualities gave you another way to look at the choices in front of you.";
           p.push(hline);
         } else {
           p.push("The qualities you admired in your heroes kept showing up in the choices you made.");
@@ -836,15 +834,15 @@
       }
       else if (hp.length) p.push("The people you help, " + joinNice(hp, 2) + ", kept getting what only you give them. Whenever two roads looked equal, that settled it.");
       var openq = FIELD_BLOCKS.filter(function (b) { return isNSY(v[b.id]); }).map(function (b) { return lc(b.title); });
-      if (openq.length) p.push("Some boxes you left as open questions: " + openq.join(", ") + ". You left them open, and that was fine. A few answered themselves.");
+      if (openq.length) p.push("Some boxes you left as open questions: " + openq.join(", ") + ". You left them open on purpose, and they could stay open for as long as they needed to.");
       var msg = "One message back to you, tonight: ";
       if (ex.length) msg += "run the small test. " + (tr.length ? "And protect " + lc(tr[0]) + " while you do it." : "Start smaller than feels serious.");
       else if (tr.length) msg += "protect " + lc(tr[0]) + " this week, on purpose, and watch what it does to the days around it.";
       else msg += "write one honest line in the question box. That is enough for tonight.";
       p.push(msg);
       var close = "";
-      if (tr.length) close += "You stopped treating " + lc(tr[0]) + " as the time left over after everything else. ";
-      if (mToday && mTomorrow) close += "And somewhere in there, " + lc(mToday) + " started to feel more like " + lc(mTomorrow) + ". ";
+      if (tr.length) close += "The weeks here have " + lc(tr[0]) + " in them on purpose, not as whatever time is left over. ";
+      if (mToday && mTomorrow) close += "And somewhere in there, " + lc(mToday) + " started to feel a little more like " + lc(mTomorrow) + ". ";
       close += "An ordinary day here finally feels like it belongs to us. I am proud of you for starting.";
       p.push(close);
     }
