@@ -636,7 +636,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card27</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card28</span></p>
   </footer>
 </div>
 
@@ -712,7 +712,7 @@
     help:       "My team: calm when everything is on fire\nMy daughter: proof that showing up matters"
   };
 
-  var EXAMPLE_AI_LETTER = "Hey, Ava.\nIt's you, two years from now. I remember the week everything arrived at once: the VP offer on the table, and the doctor's voice saying your heart needed a slower life. He didn't say maybe. You heard it.\n\nYou asked whether to take the promotion or whether this was your exit. From here, it may also have been a question about what your body had already started deciding without you. Your own numbers said it plainly: work at 8, money at 8, well-being at 3, fun at 2. The spreadsheet was winning and the person was losing.\n\nPut two answers side by side and the picture sharpens. You listed what drains you: the 7am status calls, and pretending to be fine. One was on your calendar. The other was invisible, and heavier. And the hours that gave something back were small and stubborn: coaching your team through a crisis, twenty minutes of bad piano. More of those, fewer 7am calls. That contrast turned out to be the whole negotiation.\n\nThe test you chose was the right kind of small: two weeks, nothing after 7pm, piano instead. Not to decide the VP question. To learn whether the storm was the job, or the way you were doing the job. It could answer what thinking alone could not.\n\nYou once wrote down what you admired: your grandfather, walking away from a big job at 50 and never looking back, and your daughter, saying exactly what she feels. Those two gave you another way to read your three roads. You drew one of them with music in it.\n\nOne thing worth doing tonight: say out loud, to one person, the sentence you have been pretending is not true.\n\nThe picture you drew, a sports car stuck in traffic becoming a sailboat with a steady wind, came with its own instruction: stop revving. And Sunday mornings with your daughter stopped being whatever was left of the week. An ordinary day here finally feels like it belongs to us.\n\nYour future self";
+  var EXAMPLE_AI_LETTER = "Hey, Ava.\n\nIt's you, two years from now. I remember the week everything arrived at once: the VP offer on the table, and the doctor's voice saying your heart needed a slower life. He didn't say maybe. You heard it.\n\nYou asked whether to take the promotion or whether this was your exit. From here, it may also have been a question about what your body had already started deciding without you. Your own numbers said it plainly: work at 8, money at 8, well-being at 3, fun at 2. The spreadsheet was winning and the person was losing.\n\nPut two answers side by side and the picture sharpens. You listed what drains you: the 7am status calls, and pretending to be fine. One was on your calendar. The other was invisible, and heavier. And the hours that gave something back were small and stubborn: coaching your team through a crisis, twenty minutes of bad piano. More of those, fewer 7am calls. That contrast turned out to be the whole negotiation.\n\nThe test you chose was the right kind of small: two weeks, nothing after 7pm, piano instead. Not to decide the VP question. To learn whether the storm was the job, or the way you were doing the job. It could answer what thinking alone could not.\n\nYou once wrote down what you admired: your grandfather, walking away from a big job at 50 and never looking back, and your daughter, saying exactly what she feels. Those two gave you another way to read your three roads. You drew one of them with music in it.\n\nOne thing worth doing tonight: say out loud, to one person, the sentence you have been pretending is not true.\n\nThe picture you drew, a sports car stuck in traffic becoming a sailboat with a steady wind, came with its own instruction: stop revving. And Sunday mornings with your daughter stopped being whatever was left of the week. An ordinary day here finally feels like it belongs to us.\n\nYour future self";
   var KEY = "life-canvas-v1";
   var byId = function (id) { return document.getElementById(id); };
   var grid = byId("lmgrid");
@@ -912,7 +912,7 @@
     var p = [];
     {
       var who = (v.name || "").trim();
-      var started = "Hey" + (who ? ", " + who : "") + ".\nIt's you, two years from now. " + pick(seed, 1, [
+      var started = "Hey" + (who ? ", " + who : "") + ".\n\nIt's you, two years from now. " + pick(seed, 1, [
         "I have been hoping you would sit down and do this.",
         "I was glad when you finally sat down to do this.",
         "I kept this one short, the way you like it."
