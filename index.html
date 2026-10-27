@@ -660,7 +660,7 @@
       <a class="pill" href="https://github.com/wei-wei-hu/life-designer-pro" rel="noopener">GitHub</a>
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card42</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card43</span></p>
   </footer>
 </div>
 
@@ -1118,8 +1118,7 @@
     var title = '<div class="vtitle">\ud83d\uddbc ' + (nm ? esc(nm) + "\u2019s vision image" : "My vision image") + "</div>";
     if (aiImage && aiImageHash === seedOf(values())) {
       return '<div class="vwrap">' + title +
-        '<img class="vimg" src="' + esc(aiImage) + '" alt="Vision image generated from the answers above">' +
-        '<div class="vhow">Generated from the answers above.</div></div>';
+        '<img class="vimg" src="' + esc(aiImage) + '" alt="Vision image generated from the answers above"></div>';
     }
     var prompt = buildVisionPrompt();
     if (!prompt) return "";
