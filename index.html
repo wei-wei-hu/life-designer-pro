@@ -403,10 +403,10 @@
   .mscore { display: grid; grid-template-columns: 1fr 34px 14px; gap: 5px; align-items: center; font-size: 9.5px; margin-top: 2px; }
   .mbar { height: 4px; border-radius: 2px; background: rgba(20, 20, 20, 0.1); overflow: hidden; }
   .mbar i { display: block; height: 100%; background: var(--ink); }
-  /* ---- the printable folded card ---- */
+  /* ---- the printable folded card (portrait, fold across the middle) ---- */
   .onepager { display: none; }
   @media print {
-    @page { size: A4 landscape; margin: 0; }
+    @page { margin: 0; }
     body { background: #fff; padding: 0; margin: 0; }
     .wrap > *:not(.onepager) { display: none !important; }
     .onepager {
@@ -417,65 +417,65 @@
     }
   }
   .cardsheet {
-    width: 296mm;
-    height: 208mm;
+    width: 208mm;
+    height: 276mm;
     display: flex;
+    flex-direction: column;
     background: #F2EDE8;
     overflow: hidden;
     position: relative;
   }
   .sheet1 { break-after: page; page-break-after: always; }
   .cpanel {
-    width: 50%;
-    height: 100%;
-    padding: 12mm;
+    height: 50%;
+    width: 100%;
+    padding: 13mm 15mm;
     box-sizing: border-box;
     position: relative;
     display: flex;
     flex-direction: column;
   }
-  .foldmark { position: absolute; left: 50%; top: 5mm; bottom: 5mm; border-left: 1px dashed rgba(20, 20, 20, 0.15); }
-  /* front cover */
+  .foldmark { position: absolute; top: 50%; left: 6mm; right: 6mm; border-top: 1px dashed rgba(20, 20, 20, 0.15); }
+  /* outside: back cover on top (rotated so it reads right when folded), front cover below */
+  .p-back { transform: rotate(180deg); align-items: center; justify-content: center; text-align: center; }
+  .p-back svg { width: 16px; height: 16px; margin-bottom: 4mm; stroke: #8F7BE0; }
+  .p-back .bl { font-size: 9px; color: #777; line-height: 1.9; }
   .p-front { align-items: center; justify-content: center; text-align: center; }
-  .p-front .femoji { font-size: 44px; margin-bottom: 7mm; }
+  .p-front .femoji { font-size: 46px; margin-bottom: 7mm; }
   .p-front .fblock {
     display: inline-block;
     background: var(--lilac);
     border-radius: 5px;
     padding: 2px 16px 4px;
     font-weight: 800;
-    font-size: 21px;
+    font-size: 22px;
     letter-spacing: -0.01em;
     margin-bottom: 4mm;
   }
-  .p-front h2 { font-size: 34px; font-weight: 800; letter-spacing: -0.035em; line-height: 1.02; margin: 0; }
-  .p-front .fhand { font-family: "Caveat", cursive; font-size: 21px; color: var(--muted); margin-top: 9mm; }
-  .p-front .fsquig { position: absolute; top: 10mm; right: 10mm; width: 34mm; }
-  /* back cover */
-  .p-back { align-items: center; justify-content: flex-end; text-align: center; padding-bottom: 18mm; }
-  .p-back svg { width: 16px; height: 16px; margin-bottom: 4mm; stroke: #8F7BE0; }
-  .p-back .bl { font-size: 8.5px; color: #777; line-height: 1.8; }
-  /* inside left: the map */
-  .p-map h3 { font-size: 15px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 4mm; }
+  .p-front h2 { font-size: 36px; font-weight: 800; letter-spacing: -0.035em; line-height: 1.02; margin: 0; }
+  .p-front .fhand { font-family: "Caveat", cursive; font-size: 22px; color: var(--muted); margin-top: 9mm; }
+  .p-front .fsquig { position: absolute; top: 9mm; right: 10mm; width: 32mm; }
+  /* inside: map fills the top half, letter fills the bottom half */
+  .p-map h3 { font-size: 15px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 3mm; }
+  .p-map .lifemap { flex: 1; justify-content: space-between; }
   .cpanel .lifemap { gap: 4px; margin-top: 0; }
-  .cpanel .mrow { gap: 6px; }
-  .cpanel .mtile { padding: 4px 8px; border-width: 1px; border-radius: 8px; box-shadow: 2px 2px 0 rgba(20, 20, 20, 0.85); }
-  .cpanel .mtile li { font-size: 7.5px; line-height: 1.3; margin: 0; }
-  .cpanel .mtile ul { padding-left: 11px; }
-  .cpanel .mt { font-size: 6.5px; padding: 1px 6px; margin-bottom: 3px; }
-  .cpanel .mq .qtext { font-size: 10px; }
-  .cpanel .mname { font-size: 8.5px; }
-  .cpanel .mday { font-size: 7.5px; }
-  .cpanel .mempty { font-size: 7.5px; }
+  .cpanel .mrow { gap: 8px; }
+  .cpanel .mtile { padding: 5px 9px; border-width: 1px; border-radius: 8px; box-shadow: 2px 2px 0 rgba(20, 20, 20, 0.85); }
+  .cpanel .mtile li { font-size: 8px; line-height: 1.35; margin: 0; }
+  .cpanel .mtile ul { padding-left: 12px; }
+  .cpanel .mt { font-size: 7px; padding: 1px 7px; margin-bottom: 2px; }
+  .cpanel .mq .qtext { font-size: 11px; }
+  .cpanel .mname { font-size: 9.5px; }
+  .cpanel .mday { font-size: 8px; }
+  .cpanel .mempty { font-size: 8px; }
   .cpanel .mconn { margin: -2px 0; }
-  .cpanel .mconn .hand { font-size: 10.5px; }
-  .cpanel .mconn svg { width: 8px; height: 11px; }
-  .cpanel .mscore { font-size: 6.5px; grid-template-columns: 1fr 26px 10px; gap: 4px; margin-top: 1px; }
+  .cpanel .mconn .hand { font-size: 11px; }
+  .cpanel .mconn svg { width: 9px; height: 12px; }
+  .cpanel .mscore { font-size: 7px; grid-template-columns: 1fr 30px 11px; gap: 4px; margin-top: 1px; }
   .cpanel .mbar { height: 3px; }
-  /* inside right: the letter */
-  .p-letter .ldate { font-size: 8.5px; color: var(--muted); margin-bottom: 2mm; }
+  .p-letter .ldate { font-size: 9px; color: var(--muted); margin-bottom: 1mm; }
   .p-letter .lwave { display: block; width: 120px; height: 7px; stroke: #8F7BE0; margin: 1mm 0 3mm; }
-  .p-letter .ltext { font-size: 9px; line-height: 1.5; white-space: pre-line; flex: 1; overflow: hidden; }
+  .p-letter .ltext { font-size: 9px; line-height: 1.48; white-space: pre-line; flex: 1; overflow: hidden; column-count: 2; column-gap: 8mm; }
 
   footer.site {
     margin-top: 36px;
@@ -549,7 +549,7 @@
     <svg class="hand-underline thin" viewBox="0 0 210 12" aria-hidden="true"><path d="M4 7 C 40 2, 90 10, 130 5 C 165 2, 190 8, 206 5"/></svg>
     <div class="outbar">
       <button class="primary" id="btnListen" type="button">▶ Listen</button>
-      <button id="btnPdf" type="button">⬇ Save your card (PDF)</button>
+      <button id="btnPdf" type="button">⬇ Download your card</button>
     </div>
 
     <p id="lettertext"></p>
@@ -571,7 +571,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card2</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card4</span></p>
   </footer>
 </div>
 
@@ -786,26 +786,33 @@
 
     var p = [];
     {
-      p.push("Hey. It's you, two years from now. I have been hoping you would sit down and do this.");
-      var started = "";
-      if (today.length) started = "I remember where you were: " + joinNice(today, 2) + ".";
-      if (focus) started += (started ? " And I remember what pressed hardest: " : "I remember what pressed hardest: ") + lc(focus);
-      if (started) p.push(started);
-      if (q.length) p.push("You asked: " + lc(q[0]) + " What looked like a question about what to do may also have been a question about what an ordinary day should feel like.");
+      var started = "Hey. It's you, two years from now. I have been hoping you would sit down and do this.";
+      if (today.length) started += " I remember where you were: " + joinNice(today, 2) + ".";
+      if (focus) started += " And I remember what pressed hardest: " + lc(focus);
+      p.push(started);
+      if (q.length) {
+        var deeper = "what an ordinary day should feel like";
+        if (focus && /energy/i.test(focus)) deeper = "where your energy was going";
+        else if (drains.length && /meeting|email|call|status|shift/i.test(drains.join(" "))) deeper = "how much of your week you were giving away";
+        else if (tr.length && focus && /famil|love|relation|kid|partner/i.test(focus)) deeper = "who gets your best hours";
+        p.push("You asked: " + lc(q[0]) + " What looked like a question about what to do may also have been a question about " + deeper + ".");
+      }
+      var frame = "";
       if (tr.length) {
-        var frame = "An ordinary day now is built around what you swore to protect: " + joinNice(tr, 3) + ".";
-        if (gives.length) frame += " And the hours that fuel you, like " + lc(gives[0]) + ", stopped being optional.";
-        p.push(frame);
+        frame = "An ordinary day now is made of what you swore to protect: " + joinNice(tr, 3) + ".";
+        if (gives.length) frame += " The hours that fuel you, like " + lc(gives[0]) + ", stopped being optional.";
       } else if (gives.length) {
-        p.push("The hours that fuel you, " + joinNice(gives, 2) + ", stopped being optional. That changed the shape of a week more than any title did.");
+        frame = "The hours that fuel you, " + joinNice(gives, 2) + ", stopped being optional. That changed the shape of a week more than any title did.";
       }
-      if (gives.length && drains.length) p.push("More " + lc(gives[0]) + ". Less of " + lc(drains[0]) + ".\nNot a slogan. Just how the good weeks got built.");
-    if (insight) p.push(insight);
+      if (gives.length && drains.length) frame += (frame ? " " : "") + "More " + lc(gives[0]) + ", less of " + lc(drains[0]) + ". That is what the better weeks had in common.";
+      if (frame) p.push(frame);
+      var turn = [];
+      if (insight) turn.push(insight);
       if (ex.length) {
-        var exline = "The small test, " + lc(ex[0]) + ", gave you evidence that thinking alone could not.";
-        if (drainInToday) exline += " It also showed you something your own answers were already pointing at: " + lc(drainInToday) + " was sitting right inside your ordinary day.";
-        p.push(exline);
+        turn.push("The small test, " + lc(ex[0]) + ", gave you evidence that thinking alone could not.");
+        if (drainInToday) turn.push("It also showed you something your own answers were already pointing at: " + lc(drainInToday) + " was sitting right inside your ordinary day.");
       }
+      if (turn.length) p.push(turn.join(" "));
       if (hr.length) {
         var hq = [];
         hr.slice(0, 2).forEach(function (l) {
@@ -893,11 +900,11 @@
   }
   function renderOnePager() {
     var h = [];
-    // Sheet 1, outside: back cover (left) + front cover (right)
+    // Sheet 1, outside: back cover (top, rotated) + front cover (bottom)
     h.push('<div class="cardsheet sheet1">');
     h.push('<div class="cpanel p-back">' +
       '<svg class="thin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 v5 M12 16 v5 M3 12 h5 M16 12 h5"/></svg>' +
-      '<div class="bl">Made with Life Designer Pro \u00b7 wei-wei-hu.github.io/life-designer-pro<br>\u00a9 2026 Weiwei Hu. All rights reserved.<br>Print both pages double-sided (flip on the short edge), then fold down the middle.</div></div>');
+      '<div class="bl">Made with Life Designer Pro \u00b7 wei-wei-hu.github.io/life-designer-pro<br>\u00a9 2026 Weiwei Hu. All rights reserved.<br>Print double-sided (flip on the long edge), then fold along the dotted line.</div></div>');
     h.push('<div class="foldmark"></div>');
     h.push('<div class="cpanel p-front">' +
       '<svg class="fsquig" viewBox="0 0 200 170" fill="none" aria-hidden="true"><path d="M18 14 C 118 -12, 192 62, 152 136" stroke="#CDC1F8" stroke-width="8" stroke-linecap="round"/><path d="M136 124 L153 158 L168 126 Z" fill="#CDC1F8"/></svg>' +
@@ -906,7 +913,7 @@
       "<h2>from your<br>future self</h2>" +
       '<div class="fhand">An ordinary day that finally feels like yours.</div></div>');
     h.push("</div>");
-    // Sheet 2, inside: map (left) + letter (right)
+    // Sheet 2, inside: map fills the top half, letter fills the bottom half
     h.push('<div class="cardsheet">');
     h.push('<div class="cpanel p-map"><h3>My life map</h3><div class="lifemap">' + buildMapHtml() + "</div></div>");
     h.push('<div class="foldmark"></div>');
