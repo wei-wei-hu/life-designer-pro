@@ -56,7 +56,7 @@ Two rules run through every output: nothing is invented ("not sure yet" is a wel
 - **A printable card:** the letter inside, your map opposite, a cover that says who it's for. Print it for yourself, or fill it in for someone you love.
 - **Your vision image:** the card closes with an image prompt composed from your own answers. Paste it into any image tool and see your next chapter as one scene, like the one at the top of this page.
 
-## The life-designer-pro skill package · members only
+## The life-designer-pro skill package (member only)
 
 The canvas is the one-page version. Behind it is the complete life-designer-pro skill package: a guided coaching conversation for Claude Code and OpenAI Codex that asks the follow-up questions a page cannot, produces the full blueprint, life map, and prototype plan, and keeps them current with weekly to quarterly reviews and a daily reflection.
 
