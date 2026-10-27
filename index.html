@@ -489,9 +489,6 @@
   .p-letter .ldate { font-size: 9px; color: var(--muted); margin-bottom: 1mm; }
   .p-letter .lwave { display: block; width: 120px; height: 7px; stroke: #8F7BE0; margin: 1mm 0 3mm; }
   .p-letter .ltext { font-size: 9px; line-height: 1.48; white-space: pre-line; flex: 1; overflow: hidden; column-count: 2; column-gap: 8mm; }
-  .p-letter .handwrite { margin-top: 4mm; }
-  .p-letter .handwrite .hp { font-family: "Caveat", cursive; font-size: 14px; color: var(--muted); margin: 0 0 4mm; }
-  .p-letter .handwrite .hline { border-bottom: 1px dashed rgba(20, 20, 20, 0.3); height: 8mm; }
 
   footer.site {
     margin-top: 36px;
@@ -595,7 +592,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card20</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card21</span></p>
   </footer>
 </div>
 
@@ -1032,8 +1029,7 @@
     h.push('<div class="cpanel p-letter">' +
       '<div class="ldate">\ud83d\udc8c ' + (function () { var n = (values().name || "").trim(); return n ? "For " + esc(n) + ", from your future self" : "A note from my future self"; })() + " \u00b7 " + new Date().toLocaleDateString() + "</div>" +
       '<svg class="lwave thin" viewBox="0 0 150 8" aria-hidden="true"><path d="M3 5 C 25 1, 55 7, 80 4 C 105 1, 130 6, 147 3"/></svg>' +
-      '<div class="ltext">' + esc(letterText()) + "</div>" +
-      '<div class="handwrite"><div class="hp">Some room left on purpose. Add a line in your own hand:</div><div class="hline"></div><div class="hline"></div></div></div>');
+      '<div class="ltext">' + esc(letterText()) + "</div>"</div>");
     h.push("</div>");
     byId("onepager").innerHTML = h.join("");
   }
