@@ -4,7 +4,7 @@ Think through the life behind your next decision.
 
 **[Open the Life Canvas](https://wei-wei-hu.github.io/life-designer-pro/)**: answer twelve plain questions, talking or typing, and get back a letter from your future self, your life drawn as a map, and a printable card. Free and private; nothing you type or say leaves your browser.
 
-[![The Life Canvas](assets/canvas-preview.png)](https://wei-wei-hu.github.io/life-designer-pro/)
+[![The Life Canvas](assets/cover.png)](https://wei-wei-hu.github.io/life-designer-pro/)
 
 ## Why this exists
 
