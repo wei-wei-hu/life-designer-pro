@@ -26,8 +26,7 @@ A job tells you what you do. An ordinary day tells you what life you choose.
 
 - **A letter from your future self**: key takeaways and recommendations in your own words, two years ahead. Read it, or listen to it.
 - **Your life map**: your situation, question, roads, test, and protections drawn as one picture.
-- **A printable folded card**: the letter inside, your map opposite, a cover that says who it's for. Print it for yourself, or fill it in for someone you love.
-- **AI-written letters** for members, composed from your answers under the full method.
+- **A printable card**: the letter inside, your map opposite, a cover that says who it's for. Print it for yourself, or fill it in for someone you love.
 
 ## Built on
 
