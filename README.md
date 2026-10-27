@@ -60,15 +60,15 @@ Two rules run through every output: nothing is invented ("not sure yet" is a wel
 
 The canvas is the one-page version. Behind it is the complete life-designer-pro skill package: a guided coaching conversation for Claude Code and OpenAI Codex that asks the follow-up questions a page cannot, produces the full blueprint, life map, and prototype plan, and keeps them current with weekly to quarterly reviews and a daily reflection.
 
-## Disclaimer
-
-Life Designer Pro supports reflection and planning. It does not provide therapy, diagnosis, medical advice, legal advice, or financial advice.
-
 ## About the author
 
 Life Designer Pro is created by [Weiwei Hu](https://www.linkedin.com/in/weiweihu/), who works at the intersection of big data, AI, and business decision-making, and writes about practical AI adoption for senior executives. She is the author of *Generative Engine Optimization (GEO): The Complete Playbook for Leaders to Win in AI Search*.
 
 Weiwei Hu · [LinkedIn](https://www.linkedin.com/in/weiweihu/) · [Website](https://weiweihu.carrd.co/)
+
+## Notes
+
+Life Designer Pro supports reflection and planning. It does not provide therapy, diagnosis, medical advice, legal advice, or financial advice.
 
 ## License
 
