@@ -557,6 +557,7 @@
       <button id="btnCopy" type="button">⧉ Copy letter</button>
       <button id="btnEmail" type="button">✉️ Email it</button>
       <button id="btnShare" type="button" hidden>↗ Share</button>
+      <button id="btnAI" type="button">✨ Get the AI-written version</button>
     </div>
 
     <p id="lettertext"></p>
@@ -578,7 +579,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card12</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card13</span></p>
   </footer>
 </div>
 
@@ -788,9 +789,12 @@
     if (!mToday && mt.length > 0 && !/^how\s*[:,]/i.test(mt[0])) mToday = mt[0];
     if (!mTomorrow && mt.length > 1 && !/^how\s*[:,]/i.test(mt[1])) mTomorrow = mt[1];
     var gives = [], drains = [];
-    en.forEach(function (l) {
+    var tagged = en.some(function (l) { return /^(drain|gave|give)/i.test(l); });
+    en.forEach(function (l, idx) {
       if (/^drain/i.test(l)) drains.push(l.replace(/^drain(ed|s)?\s*[:,]?\s*/i, ""));
-      else gives.push(l.replace(/^(gave|gives?)\s*[:,]?\s*/i, ""));
+      else if (/^(gave|gives?)/i.test(l)) gives.push(l.replace(/^(gave|gives?)\s*[:,]?\s*/i, ""));
+      else if (!tagged && en.length >= 2 && idx > 0) drains.push(l);
+      else gives.push(l);
     });
     var todayText = today.join(" ").toLowerCase();
     var drainInToday = drains.filter(function (d) {
@@ -810,6 +814,37 @@
     else if (q.length && ex.length) insight = "You kept trying to choose the right future before giving yourself permission to test one.";
 
     var seed = seedOf(v);
+    var AREA_TOKENS = {
+      wellbeing: ["well", "health"], work: ["work", "career", "job", "promot"],
+      love: ["love", "relationship", "partner", "famil"], fun: ["fun", "enjoy", "play"],
+      learning: ["learn", "creativ"], community: ["communi", "belong", "friend"],
+      financial: ["financ", "money", "secur"], contribution: ["contribut", "meaning", "impact"]
+    };
+    function areaRating(id) {
+      var raw = (v.snap[id] || "").trim();
+      return raw === "" ? null : Math.max(0, Math.min(10, Number(raw) || 0));
+    }
+    function areaLabel(id) {
+      for (var i = 0; i < AREAS.length; i++) if (AREAS[i].id === id) return lc(AREAS[i].label);
+      return id;
+    }
+    var tensions = [];
+    var fl = (focus || "").toLowerCase();
+    if (fl) {
+      var hiMatch = null, loMiss = null;
+      Object.keys(AREA_TOKENS).forEach(function (id) {
+        var hit = AREA_TOKENS[id].some(function (t) { return fl.indexOf(t) > -1; });
+        var n = areaRating(id);
+        if (n === null) return;
+        if (hit && n >= 8 && (!hiMatch || n > hiMatch.n)) hiMatch = { id: id, n: n };
+        if (!hit && n <= 4 && (!loMiss || n < loMiss.n)) loMiss = { id: id, n: n };
+      });
+      if (hiMatch) tensions.push("One thing stood out when I put your answers side by side: you rated " + areaLabel(hiMatch.id) + " " + hiMatch.n + " out of 10, and still named it as what pressed hardest. Wanting more from something that is already full usually points at size and shape, not escape.");
+      if (loMiss) tensions.push("And while the question looked at " + lc(focus) + ", your lowest number sat in " + areaLabel(loMiss.id) + " (" + loMiss.n + "). It never made it into the question. It may belong there.");
+    }
+    if (tensions.length < 2 && drains.length && p1) {
+      tensions.push("Another pair worth holding side by side: what drains you (" + lc(drains[0]) + ") and the road you are on now. Your answers do not say how much of one lives inside the other. That may be the first thing to find out.");
+    }
     var p = [];
     {
       var started = "Hey. It's you, two years from now. " + pick(seed, 1, [
@@ -841,6 +876,7 @@
       }
       if (gives.length && drains.length) frame += (frame ? " " : "") + "More " + lc(gives[0]) + ", less of " + lc(drains[0]) + ".";
       if (frame) p.push(frame);
+      tensions.slice(0, 2).forEach(function (t) { p.push(t); });
       var turn = [];
       if (insight) turn.push(insight);
       if (ex.length) {
@@ -1016,6 +1052,23 @@
     window.print();
   }
   byId("btnPdf").addEventListener("click", savePdf);
+  byId("btnAI").addEventListener("click", function () {
+    var v = values();
+    var parts = ["Write me a letter from my future self, two years from now, using the method of Designing Your Life (Burnett and Evans), Design the Life You Love (Birsel), and Business Model You (Clark). Rules: use only my answers below; never invent outcomes, events, or feelings; pick the 4 to 6 most revealing details instead of repeating everything; find one connection between answers I have not made myself; name any tension between my ratings, my question, and my roads; treat my experiment as a way to learn, not a result; plain warm human language, no coaching or corporate words, no cliches, no slogans; full paragraphs; open with: Hey. It's you, two years from now. Close with: Your future self.", "", "My answers:"];
+    FIELD_BLOCKS.forEach(function (b) {
+      var val = (v[b.id] || "").trim();
+      if (val) parts.push(b.title + ": " + val.replace(/\n/g, "; "));
+    });
+    var rated = AREAS.map(function (a) {
+      var raw = (v.snap[a.id] || "").trim();
+      return raw === "" ? null : a.label + " " + raw + "/10";
+    }).filter(Boolean);
+    if (rated.length) parts.push("My life ratings: " + rated.join(", "));
+    if ((v.focus || "").trim()) parts.push("Needs attention most: " + v.focus.trim());
+    var b2 = this;
+    var done = function () { b2.textContent = "Prompt copied, paste it into Claude or ChatGPT"; setTimeout(function () { b2.textContent = "✨ Get the AI-written version"; }, 3200); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(parts.join("\n")).then(done, function () {});
+  });
   byId("btnCopy").addEventListener("click", function () {
     var b = this;
     var done = function () { b.textContent = "Copied ✓"; setTimeout(function () { b.textContent = "⧉ Copy letter"; }, 1600); };
