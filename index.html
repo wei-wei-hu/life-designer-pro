@@ -636,7 +636,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card36</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card37</span></p>
   </footer>
 </div>
 
@@ -716,6 +716,7 @@
   var KEY = "life-canvas-v1";
   var byId = function (id) { return document.getElementById(id); };
   var grid = byId("lmgrid");
+  var fromExample = false;
   var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 
   // Build the cards
@@ -1092,7 +1093,7 @@
 
   function save() {
     try {
-      localStorage.setItem(KEY, JSON.stringify({ v: values() }));
+      localStorage.setItem(KEY, JSON.stringify({ v: values(), ex: fromExample }));
     } catch (e) { /* private window etc. */ }
   }
   function load() {
@@ -1100,11 +1101,14 @@
       var raw = localStorage.getItem(KEY);
       if (!raw) return false;
       var data = JSON.parse(raw);
+      if (data.ex) return false;
+      if (data.v && data.v.question === EXAMPLE.question && data.v.today === EXAMPLE.today) return false;
       setValues(data.v || {});
       return true;
     } catch (e) { return false; }
   }
   function loadExample() {
+    fromExample = true;
     setValues(EXAMPLE);
     aiLetter = EXAMPLE_AI_LETTER;
     aiHash = seedOf(values());
@@ -1113,6 +1117,7 @@
     save();
   }
   function onAnyInput() {
+    fromExample = false;
     updateBars();
     renderStory();
     save();
@@ -1126,6 +1131,7 @@
   byId("btnExample").addEventListener("click", loadExample);
 
   byId("btnClear").addEventListener("click", function () {
+    fromExample = false;
     setValues({});
     renderStory();
     save();
