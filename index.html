@@ -635,7 +635,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card33</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card34</span></p>
   </footer>
 </div>
 
@@ -711,7 +711,7 @@
     help:       "My team: calm when everything is on fire\nMy daughter: proof that showing up matters"
   };
 
-  var EXAMPLE_AI_LETTER = "Hey, Ava.\n\nIt's you, two years from now. I remember the week it arrived all at once: the VP offer on the table, and the doctor saying your heart needed a slower life. He didn't say maybe.\n\nYou asked: take the promotion, or is this my exit? Here is how your own answers read the three roads. The VP seat gives the most and asks the most from a body that scored itself a three. Staying smaller keeps the craft you love, the coaching, and hands back the 7am calls. The exit is the only road you drew with piano in it. None of these is a backup plan; they are three real prices for three real days.\n\nWhat you could not know yet, and no amount of thinking would settle, was whether the storm was the job or the way you were living inside it. That is exactly what your prototype was for: two weeks, nothing after seven, twenty minutes of piano.\n\nSo the next best action was never the decision. It was the evidence. Finish the two weeks. If the evenings come back, choose between staying big and staying smaller, and let the doctor's sentence break the tie. If they don't come back, you already know which road has the music.\n\nTonight: say the sentence you have been pretending is not true, to one person who loves you.\n\nKeep the sailboat where you can see it. An ordinary day here finally feels like it belongs to us.\n\nYour future self";
+  var EXAMPLE_AI_LETTER = "Hey, Ava.\n\nIt's you, two years from now. I remember when it all arrived at once: the VP offer on the table, and the doctor saying your heart needed a slower life. He didn't say maybe.\n\nYou asked: take the promotion, or is this my exit? Here is how your own answers read the three roads. The VP seat gives the most and asks the most from a body that scored itself a three. Staying smaller keeps the craft you love, the coaching, and hands back the 7am calls. The exit is the only road you drew with piano in it. None of these is a backup plan; they are three real prices for three real days.\n\nWhat you could not know yet, and no amount of thinking would settle, was whether the storm was the job or the way you were living inside it. That is exactly what your prototype was for: two weeks, nothing after seven, twenty minutes of piano.\n\nSo the next best action was never the decision. It was the evidence. Finish the two weeks. If the evenings come back, choose between staying big and staying smaller, and let the doctor's sentence break the tie. If they don't come back, you already know which road has the music.\n\nTonight: say the sentence you have been pretending is not true, to one person who loves you.\n\nKeep the sailboat where you can see it. An ordinary day here finally feels like it belongs to us.\n\nYour future self";
   var KEY = "life-canvas-v1";
   var byId = function (id) { return document.getElementById(id); };
   var grid = byId("lmgrid");
@@ -801,8 +801,17 @@
       .filter(function (s) { return s.length; });
   }
   var KEEPCAP = /^(I\b|[A-Z]{2}|Mon(day)?\b|Tue(s(day)?)?\b|Wed(nesday)?\b|Thu(rs(day)?)?\b|Fri(day)?\b|Sat(urday)?\b|Sun(day)?\b)/;
+  function youify(t) {
+    return (t || "")
+      .replace(/\bI'm\b/g, "you're").replace(/\bI am\b/g, "you are")
+      .replace(/\bI've\b/g, "you have").replace(/\bI'll\b/g, "you will")
+      .replace(/\bI'd\b/g, "you'd").replace(/\bI\b/g, "you")
+      .replace(/\bmy\b/g, "your").replace(/\bMy\b/g, "Your")
+      .replace(/\bmyself\b/g, "yourself").replace(/\bmine\b/g, "yours")
+      .replace(/\bme\b/g, "you");
+  }
   function lc(s) {
-    s = (s || "").replace(/\.+$/, "");
+    s = youify((s || "").replace(/\.+$/, ""));
     if (!s || KEEPCAP.test(s)) return s;
     return s.charAt(0).toLowerCase() + s.slice(1);
   }
