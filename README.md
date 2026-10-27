@@ -55,7 +55,7 @@ Two rules run through every output: nothing is invented ("not sure yet" is a wel
 
 ## The life-designer-pro skill package · members only
 
-The canvas is the one-page version. Behind it is the complete life-designer-pro skill package: a guided coaching conversation for Claude Code and OpenAI Codex that asks the follow-up questions a page cannot, produces the full blueprint, life map, and prototype plan, and keeps them current with weekly to quarterly reviews and a daily reflection. The skill package is not public. For member access, reach out on [LinkedIn](https://www.linkedin.com/in/weiweihu/).
+The canvas is the one-page version. Behind it is the complete life-designer-pro skill package: a guided coaching conversation for Claude Code and OpenAI Codex that asks the follow-up questions a page cannot, produces the full blueprint, life map, and prototype plan, and keeps them current with weekly to quarterly reviews and a daily reflection.
 
 ## Important limits
 
