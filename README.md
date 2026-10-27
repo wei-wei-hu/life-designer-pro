@@ -2,11 +2,15 @@
 
 An AI-assisted life-design coach. Life Designer Pro helps you look at your work, relationships, health, fun, learning and creativity, community, finances, and contribution as one connected life, through an adaptive set of questions, three alternative future designs, and evidence-based experiments.
 
+> **Attribution:** Inspired by ideas from [*Designing Your Life*](https://designingyour.life/) by [Bill Burnett](https://designingyour.life/about-us/) and [Dave Evans](https://designingyour.life/about-us/) and the [Stanford Life Design Lab](https://lifedesignlab.stanford.edu/). The life metaphor, heroes, and future-self letter draw on [*Design the Life You Love*](https://www.penguinrandomhouse.com/books/252264/design-the-life-you-love-by-ayse-birsel/) by [Ayse Birsel](https://www.aysebirsel.com/). The who-you-help lens adapts [*Business Model You*](https://businessmodelyou.com/) by Tim Clark with Alexander Osterwalder and Yves Pigneur. This is an independent adaptation, not affiliated with or endorsed by Stanford University or any of these authors.
+
+![A life-vision image generated from a real session](assets/vision.png)
+
+*This is why it exists. Weiwei's own vision image, generated from her session's answers: one long table that starts as a writing desk and ends as a dinner table set for two.*
+
 **[Open the Life Canvas](https://wei-wei-hu.github.io/life-designer-pro/)** — free, private, in your browser. Nothing you type or say leaves it.
 
 [![The Life Canvas](assets/cover.png)](https://wei-wei-hu.github.io/life-designer-pro/)
-
-> **Attribution:** Inspired by ideas from [*Designing Your Life*](https://designingyour.life/) by [Bill Burnett](https://designingyour.life/about-us/) and [Dave Evans](https://designingyour.life/about-us/) and the [Stanford Life Design Lab](https://lifedesignlab.stanford.edu/). The life metaphor, heroes, and future-self letter draw on [*Design the Life You Love*](https://www.penguinrandomhouse.com/books/252264/design-the-life-you-love-by-ayse-birsel/) by [Ayse Birsel](https://www.aysebirsel.com/). The who-you-help lens adapts [*Business Model You*](https://businessmodelyou.com/) by Tim Clark with Alexander Osterwalder and Yves Pigneur. This is an independent adaptation, not affiliated with or endorsed by Stanford University or any of these authors.
 
 ## What makes this different
 
@@ -52,11 +56,7 @@ Two rules run through every output: nothing is invented ("not sure yet" is a wel
 - **A letter from your future self:** key takeaways and recommendations in your own words, two years ahead — read it, or listen to it.
 - **Your Life Map:** one page showing your current priorities, energy sources, tensions, and the areas of life that need more attention.
 - **A printable card:** the letter inside, your map opposite, a cover that says who it's for. Print it for yourself, or fill it in for someone you love.
-- **Your vision, as an image:** the card closes with an image prompt composed from your own answers. Paste it into any image tool and see your next chapter as one scene.
-
-![A life-vision image generated from a real session](assets/vision.png)
-
-*Weiwei's own vision image, generated from her session's answers: one long table that starts as a writing desk and ends as a dinner table set for two.*
+- **Your vision, as an image:** the card closes with an image prompt composed from your own answers. Paste it into any image tool and see your next chapter as one scene, like the one at the top of this page.
 
 ## The life-designer-pro skill package · members only
 
