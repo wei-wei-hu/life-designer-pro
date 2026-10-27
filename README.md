@@ -53,6 +53,10 @@ Two rules run through every output: nothing is invented ("not sure yet" is a wel
 - **Your Life Map:** one page showing your current priorities, energy sources, tensions, and the areas of life that need more attention.
 - **A printable card:** the letter inside, your map opposite, a cover that says who it's for. Print it for yourself, or fill it in for someone you love.
 
+## The full skill · members only
+
+The canvas is the one-page version. Behind it is the complete Life Designer Pro skill: a guided coaching conversation for Claude Code and OpenAI Codex that asks the follow-up questions a page cannot, produces the full blueprint, life map, and prototype plan, and keeps them current with weekly to quarterly reviews and a daily reflection. The skill package is not public. For member access, reach out on [LinkedIn](https://www.linkedin.com/in/weiweihu/).
+
 ## Important limits
 
 Life Designer Pro supports reflection and planning. It does not provide therapy, diagnosis, medical advice, legal advice, or financial advice.
