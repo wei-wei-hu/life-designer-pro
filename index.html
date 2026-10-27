@@ -571,7 +571,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card4</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card5</span></p>
   </footer>
 </div>
 
@@ -799,18 +799,18 @@
       }
       var frame = "";
       if (tr.length) {
-        frame = "An ordinary day now is made of what you swore to protect: " + joinNice(tr, 3) + ".";
-        if (gives.length) frame += " The hours that fuel you, like " + lc(gives[0]) + ", stopped being optional.";
+        frame = "An ordinary week has the things you said you'd protect in it now: " + joinNice(tr, 3) + ".";
+        if (gives.length) frame += " You found more room for " + lc(gives[0]) + ".";
       } else if (gives.length) {
-        frame = "The hours that fuel you, " + joinNice(gives, 2) + ", stopped being optional. That changed the shape of a week more than any title did.";
+        frame = "You found more room for " + joinNice(gives, 2) + ". That changed the week more than any title did.";
       }
-      if (gives.length && drains.length) frame += (frame ? " " : "") + "More " + lc(gives[0]) + ", less of " + lc(drains[0]) + ". That is what the better weeks had in common.";
+      if (gives.length && drains.length) frame += (frame ? " " : "") + "More " + lc(gives[0]) + ", less of " + lc(drains[0]) + ".";
       if (frame) p.push(frame);
       var turn = [];
       if (insight) turn.push(insight);
       if (ex.length) {
-        turn.push("The small test, " + lc(ex[0]) + ", gave you evidence that thinking alone could not.");
-        if (drainInToday) turn.push("It also showed you something your own answers were already pointing at: " + lc(drainInToday) + " was sitting right inside your ordinary day.");
+        turn.push("You tried the small test: " + lc(ex[0]) + ". Nothing dramatic happened, but it told you something thinking alone could not.");
+        if (drainInToday) turn.push("And " + lc(drainInToday) + " showed up right in the middle of it. That told you something too.");
       }
       if (turn.length) p.push(turn.join(" "));
       if (hr.length) {
@@ -835,11 +835,11 @@
       }
       else if (hp.length) p.push("The people you help, " + joinNice(hp, 2) + ", kept getting what only you give them. Whenever two roads looked equal, that settled it.");
       var openq = FIELD_BLOCKS.filter(function (b) { return isNSY(v[b.id]); }).map(function (b) { return lc(b.title); });
-      if (openq.length) p.push("Some boxes you left as open questions: " + openq.join(", ") + ". The good answers arrived on their own time.");
+      if (openq.length) p.push("Some boxes you left as open questions: " + openq.join(", ") + ". You left them open, and that was fine. A few answered themselves.");
       var msg = "One message back to you, tonight: ";
       if (ex.length) msg += "run the small test. " + (tr.length ? "And protect " + lc(tr[0]) + " while you do it." : "Start smaller than feels serious.");
       else if (tr.length) msg += "protect " + lc(tr[0]) + " this week, on purpose, and watch what it does to the days around it.";
-      else msg += "write one honest line in the question box. That is the whole assignment.";
+      else msg += "write one honest line in the question box. That is enough for tonight.";
       p.push(msg);
       var close = "";
       if (tr.length) close += "You stopped treating " + lc(tr[0]) + " as the time left over after everything else. ";
