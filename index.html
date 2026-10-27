@@ -571,7 +571,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card2</span></p>
   </footer>
 </div>
 
@@ -779,8 +779,7 @@
 
     // One insight, chosen by what the answers actually support
     var insight = null;
-    if (gives.length && drains.length) insight = "More " + lc(gives[0]) + ", less " + lc(drains[0]) + ". It was never a slogan; it turned out to be the whole design.";
-    else if (pnames.length >= 2 && ex.length) insight = "You were never short on options. You were short on evidence.";
+    if (pnames.length >= 2 && ex.length) insight = "You were never short on options. You were short on evidence.";
     else if (focus && /work|career|job/i.test(focus) && tr.some(function (t) { return !/work|career|job/i.test(t); })) insight = "The real constraint was never ambition. It was how much you were asking one job to provide.";
     else if (drains.length && tr.length) insight = "The calendar told the story before any plan did.";
     else if (q.length && ex.length) insight = "You kept trying to choose the right future before giving yourself permission to test one.";
@@ -800,7 +799,8 @@
       } else if (gives.length) {
         p.push("The hours that fuel you, " + joinNice(gives, 2) + ", stopped being optional. That changed the shape of a week more than any title did.");
       }
-      if (insight) p.push(insight);
+      if (gives.length && drains.length) p.push("More " + lc(gives[0]) + ". Less of " + lc(drains[0]) + ".\nNot a slogan. Just how the good weeks got built.");
+    if (insight) p.push(insight);
       if (ex.length) {
         var exline = "The small test, " + lc(ex[0]) + ", gave you evidence that thinking alone could not.";
         if (drainInToday) exline += " It also showed you something your own answers were already pointing at: " + lc(drainInToday) + " was sitting right inside your ordinary day.";
@@ -818,7 +818,9 @@
         if (hq.length) {
           var hline = "The " + hq[0].q + " you admired in " + hq[0].n;
           if (hq[1]) hline += ", and the " + hq[1].q + " you saw in " + hq[1].n + ",";
-          hline += " started showing up more clearly in your own choices.";
+          hline += tr.length
+            ? " started showing up in the way you protected " + lc(tr[0]) + "."
+            : " started showing up more clearly in your own choices.";
           p.push(hline);
         } else {
           p.push("The qualities you admired in your heroes kept showing up in the choices you made.");
@@ -834,7 +836,7 @@
       p.push(msg);
       var close = "";
       if (tr.length) close += "You stopped treating " + lc(tr[0]) + " as the time left over after everything else. ";
-      if (mToday && mTomorrow) close += "And somewhere in there, " + lc(mToday) + " became " + lc(mTomorrow) + ". ";
+      if (mToday && mTomorrow) close += "And somewhere in there, " + lc(mToday) + " started to feel more like " + lc(mTomorrow) + ". ";
       close += "An ordinary day here finally feels like it belongs to us. I am proud of you for starting.";
       p.push(close);
     }
