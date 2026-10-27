@@ -272,7 +272,8 @@
     color: var(--ink);
   }
   .letter h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.015em; margin: 8px 0 8px; }
-  .letter .outbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 4px 0 26px; }
+  .letter .outbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: stretch; margin: 4px 0 26px; }
+  .letter .outbar button { flex: 1 1 170px; min-width: 170px; text-align: center; }
   .letter p#lettertext {
     font-size: 15.5px;
     line-height: 1.7;
@@ -557,8 +558,6 @@
       <button class="primary" id="btnAI" type="button">✨ Write it with AI</button>
       <button id="btnListen" type="button">▶ Listen</button>
       <button id="btnPdf" type="button">⬇ Download your card</button>
-      <button id="btnCopy" type="button">⧉ Copy letter</button>
-      <button id="btnEmail" type="button">✉️ Email it</button>
       <button id="btnShare" type="button" hidden>↗ Share</button>
     </div>
     <p class="ainote" id="ainote" hidden></p>
@@ -582,7 +581,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card16</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card17</span></p>
   </footer>
 </div>
 
@@ -1131,15 +1130,6 @@
         } else note("Payment could not be confirmed. If you were charged, contact underlineai@gmail.com.");
       }).catch(function () { note("Payment could not be confirmed. If you were charged, contact underlineai@gmail.com."); });
   })();
-  byId("btnCopy").addEventListener("click", function () {
-    var b = this;
-    var done = function () { b.textContent = "Copied ✓"; setTimeout(function () { b.textContent = "⧉ Copy letter"; }, 1600); };
-    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(letterText()).then(done, function () {});
-  });
-  byId("btnEmail").addEventListener("click", function () {
-    location.href = "mailto:?subject=" + encodeURIComponent("A note from my future self") +
-      "&body=" + encodeURIComponent(letterText());
-  });
   if (navigator.share) {
     var shareBtn = byId("btnShare");
     shareBtn.hidden = false;
