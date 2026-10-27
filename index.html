@@ -581,7 +581,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card18</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card19</span></p>
   </footer>
 </div>
 
@@ -656,6 +656,7 @@
     help:       "My students: someone who notices when they are struggling\nNew teachers: lesson plans that actually work"
   };
 
+  var EXAMPLE_AI_LETTER = "Hey. It's you, two years from now. I have been waiting for a chance to answer this one properly.\n\nI remember where you were. Eleven years into teaching science, parents three hours away and getting older, weekends disappearing into grading. You asked whether you should move back to your hometown. From here, that looks like it may also have been a question about who is in your week. Your own numbers said it first: meaning sat at an 8, community sat at a 4, your lowest. The gap between those two numbers may be most of the question.\n\nPut two more of your answers side by side and something shows. You swore to protect summers off with real rest, and in the same breath described weekends that vanish into grading late at night. The drain you named was already living inside the thing you wanted to protect. No wonder the move felt heavy; it was carrying that too.\n\nYou drew three roads, and the one with a kitchen table in it was the middle one: a smaller school, dinner at your parents' place on Wednesdays. The others stayed real. And I notice you put morning runs and lab days, the hours that fuel you, into every version. Those were never up for negotiation, which tells you what actually travels with you.\n\nSo the experiment was the right size: two full weekends there this month, not holidays. Ordinary Tuesdays in disguise. The point was never to decide. It was to feel what a normal week there does to you, and whether the people fill the number your ratings said was emptiest.\n\nYou once wrote down what you admired: your dad, fixing things without complaining, and your first mentor, making every kid feel seen. Those qualities gave you a way to read your own roads. A smaller school is full of kids to see.\n\nOne thing worth doing tonight: put both weekends on the calendar before grading eats them.\n\nAnd the picture you drew, a commuter train you never chose becoming a kitchen table with people around it, came with its own instruction: fewer transfers, shorter line. An ordinary day here finally feels like it belongs to us.\n\nYour future self";
   var KEY = "life-canvas-v1";
   var byId = function (id) { return document.getElementById(id); };
   var grid = byId("lmgrid");
@@ -1027,7 +1028,10 @@
   }
   function loadExample() {
     setValues(EXAMPLE);
+    aiLetter = EXAMPLE_AI_LETTER;
+    aiHash = seedOf(values());
     renderStory();
+    note('This example letter was written by the AI from the answers above. Members get theirs written the same way; message <a href="https://www.linkedin.com/in/weiweihu" rel="noopener">Weiwei Hu on LinkedIn</a> for access.');
     save();
   }
   function onAnyInput() {
@@ -1076,7 +1080,7 @@
   function note(msg) {
     var n = byId("ainote");
     n.hidden = !msg;
-    n.textContent = msg || "";
+    n.innerHTML = msg || "";
   }
   function setAiLetter(text) {
     aiLetter = text;
@@ -1112,7 +1116,10 @@
       .catch(function () { note("Checkout is not available right now."); });
   }
   byId("btnAI").addEventListener("click", function () {
-    if (!WORKER_URL) { note("AI-written letters are almost ready. The instant letter below already uses your answers."); return; }
+    if (!WORKER_URL) {
+      note('The AI-written letter is currently for members. Message <a href="https://www.linkedin.com/in/weiweihu" rel="noopener">Weiwei Hu on LinkedIn</a> for access. Click "See an example" above to read a real AI-written letter, and the instant letter below already uses your answers.');
+      return;
+    }
     if (aiToken()) aiWrite(); else startCheckout();
   });
   (function () {
