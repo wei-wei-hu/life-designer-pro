@@ -554,6 +554,9 @@
     <div class="outbar">
       <button class="primary" id="btnListen" type="button">▶ Listen</button>
       <button id="btnPdf" type="button">⬇ Download your card</button>
+      <button id="btnCopy" type="button">⧉ Copy letter</button>
+      <button id="btnEmail" type="button">✉️ Email it</button>
+      <button id="btnShare" type="button" hidden>↗ Share</button>
     </div>
 
     <p id="lettertext"></p>
@@ -575,7 +578,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card11</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card12</span></p>
   </footer>
 </div>
 
@@ -679,7 +682,7 @@
       el.className = "card " + b.tint + (b.c2 ? " c2" : "");
       el.innerHTML =
         '<span class="icon">' + b.icon + "</span>" +
-        '<div class="num">0' + b.n + ".</div>" +
+        '<div class="num">' + (b.n < 10 ? "0" + b.n : b.n) + ".</div>" +
         "<h3>" + b.title + "</h3>" +
         '<p class="ask">' + b.ask + "</p>" +
         '<button type="button" class="nsy" data-nsy="f-' + b.id + '">Not sure yet? Leave it as a question</button>' +
@@ -738,8 +741,13 @@
   }
   var KEEPCAP = /^(I\b|[A-Z]{2}|Mon(day)?\b|Tue(s(day)?)?\b|Wed(nesday)?\b|Thu(rs(day)?)?\b|Fri(day)?\b|Sat(urday)?\b|Sun(day)?\b)/;
   function lc(s) {
-    if (!s || KEEPCAP.test(s)) return s || "";
+    s = (s || "").replace(/\.+$/, "");
+    if (!s || KEEPCAP.test(s)) return s;
     return s.charAt(0).toLowerCase() + s.slice(1);
+  }
+  function endp(s) {
+    s = (s || "").trim();
+    return /[.?!]$/.test(s) ? s : s + ".";
   }
   function esc(s) {
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -810,7 +818,7 @@
         "I kept this one short, the way you like it."
       ]);
       if (today.length) started += " I remember where you were: " + joinNice(today, 2) + ".";
-      if (focus) started += " And I remember what pressed hardest: " + lc(focus);
+      if (focus) started += " And I remember what pressed hardest: " + endp(lc(focus));
       p.push(started);
       if (q.length) {
         var deeper = "what an ordinary day should feel like";
@@ -818,7 +826,7 @@
         else if (drains.length && /meeting|email|call|status|shift/i.test(drains.join(" "))) deeper = "how much of your week you were giving away";
         else if (tr.length && focus && /famil|love|relation|kid|partner/i.test(focus)) deeper = "who gets your best hours";
         else if (focus && /communi|friend|alone|nobody|lonel/i.test(focus)) deeper = "who is around you in a normal week";
-        p.push("You asked: " + lc(q[0]) + " " + pick(seed, 2, [
+        p.push("You asked: " + endp(lc(q[0])) + " " + pick(seed, 2, [
           "What looked like a question about what to do may also have been a question about " + deeper + ".",
           "On the surface it was about what to do. Underneath, it may have been about " + deeper + ".",
           "Your answers kept pointing somewhere else: not what to do, but " + deeper + "."
@@ -1008,6 +1016,22 @@
     window.print();
   }
   byId("btnPdf").addEventListener("click", savePdf);
+  byId("btnCopy").addEventListener("click", function () {
+    var b = this;
+    var done = function () { b.textContent = "Copied ✓"; setTimeout(function () { b.textContent = "⧉ Copy letter"; }, 1600); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(letterText()).then(done, function () {});
+  });
+  byId("btnEmail").addEventListener("click", function () {
+    location.href = "mailto:?subject=" + encodeURIComponent("A note from my future self") +
+      "&body=" + encodeURIComponent(letterText());
+  });
+  if (navigator.share) {
+    var shareBtn = byId("btnShare");
+    shareBtn.hidden = false;
+    shareBtn.addEventListener("click", function () {
+      navigator.share({ title: "A note from my future self", text: letterText() }).catch(function () {});
+    });
+  }
   byId("btnListenHero").addEventListener("click", function () {
     document.querySelector(".letter").scrollIntoView({ behavior: "smooth", block: "start" });
     byId("btnListen").click();
