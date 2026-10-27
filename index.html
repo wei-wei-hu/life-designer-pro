@@ -492,6 +492,38 @@
   .p-letter .ltext { font-size: 9px; line-height: 1.48; white-space: pre-line; flex: 1; overflow: hidden; column-count: 2; column-gap: 8mm; }
   .p-letter .insidefoot { margin-top: 8mm; text-align: center; font-size: 8px; color: #777; }
 
+  .modal {
+    position: fixed; inset: 0; z-index: 100;
+    background: rgba(20, 20, 20, 0.45);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .modalcard {
+    position: relative;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 16px;
+    box-shadow: 6px 8px 0 rgba(20, 20, 20, 0.9);
+    padding: 36px 48px 32px;
+    text-align: center;
+  }
+  .modalcard h3 { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin: 6px 0 18px; }
+  .modalemoji { font-size: 34px; }
+  .modalpill {
+    display: inline-block;
+    font-size: 15px; font-weight: 800;
+    background: var(--lilac); color: var(--ink);
+    border: 2px solid var(--ink); border-radius: 999px;
+    padding: 11px 26px; text-decoration: none;
+    box-shadow: 3px 4px 0 var(--ink);
+  }
+  .modalpill:hover { transform: translate(-1px, -2px); box-shadow: 5px 6px 0 var(--ink); }
+  .modalx {
+    position: absolute; top: 8px; right: 12px;
+    border: none; background: none; box-shadow: none;
+    font-size: 22px; padding: 4px 8px; color: var(--muted);
+  }
+  .modalx:hover { background: none; color: var(--ink); }
+
   footer.site {
     margin-top: 36px;
     padding-top: 18px;
@@ -587,6 +619,15 @@
 
 
 
+  <div id="modal" class="modal" hidden>
+    <div class="modalcard">
+      <button class="modalx" id="modalx" type="button" aria-label="Close">×</button>
+      <div class="modalemoji">🔒</div>
+      <h3>Members only</h3>
+      <a class="modalpill" href="https://www.linkedin.com/in/weiweihu" target="_blank" rel="noopener">Message Weiwei</a>
+    </div>
+  </div>
+
   <footer class="site">
     <div class="pills">
       <a class="pill" href="https://www.linkedin.com/in/weiweihu" rel="noopener">LinkedIn</a>
@@ -594,7 +635,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card23</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card24</span></p>
   </footer>
 </div>
 
@@ -1144,11 +1185,13 @@
   }
   byId("btnAI").addEventListener("click", function () {
     if (!WORKER_URL) {
-      note('The AI-written letter is currently for members. Message <a href="https://www.linkedin.com/in/weiweihu" rel="noopener">Weiwei Hu on LinkedIn</a> for access. Click "See an example" above to read a real AI-written letter, and the instant letter below already uses your answers.');
+      byId("modal").hidden = false;
       return;
     }
     if (aiToken()) aiWrite(); else startCheckout();
   });
+  byId("modalx").addEventListener("click", function () { byId("modal").hidden = true; });
+  byId("modal").addEventListener("click", function (e) { if (e.target === this) this.hidden = true; });
   (function () {
     var m = location.search.match(/[?&]session=([^&]+)/);
     if (!m || !WORKER_URL) return;
