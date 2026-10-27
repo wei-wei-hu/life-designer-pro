@@ -571,7 +571,7 @@
       <a class="pill" href="https://weiweihu.carrd.co/" rel="noopener">Website</a>
       <a class="pill" href="mailto:underlineai@gmail.com">Email</a>
     </div>
-    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card8</span></p>
+    <p>© 2026 Weiwei Hu. All rights reserved. <span style="opacity:.55">· v10.26-card9</span></p>
   </footer>
 </div>
 
@@ -748,6 +748,15 @@
   function cleanOrdinary(l) {
     return (l || "").replace(/^(an?\s+)?(ordinary|normal)\s+day\s*[:,]?\s*/i, "").trim();
   }
+  function seedOf(v) {
+    var str = JSON.stringify(v);
+    var h = 0;
+    for (var i = 0; i < str.length; i++) { h = (h * 31 + str.charCodeAt(i)) >>> 0; }
+    return h;
+  }
+  function pick(seed, salt, arr) {
+    return arr[(seed + salt) % arr.length];
+  }
   function letterText() {
     var v = values();
     var today = lines(v.today), q = lines(v.question), tr = lines(v.travels),
@@ -779,14 +788,23 @@
 
     // One insight, chosen by what the answers actually support
     var insight = null;
-    if (pnames.length >= 2 && ex.length) insight = "You were never short on options. You were short on evidence.";
+    if (pnames.length >= 2 && ex.length) insight = pick(seed, 3, [
+      "You were never short on options. You were short on evidence.",
+      "The problem was never too few options. It was too little evidence.",
+      "You had " + pnames.length + " roads and one real question: which of them holds up outside your head."
+    ]);
     else if (focus && /work|career|job/i.test(focus) && tr.some(function (t) { return !/work|career|job/i.test(t); })) insight = "The real constraint was never ambition. It was how much you were asking one job to provide.";
     else if (drains.length && tr.length) insight = "The calendar told the story before any plan did.";
     else if (q.length && ex.length) insight = "You kept trying to choose the right future before giving yourself permission to test one.";
 
+    var seed = seedOf(v);
     var p = [];
     {
-      var started = "Hey. It's you, two years from now. I have been hoping you would sit down and do this.";
+      var started = "Hey. It's you, two years from now. " + pick(seed, 1, [
+        "I have been hoping you would sit down and do this.",
+        "I was glad when you finally sat down to do this.",
+        "I kept this one short, the way you like it."
+      ]);
       if (today.length) started += " I remember where you were: " + joinNice(today, 2) + ".";
       if (focus) started += " And I remember what pressed hardest: " + lc(focus);
       p.push(started);
@@ -796,7 +814,11 @@
         else if (drains.length && /meeting|email|call|status|shift/i.test(drains.join(" "))) deeper = "how much of your week you were giving away";
         else if (tr.length && focus && /famil|love|relation|kid|partner/i.test(focus)) deeper = "who gets your best hours";
         else if (focus && /communi|friend|alone|nobody|lonel/i.test(focus)) deeper = "who is around you in a normal week";
-        p.push("You asked: " + lc(q[0]) + " What looked like a question about what to do may also have been a question about " + deeper + ".");
+        p.push("You asked: " + lc(q[0]) + " " + pick(seed, 2, [
+          "What looked like a question about what to do may also have been a question about " + deeper + ".",
+          "On the surface it was about what to do. Underneath, it may have been about " + deeper + ".",
+          "Your answers kept pointing somewhere else: not what to do, but " + deeper + "."
+        ]));
       }
       var frame = "";
       if (tr.length) {
@@ -810,7 +832,11 @@
       var turn = [];
       if (insight) turn.push(insight);
       if (ex.length) {
-        turn.push("You tried a small test: " + lc(ex[0]) + ". The point was to learn, not to prove the whole future, and it could answer something thinking alone could not.");
+        turn.push(pick(seed, 4, [
+          "You tried a small test: " + lc(ex[0]) + ". The point was to learn, not to prove the whole future, and it could answer something thinking alone could not.",
+          "You started with a small test: " + lc(ex[0]) + ". Not to decide everything. Just to learn one true thing.",
+          "The first move was small on purpose: " + lc(ex[0]) + ". It was there to teach you something thinking alone could not."
+        ]));
         if (drainInToday) turn.push("One thing stood out when you put your answers side by side: " + lc(drainInToday) + " was already sitting inside your ordinary day.");
       }
       if (turn.length) p.push(turn.join(" "));
@@ -835,7 +861,11 @@
       else if (hp.length) p.push("The people you help, " + joinNice(hp, 2) + ", kept getting what only you give them. Whenever two roads looked equal, that settled it.");
       var openq = FIELD_BLOCKS.filter(function (b) { return isNSY(v[b.id]); }).map(function (b) { return lc(b.title); });
       if (openq.length) p.push("Some boxes you left as open questions: " + openq.join(", ") + ". You left them open on purpose, and they could stay open for as long as they needed to.");
-      var msg = "One message back to you, tonight: ";
+      var msg = pick(seed, 5, [
+        "One message back to you, tonight: ",
+        "If I could send a single line back, it would be this: ",
+        "One thing worth doing tonight: "
+      ]);
       if (ex.length) msg += "run the small test. " + (tr.length ? "And protect " + lc(tr[0]) + " while you do it." : "Start smaller than feels serious.");
       else if (tr.length) msg += "protect " + lc(tr[0]) + " this week, on purpose, and watch what it does to the days around it.";
       else msg += "write one honest line in the question box. That is enough for tonight.";
@@ -843,7 +873,11 @@
       var close = "";
       if (tr.length) close += "The weeks here have " + lc(tr[0]) + " in them on purpose, not as whatever time is left over. ";
       if (mToday && mTomorrow) close += "And somewhere in there, " + lc(mToday) + " started to feel a little more like " + lc(mTomorrow) + ". ";
-      close += "An ordinary day here finally feels like it belongs to us. I am proud of you for starting.";
+      close += "An ordinary day here finally feels like it belongs to us. " + pick(seed, 6, [
+        "I am proud of you for starting.",
+        "Starting was the hard part, and you did it.",
+        "You started. That turned out to be the part that counted."
+      ]);
       p.push(close);
     }
     p.push("Your future self");
