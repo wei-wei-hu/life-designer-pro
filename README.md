@@ -6,8 +6,6 @@ Inspired by ideas from [*Designing Your Life*](https://designingyour.life/) by [
 
 ![A life-vision image generated from a real session](assets/vision.png)
 
-*This is why it exists. Weiwei's own vision image, generated from her session's answers: one long table that starts as a writing desk and ends as a dinner table set for two.*
-
 **[Open the Life Canvas](https://wei-wei-hu.github.io/life-designer-pro/)** — free, private, in your browser. Nothing you type or say leaves it.
 
 [![The Life Canvas](assets/cover.png)](https://wei-wei-hu.github.io/life-designer-pro/)
